@@ -66,6 +66,14 @@ header .container {
     gap: 10px;
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark);
+    text-decoration: none;
+}
+
 .logo-svg {
     width: 40px;
     height: 40px;
@@ -484,8 +492,16 @@ nav ul li {
     overflow-x: auto;
 }
 
+.code-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
 .code-block pre {
     margin: 0;
+    flex-grow: 1;
 }
 
 .code-block code {
@@ -493,6 +509,26 @@ nav ul li {
     font-family: 'Consolas', 'Monaco', monospace;
     font-size: 0.9rem;
     white-space: pre-wrap;
+}
+
+.copy-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
 }
 
 /* Shortcuts section */
@@ -605,6 +641,14 @@ footer {
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
+}
+
+.footer-logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
 }
 
 .footer-logo h2 {

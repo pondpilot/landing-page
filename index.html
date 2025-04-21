@@ -15,8 +15,10 @@
         <header>
             <div class="container">
                 <div class="logo">
-                    <img src="polly.svg" alt="PondPilot Logo" class="logo-svg" />
-                    <h1>PondPilot</h1>
+                    <a href="/" title="Home">
+                        <img src="polly.svg" alt="PondPilot Logo" class="logo-svg" />
+                        <h1>PondPilot</h1>
+                    </a>
                 </div>
                 <nav>
                     <ul>
@@ -166,7 +168,12 @@
                     <div class="start-option">
                         <h3>Running Locally</h3>
                         <div class="code-block">
-                            <pre><code>docker run -d -p 4173:80 --name pondpilot ghcr.io/pondpilot/pondpilot:latest</code></pre>
+                            <div class="code-container">
+                                <pre><code>docker run -d -p 4173:80 --name pondpilot ghcr.io/pondpilot/pondpilot:latest</code></pre>
+                                <button class="copy-btn" title="Copy to clipboard">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
                         </div>
                         <p>Visit <code>http://localhost:4173</code> to access</p>
                         <a href="https://github.com/pondpilot/pondpilot" class="btn secondary">View Docs</a>
@@ -225,8 +232,10 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo">
-                        <img src="polly.svg" alt="PondPilot Logo" class="logo-svg footer-logo-svg" />
-                        <h2>PondPilot</h2>
+                        <a href="/" title="Home">
+                            <img src="polly.svg" alt="PondPilot Logo" class="logo-svg footer-logo-svg" />
+                            <h2>PondPilot</h2>
+                        </a>
                     </div>
                     <div class="footer-links">
                         <div class="footer-col">
@@ -260,6 +269,21 @@
             document.querySelector(".mobile-toggle").addEventListener("click", function () {
                 document.querySelector("nav").classList.toggle("active");
                 this.classList.toggle("active");
+            });
+
+            // Copy to clipboard functionality
+            document.querySelector(".copy-btn").addEventListener("click", function() {
+                const codeText = document.querySelector(".code-container code").textContent;
+                navigator.clipboard.writeText(codeText).then(() => {
+                    // Show visual feedback
+                    const originalIcon = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i>';
+                    setTimeout(() => {
+                        this.innerHTML = originalIcon;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
             });
         </script>
 
