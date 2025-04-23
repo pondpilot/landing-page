@@ -66,11 +66,98 @@
                         </div>
                         <div class="browser-address">app.pondpilot.io</div>
                         <div class="browser-content">
-                            <div class="demo-placeholder">
-                                <div class="demo-text">
-                                    <img src="polly.svg" alt="PondPilot Logo" class="demo-logo" />
-                                    <h2>PondPilot Demo</h2>
-                                    <p>Blazing-fast SQL data exploration</p>
+                            <div class="sql-explorer">
+                                <div class="explorer-sidebar">
+                                    <div class="sidebar-header">
+                                        <img src="polly.svg" alt="PondPilot Logo" class="sidebar-logo" />
+                                        <span>Files</span>
+                                    </div>
+                                    <ul class="file-list">
+                                        <li class="file-item"><i class="fas fa-file-alt"></i> duck_analysis.sql</li>
+                                        <li class="file-item active"><i class="fas fa-table"></i> pond_data.csv</li>
+                                        <li class="file-item"><i class="fas fa-table"></i> migration_routes.parquet</li>
+                                        <li class="file-item"><i class="fas fa-database"></i> quack_metrics.duckdb</li>
+                                    </ul>
+                                </div>
+                                <div class="sql-workspace">
+                                    <div class="workspace-tabs">
+                                        <div class="workspace-tab active">
+                                            <i class="fas fa-code"></i>
+                                            pond_query.sql
+                                        </div>
+                                        <button class="add-tab">+</button>
+                                    </div>
+                                    <div class="sql-editor">
+                                        <div class="editor-success">Query ran successfully</div>
+                                        <pre class="sql-code"><span class="sql-comment">-- Duck pond analysis - Get our ducks in a row!</span>
+<span class="sql-keyword">SELECT</span> 
+  duck_type,
+  <span class="sql-keyword">COUNT</span>(*) <span class="sql-keyword">AS</span> duck_count,
+  <span class="sql-keyword">AVG</span>(quacks_per_minute) <span class="sql-keyword">AS</span> quack_rate,
+  <span class="sql-keyword">SUM</span>(bread_consumed) <span class="sql-keyword">AS</span> total_bread
+<span class="sql-keyword">FROM</span> pond_data
+<span class="sql-keyword">WHERE</span> migration_season = <span class="sql-string">'Spring'</span>
+<span class="sql-keyword">GROUP BY</span> duck_type
+<span class="sql-keyword">ORDER BY</span> quack_rate <span class="sql-keyword">DESC</span>;</pre>
+                                        <div class="cursor"></div>
+                                        <div class="run-button">
+                                            <span>Run</span>
+                                        </div>
+                                    </div>
+                                    <div class="result-preview">
+                                        <div class="result-header">
+                                            <div class="result-count">4 rows</div>
+                                            <button class="export-btn">Export CSV</button>
+                                        </div>
+                                        <table class="result-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>duck_type</th>
+                                                    <th>duck_count</th>
+                                                    <th>quack_rate</th>
+                                                    <th>total_bread</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Mallard</td>
+                                                    <td>42</td>
+                                                    <td>28.5</td>
+                                                    <td>420 slices</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Wood Duck</td>
+                                                    <td>18</td>
+                                                    <td>22.3</td>
+                                                    <td>217 slices</td>
+                                                </tr>
+                                                <tr class="active-row">
+                                                    <td>3</td>
+                                                    <td>Mandarin</td>
+                                                    <td>7</td>
+                                                    <td>19.8</td>
+                                                    <td>135 slices</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Rubber Duck</td>
+                                                    <td>1</td>
+                                                    <td>0.0</td>
+                                                    <td>0 slices</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="result-footer">
+                                            <div class="duck-indicator">
+                                                <img src="polly.svg" alt="Duck" class="result-duck" />
+                                                <span>Powered by DuckDB</span>
+                                            </div>
+                                            <div class="result-stats">Query completed in 0.024s</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

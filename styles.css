@@ -179,11 +179,12 @@ nav ul li {
 .hero .container {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 30px;
+    max-width: 1300px;
 }
 
 .hero-content {
-    flex: 1;
+    flex: 0 0 40%;
 }
 
 .hero-content h1 {
@@ -240,7 +241,7 @@ nav ul li {
 }
 
 .hero-image {
-    flex: 1;
+    flex: 0 0 60%;
     position: relative;
 }
 
@@ -250,6 +251,9 @@ nav ul li {
     overflow: hidden;
     box-shadow: var(--box-shadow);
     border: 1px solid #e0e0e0;
+    width: 95%;
+    max-width: 950px;
+    margin: 0 auto;
 }
 
 .browser-dots {
@@ -293,9 +297,302 @@ nav ul li {
 .browser-content {
     padding: 0;
     overflow: hidden;
-    min-height: 300px;
+    min-height: 400px;
 }
 
+/* SQL Explorer Mockup */
+.sql-explorer {
+    display: flex;
+    height: 100%;
+    min-height: 450px;
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.explorer-sidebar {
+    width: 200px;
+    background-color: #f2f4f8;
+    border-right: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.sidebar-logo {
+    width: 20px;
+    height: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.file-list {
+    list-style: none;
+    padding: 8px 0;
+}
+
+.file-item {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--gray);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.file-item:hover {
+    background-color: rgba(73, 87, 193, 0.05);
+}
+
+.file-item.active {
+    background-color: rgba(73, 87, 193, 0.1);
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.file-item i {
+    color: var(--gray-light);
+    font-size: 0.8rem;
+}
+
+.file-item.active i {
+    color: var(--primary);
+}
+
+.sql-workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.workspace-tabs {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 4px 8px 0;
+    background-color: #f8f9fa;
+}
+
+.workspace-tab {
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    margin-right: 2px;
+    font-size: 0.8rem;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.workspace-tab.active {
+    background-color: white;
+    color: var(--dark);
+    border-top: 2px solid var(--primary);
+    padding-top: 7px;
+    position: relative;
+    z-index: 1;
+}
+
+.workspace-tab i {
+    font-size: 0.8rem;
+}
+
+.add-tab {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    color: var(--gray);
+    cursor: pointer;
+}
+
+.sql-editor {
+    padding: 16px;
+    background-color: white;
+    color: var(--dark);
+    position: relative;
+    font-family: 'Consolas', 'Monaco', monospace;
+    flex: 0 0 180px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.editor-success {
+    color: #4caf50;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+.sql-code {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre;
+    margin: 0;
+}
+
+.sql-keyword {
+    color: #4957C1;
+    font-weight: 600;
+}
+
+.sql-string {
+    color: #e67e22;
+}
+
+.sql-comment {
+    color: #7f8c8d;
+}
+
+.run-button {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.run-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.cursor {
+    position: absolute;
+    width: 2px;
+    height: 18px;
+    background-color: #333;
+    left: 270px;
+    top: 117px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+.result-preview {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    overflow: auto;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.result-count {
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+.export-btn {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: var(--gray);
+    cursor: pointer;
+}
+
+.export-btn:hover {
+    background-color: #e8e8e8;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.result-table th {
+    background-color: #f8f9fa;
+    padding: 8px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--dark);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.result-table td {
+    padding: 8px 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.result-table tr:hover {
+    background-color: rgba(73, 87, 193, 0.05);
+}
+
+.result-table tr.active-row {
+    background-color: rgba(73, 87, 193, 0.1);
+}
+
+.result-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+    margin-top: auto;
+}
+
+.duck-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+.result-duck {
+    width: 16px;
+    height: 16px;
+}
+
+.result-stats {
+    color: var(--gray);
+    font-size: 0.8rem;
+}
+
+/* Original Demo Styles (kept for other sections) */
 .demo-placeholder {
     display: flex;
     align-items: center;
@@ -745,6 +1042,12 @@ footer {
 
     .hero-content {
         text-align: center;
+        flex: 0 0 auto;
+    }
+    
+    .hero-image {
+        flex: 0 0 auto;
+        width: 100%;
     }
 
     .hero-buttons {
@@ -754,6 +1057,86 @@ footer {
     .hero-badge {
         justify-content: center;
     }
+    
+    /* SQL Explorer responsiveness */
+    .sql-explorer {
+        flex-direction: column;
+    }
+    
+    .explorer-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .file-list {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 8px 8px;
+    }
+    
+    .file-item {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        border-radius: 4px;
+        margin: 4px;
+    }
+    
+    .sql-code {
+        font-size: 0.8rem;
+    }
+    
+    .cursor {
+        left: 244px; 
+        top: 117px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* SQL Explorer mobile view */
+    .sql-editor {
+        flex: 0 0 160px;
+        padding: 12px;
+    }
+    
+    .cursor {
+        left: 130px;
+        top: 106px;
+    }
+    
+    .sql-code {
+        font-size: 0.75rem;
+    }
+    
+    .workspace-tab {
+        font-size: 0.7rem;
+        padding: 6px 8px;
+    }
+    
+    .run-button {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+        right: 12px;
+        top: 12px;
+    }
+    
+    .editor-success {
+        font-size: 0.7rem;
+    }
+    
+    .result-table th, 
+    .result-table td {
+        padding: 6px 8px;
+        font-size: 0.7rem;
+    }
+    
+    .result-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 6px 8px;
+    }
+}
 }
 
 @media (max-width: 768px) {
