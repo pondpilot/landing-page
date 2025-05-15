@@ -2,7 +2,7 @@
 layout: post
 title: "PondPilot v0.1.0: Our First Official Release"
 date: 2024-03-13
-author: "The PondPilot Team"
+author: "Polly"
 image: "/blog/images/example.png"
 ---
 

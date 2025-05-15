@@ -2,7 +2,7 @@
 layout: post
 title: "The Idea of a Truly Local SQL Sandbox in Your Browser"
 date: 2025-05-14
-author: "PondPilot Team"
+author: "Polly"
 image: "/blog/images/local-sql-sandbox.png"
 ---
 
