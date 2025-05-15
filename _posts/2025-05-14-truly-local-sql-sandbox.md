@@ -4,6 +4,7 @@ title: "The Idea of a Truly Local SQL Sandbox in Your Browser"
 date: 2025-05-14
 author: "Polly"
 image: "/blog/images/local-sql-sandbox.png"
+hidden: true
 ---
 
 > *"The future is already here — it’s just locally executed."*
