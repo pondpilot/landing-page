@@ -4,13 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{% if page.title %}{{ page.title }} - {% endif %}PondPilot</title>
-        <link rel="stylesheet" href="/styles.css" />
-        <link rel="stylesheet" href="/blog/blog.css" />
+        <link rel="stylesheet" href="/assets/css/styles.css" />
+        <link rel="stylesheet" href="/assets/css/blog.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-        <link rel="icon" href="/polly.svg" type="image/svg+xml" />
+        <link rel="icon" href="/assets/images/polly.svg" type="image/svg+xml" />
         <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}PondPilot - A blazing-fast, lightweight, 100% client-side data exploration tool powered by DuckDB{% endif %}">
     </head>
     <body class="{% if page.layout == 'post' or page.url contains '/blog/' %}blog-page{% endif %}">
@@ -18,7 +18,7 @@
             <div class="container">
                 <div class="logo">
                     <a href="/" title="Home">
-                        <img src="/polly.svg" alt="PondPilot Logo" class="logo-svg" />
+                        <img src="/assets/images/polly.svg" alt="PondPilot Logo" class="logo-svg" />
                         <h1>PondPilot</h1>
                     </a>
                 </div>
@@ -53,7 +53,7 @@
                 <div class="footer-content">
                     <div class="footer-logo">
                         <a href="/" title="Home">
-                            <img src="/polly.svg" alt="PondPilot Logo" class="logo-svg footer-logo-svg" />
+                            <img src="/assets/images/polly.svg" alt="PondPilot Logo" class="logo-svg footer-logo-svg" />
                             <h2>PondPilot</h2>
                         </a>
                     </div>

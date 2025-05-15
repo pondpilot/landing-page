@@ -16,3 +16,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - docker-compose.yml
+  - justfile
+  - README.md
+  - .gitignore
+  - .jekyll-cache

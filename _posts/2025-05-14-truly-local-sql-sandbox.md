@@ -4,7 +4,6 @@ title: "The Idea of a Truly Local SQL Sandbox in Your Browser"
 date: 2025-05-14
 author: "Polly"
 image: "/blog/images/local-sql-sandbox.png"
-hidden: true
 ---
 
 > *"The future is already here — it’s just locally executed."*
@@ -27,9 +26,9 @@ In other words: *the hardware is ready, the engine is ready, the sandbox is read
 
 ## What Existing Tools Get Wrong
 
-A handful of in‑browser SQL toys exist, but most of them make two fatal mistakes:
+A handful of in‑browser SQL toys exist, but most of them make two critical sacrificies:
 
-1. **They copy your data into memory.** Moving a 5 GB Parquet file through JS buffers is slow and immediately collides with the 2 GB WASM heap limit.
+1. **They copy your data. Twice!** Moving a 5 GB Parquet file first into browser cache, which eats your disk space and makes it impossible to react to changes to the files. And then read the entire file into JS buffers, which is slow and immediately collides with the 4 GB WASM memory limit.
 2. **They assume the cloud is close.** Uploading "just a sample" of sensitive data is a non‑starter for healthcare, finance, or any developer sitting on a slow café Wi‑Fi.
 
 The net result: great intentions, frustrating reality.
@@ -39,7 +38,7 @@ The net result: great intentions, frustrating reality.
 PondPilot takes a different route:
 
 * **Direct file handles, no duplication.** We open CSV, Parquet, XLSX, and DuckDB files *in place* using the File System Access API. Reads stream directly into DuckDB’s buffer manager—no JS detour, no hidden uploads.
-* **Merge multi‑gigabyte sources.** Need to join a 12 GB clickstream with a 9 GB product catalog? Point PondPilot at both files and watch them mingle under 200 MB of RAM.
+* **Merge multi‑gigabyte sources.** Need to join a 12 GB clickstream with a 9 GB product catalog? Point PondPilot at both files and watch them mingle under 400 MB of RAM.
 * **State that persists.** Tabs, attached folders, and temporary tables survive reloads so your "aha!" moment isn’t lost when you nudge the trackpad.
 
 ## CLI Power, GUI Flow
@@ -57,12 +56,6 @@ We believe analysis should happen **where the data already lives**—whether tha
 
 ## Try It Now
 
-Open [app.pondpilot.io](https://app.pondpilot.io), drop in a file, and type:
-
-```sql
-TBD... Maybe a deeplink with a query instead?
-```
-
-Watch the result materialize before the fan spins up. That’s the future we want to share—one where every knowledge worker carries a data warehouse in their backpack.
+Open [this demo query](https://app.pondpilot.io/shared-script/JTdCJTIybmFtZSUyMiUzQSUyMnF1ZXJ5JTIyJTJDJTIyY29udGVudCUyMiUzQSUyMlNFTEVDVCU1Q24lMjAlMjBvX29yZGVyc3RhdHVzJTJDJTVDbiUyMCUyMENPVU5UKCopJTIwQVMlMjB0b3RhbF9vcmRlcnMlMkMlNUNuJTIwJTIwUk9VTkQoQVZHKG9fdG90YWxwcmljZSklMkMlMjAyKSUyMEFTJTIwYXZnX29yZGVyX3ZhbHVlJTVDbkZST00lNUNuJTIwJTIwJ2h0dHBzJTNBJTJGJTJGc2hlbGwuZHVja2RiLm9yZyUyRmRhdGElMkZ0cGNoJTJGMF8wMSUyRnBhcnF1ZXQlMkZvcmRlcnMucGFycXVldCclNUNuR1JPVVAlMjBCWSU1Q24lMjAlMjBvX29yZGVyc3RhdHVzJTVDbk9SREVSJTIwQlklNUNuJTIwJTIwdG90YWxfb3JkZXJzJTIwREVTQyUzQiUyMiU3RA%3D%3D) and watch the result materialize before the fan spins up. That’s the future we want to share—one where every knowledge worker carries a data warehouse in their backpack.
 
 Have thoughts, bug reports, or dueling benchmarks? [Join the flock on GitHub](https://github.com/pondpilot/pondpilot). We’re excited to see what you’ll build when SQL becomes a *first‑class local citizen* again.

@@ -10,10 +10,10 @@ serve:
     @echo "Starting Jekyll server at http://localhost:4000..."
     @docker-compose up
 
-# Serve the site with simple HTTP server (no Jekyll processing)
+# Serve the built site with simple HTTP server (from _site directory)
 serve-simple:
     @echo "Starting simple HTTP server at http://localhost:8000..."
-    @python3 -m http.server || python -m http.server
+    @cd _site && python3 -m http.server || cd _site && python -m http.server
 
 # Format HTML files
 format-html:
@@ -23,7 +23,7 @@ format-html:
 # Format CSS files
 format-css:
     @echo "Formatting CSS files..."
-    @npx prettier --write *.css
+    @npx prettier --write assets/**/*.css
 
 # Validate HTML
 validate-html:
@@ -95,12 +95,15 @@ new-post:
 # Build the site with Jekyll (via Docker)
 build:
     @echo "Building site with Jekyll..."
-    @docker run --rm -v $(pwd):/site bretfisher/jekyll-serve jekyll build
+    @docker run --rm -v $(pwd):/site bretfisher/jekyll-serve bundle exec jekyll build
 
 # Clean the site build
 clean:
     @echo "Cleaning site build..."
     @rm -rf _site
+
+# Build and serve the site with simple HTTP server
+build-and-serve: build serve-simple
 
 # Full development setup (format, validate, serve)
 dev: format-html format-css validate-html serve
