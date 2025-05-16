@@ -3,7 +3,7 @@ layout: post
 title: "PondPilot v0.2.0 Released: New Features and Improvements"
 date: 2024-05-13
 author: "Polly"
-image: "/blog/images/intro-pondpilot.png"
+image: "/blog/images/v0.2.0.jpeg"
 ---
 
 We're excited to announce the release of PondPilot v0.2.0! A quick reminder: PondPilot is continuously updated at [app.pondpilot.io](https://app.pondpilot.io), but we occasionally mark major milestones so you can easily discover new features and improvements. Let's dive into the highlights of this release.

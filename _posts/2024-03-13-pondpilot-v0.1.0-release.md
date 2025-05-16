@@ -3,7 +3,7 @@ layout: post
 title: "PondPilot v0.1.0: Our First Official Release"
 date: 2024-03-13
 author: "Polly"
-image: "/blog/images/intro-pondpilot.png"
+image: "/blog/images/v0.1.0.jpeg"
 ---
 
 We're thrilled to announce the first official release of PondPilot v0.1.0! After months of development and testing, we've reached this important milestone in our journey to provide a fast, secure, and easy-to-use data exploration tool powered by DuckDB.
