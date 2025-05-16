@@ -1,0 +1,46 @@
+---
+layout: default
+title: Blog
+---
+<div class="blog-index-container">
+    <div class="container">
+        <div class="blog-header">
+            <h1>PondPilot Blog</h1>
+            <p>News, updates, and insights from the PondPilot team</p>
+        </div>
+        
+        <div class="blog-posts">
+            {% for post in site.posts %}
+            {% unless post.hidden %}
+            <div class="blog-post-card">
+                {% if post.image %}
+                <div class="post-image">
+                    <a href="{{ post.url }}">
+                        <img src="{{ post.image }}" alt="{{ post.title }}" />
+                    </a>
+                </div>
+                {% endif %}
+                <div class="post-content">
+                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    <div class="post-meta">
+                        <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                        {% if post.author %}<span class="post-author">{{ post.author }}</span>{% endif %}
+                    </div>
+                    <div class="post-excerpt">
+                        {{ post.excerpt | strip_html | truncatewords: 30 }}
+                    </div>
+                    <a href="{{ post.url }}" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            {% endunless %}
+            {% endfor %}
+        </div>
+        
+        {% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true" %}
+        {% if visible_posts.size == 0 %}
+        <div class="no-posts">
+            <p>No blog posts yet. Check back soon!</p>
+        </div>
+        {% endif %}
+    </div>
+</div>

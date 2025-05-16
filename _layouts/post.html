@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="blog-post-container">
+    <div class="container-narrow">
+        <div class="blog-post-header">
+            <h1>{{ page.title }}</h1>
+            <div class="blog-post-meta">
+                <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+                {% if page.author %}<span class="post-author">{{ page.author }}</span>{% endif %}
+            </div>
+        </div>
+        
+        <article class="blog-post-content">
+            {{ content }}
+        </article>
+        
+        <div class="blog-nav">
+            <a href="/blog" class="blog-back-link"><i class="fas fa-arrow-left"></i> Back to all posts</a>
+        </div>
+    </div>
+</div>

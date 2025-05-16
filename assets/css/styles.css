@@ -486,8 +486,8 @@ nav ul li {
     width: 2px;
     height: 18px;
     background-color: #333;
-    left: 270px;
-    top: 117px;
+    left: 359px;
+    top: 135px;
     animation: blink 1s infinite;
 }
 
@@ -1087,8 +1087,8 @@ footer {
     }
     
     .cursor {
-        left: 244px; 
-        top: 117px;
+        left: 280px; 
+        top: 135px;
     }
 }
 
@@ -1100,8 +1100,8 @@ footer {
     }
     
     .cursor {
-        left: 130px;
-        top: 106px;
+        left: 165px;
+        top: 125px;
     }
     
     .sql-code {

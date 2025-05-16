@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% if page.title %}{{ page.title }} - {% endif %}PondPilot</title>
+        <link rel="stylesheet" href="/assets/css/styles.css" />
+        <link rel="stylesheet" href="/assets/css/blog.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="icon" href="/assets/images/polly.svg" type="image/svg+xml" />
+        <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}PondPilot - A blazing-fast, lightweight, 100% client-side data exploration tool powered by DuckDB{% endif %}">
+    </head>
+    <body class="{% if page.layout == 'post' or page.url contains '/blog/' %}blog-page{% endif %}">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="/" title="Home">
+                        <img src="/assets/images/polly.svg" alt="PondPilot Logo" class="logo-svg" />
+                        <h1>PondPilot</h1>
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/#features">Features</a></li>
+                        <li><a href="/#demo">Demo</a></li>
+                        <li><a href="/#get-started">Get Started</a></li>
+                        <li><a href="/#shortcuts">Shortcuts</a></li>
+                        <li><a href="/blog" {% if page.url contains '/blog/' %}class="active"{% endif %}>Blog</a></li>
+                        <li class="social-icons">
+                            <a href="https://github.com/pondpilot/pondpilot" class="icon-btn github-btn" aria-label="GitHub"
+                                ><i class="fab fa-github"></i
+                            ></a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            {{ content }}
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <a href="/" title="Home">
+                            <img src="/assets/images/polly.svg" alt="PondPilot Logo" class="logo-svg footer-logo-svg" />
+                            <h2>PondPilot</h2>
+                        </a>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-col">
+                            <h3>Product</h3>
+                            <ul>
+                                <li><a href="/#features">Features</a></li>
+                                <li><a href="/#demo">Demo</a></li>
+                                <li><a href="/#get-started">Get Started</a></li>
+                                <li><a href="/#shortcuts">Shortcuts</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h3>Resources</h3>
+                            <ul>
+                                <li><a href="https://github.com/pondpilot/pondpilot">GitHub</a></li>
+                                <li><a href="https://github.com/pondpilot/pondpilot/releases">Releases</a></li>
+                                <li><a href="https://github.com/pondpilot/pondpilot/blob/main/CHANGELOG.md">Changelog</a></li>
+                                <li><a href="https://github.com/pondpilot/pondpilot/blob/main/LICENSE">License</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Licensed under <a href="https://www.gnu.org/licenses/agpl-3.0">GNU Affero General Public License v3.0</a></p>
+                    <p class="built-by">Built at <a href="https://t1a.com">T1A</a> with ❤️</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.querySelector(".mobile-toggle").addEventListener("click", function () {
+                document.querySelector("nav").classList.toggle("active");
+                this.classList.toggle("active");
+            });
+        </script>
+
+        <!-- Cloudflare Web Analytics -->
+        <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "6dc7e9d760c8409290a9502dce84c0c8"}'
+        ></script>
+        <!-- End Cloudflare Web Analytics -->
+    </body>
+</html>

@@ -1,0 +1,23 @@
+# GitHub Pages Jekyll configuration
+name: PondPilot Blog
+description: News and updates from the PondPilot team
+url: ""
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Permalinks
+permalink: /blog/:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - docker-compose.yml
+  - justfile
+  - README.md
+  - .gitignore
+  - .jekyll-cache
