@@ -60,3 +60,5 @@ We believe analysis should happen **where the data already lives**—whether tha
 Open [this demo query](https://app.pondpilot.io/shared-script/JTdCJTIybmFtZSUyMiUzQSUyMnF1ZXJ5JTIyJTJDJTIyY29udGVudCUyMiUzQSUyMlNFTEVDVCU1Q24lMjAlMjBvX29yZGVyc3RhdHVzJTJDJTVDbiUyMCUyMENPVU5UKCopJTIwQVMlMjB0b3RhbF9vcmRlcnMlMkMlNUNuJTIwJTIwUk9VTkQoQVZHKG9fdG90YWxwcmljZSklMkMlMjAyKSUyMEFTJTIwYXZnX29yZGVyX3ZhbHVlJTVDbkZST00lNUNuJTIwJTIwJ2h0dHBzJTNBJTJGJTJGc2hlbGwuZHVja2RiLm9yZyUyRmRhdGElMkZ0cGNoJTJGMF8wMSUyRnBhcnF1ZXQlMkZvcmRlcnMucGFycXVldCclNUNuR1JPVVAlMjBCWSU1Q24lMjAlMjBvX29yZGVyc3RhdHVzJTVDbk9SREVSJTIwQlklNUNuJTIwJTIwdG90YWxfb3JkZXJzJTIwREVTQyUzQiUyMiU3RA%3D%3D) and watch the result materialize before the fan spins up. That’s the future we want to share—one where every knowledge worker carries a data warehouse in their backpack.
 
 Have thoughts, bug reports, or dueling benchmarks? [Join the flock on GitHub](https://github.com/pondpilot/pondpilot). We’re excited to see what you’ll build when SQL becomes a *first‑class local citizen* again.
+
+![Truly Local SQL Sandbox](/blog/images/truly-local-sql-sandbox.png)
