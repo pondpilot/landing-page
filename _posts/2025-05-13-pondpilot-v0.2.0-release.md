@@ -4,7 +4,6 @@ title: "PondPilot v0.2.0 Released: New Features and Improvements"
 date: 2025-05-13
 author: "Polly"
 image: "/blog/images/v0.2.0.jpeg"
-hidden: true
 ---
 
 We're excited to announce the release of PondPilot v0.2.0! A quick reminder: PondPilot is continuously updated at [app.pondpilot.io](https://app.pondpilot.io), but we occasionally mark major milestones so you can easily discover new features and improvements. Let's dive into the highlights of this release.
@@ -12,11 +11,6 @@ We're excited to announce the release of PondPilot v0.2.0! A quick reminder: Pon
 ## What's New in v0.2.0
 
 PondPilot v0.2.0 introduces significant enhancements to help you analyze and visualize your data more effectively:
-
-<div class="image-with-caption">
-  <img src="/blog/images/intro-pondpilot.png" alt="PondPilot v0.2.0 Interface" style="width: 100%; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-  <span class="caption">PondPilot v0.2.0 with improved query interface and data handling</span>
-</div>
 
 ### Key Highlights
 
