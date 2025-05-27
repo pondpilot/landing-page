@@ -39,6 +39,13 @@
             <li><a href="/blog">Blog</a></li>
             <li class="social-icons">
               <a
+                href="https://widget.pondpilot.io"
+                class="icon-btn widget-btn"
+                aria-label="PondPilot Widget"
+                title="PondPilot Widget"
+                ><i class="fas fa-code"></i
+              ></a>
+              <a
                 href="https://github.com/pondpilot/pondpilot"
                 class="icon-btn github-btn"
                 aria-label="GitHub"
@@ -339,6 +346,80 @@
               class="btn secondary"
               >View Docs</a
             >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="widget" class="widget-section">
+      <div class="container">
+        <div class="widget-content">
+          <div class="widget-text">
+            <h2>Embed PondPilot in Your Projects</h2>
+            <p>
+              Take the power of PondPilot anywhere with our embeddable widget.
+              Perfect for documentation, tutorials, demos, and interactive data
+              exploration.
+            </p>
+            <div class="widget-features">
+              <div class="widget-feature">
+                <i class="fas fa-code"></i>
+                <span>Easy integration with just a few lines of code</span>
+              </div>
+              <div class="widget-feature">
+                <i class="fas fa-palette"></i>
+                <span>Customizable themes and styling</span>
+              </div>
+              <div class="widget-feature">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Responsive design for all devices</span>
+              </div>
+            </div>
+            <div class="widget-buttons">
+              <a href="https://widget.pondpilot.io" class="btn primary">
+                Try Widget Demo
+              </a>
+              <a
+                href="https://github.com/pondpilot/pondpilot-widget"
+                class="btn secondary"
+              >
+                View on GitHub
+              </a>
+            </div>
+          </div>
+          <div class="widget-preview">
+            <div class="widget-demo">
+              <div class="widget-header">
+                <span class="widget-title">PondPilot Widget</span>
+                <div class="widget-controls">
+                  <span class="control-dot minimize"></span>
+                  <span class="control-dot maximize"></span>
+                  <span class="control-dot close"></span>
+                </div>
+              </div>
+              <div class="widget-body">
+                <div class="widget-sql">
+                  <pre><code>SELECT species, COUNT(*) as count
+FROM ducks 
+WHERE pond = 'central_park'
+GROUP BY species;</code></pre>
+                </div>
+                <div class="widget-result">
+                  <div class="result-row">
+                    <span>Mallard</span>
+                    <span>24</span>
+                  </div>
+                  <div class="result-row">
+                    <span>Wood Duck</span>
+                    <span>12</span>
+                  </div>
+                  <div class="result-row">
+                    <span>Teal</span>
+                    <span>8</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
