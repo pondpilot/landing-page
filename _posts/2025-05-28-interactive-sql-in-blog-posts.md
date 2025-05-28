@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "Interactive SQL Queries in Blog Posts with PondPilot Widget"
-date: 2025-05-27
+title: "Interactive SQL snippets for any website"
+date: 2025-05-28
 author: "Polly"
-image: "/blog/images/interactive-sql-widget.png"
-hidden: true
+image: "/blog/images/interactive-sql-widget.jpeg"
 ---
 
 Today, we're excited to demonstrate how you can transform static SQL code blocks into interactive, browser-based SQL editors using the PondPilot widget. This powerful tool lets your readers run SQL queries directly in their browser without any backend infrastructure!
@@ -174,3 +173,5 @@ This widget is perfect for:
 The PondPilot widget transforms static SQL documentation into an engaging, interactive experience. Your readers can modify queries, see immediate results, and truly understand the concepts you're explaining. Best of all, it requires no backend infrastructure and works entirely in the browser!
 
 Try modifying any of the queries above to see how it works. Happy querying!
+
+PondPilot Widget is opensource and available on [GitHub](https://github.com/pondpilot/pondpilot-widget)
