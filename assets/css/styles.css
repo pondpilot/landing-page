@@ -137,8 +137,8 @@ nav ul li {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     transition: var(--transition);
     font-size: 18px;
@@ -166,16 +166,40 @@ nav ul li {
 .mobile-toggle {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.mobile-toggle:hover {
+    background-color: var(--light-alt);
 }
 
 .mobile-toggle span {
     display: block;
-    width: 25px;
+    width: 28px;
     height: 3px;
     background-color: var(--dark);
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    margin: 3px 0;
+    transform-origin: center;
+}
+
+.mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* Hero section */
@@ -1289,7 +1313,101 @@ footer {
         gap: 4px;
         padding: 6px 8px;
     }
+
+    /* Widget section mobile optimizations */
+    .widget-section {
+        padding: 60px 0;
+    }
+
+    .widget-content {
+        gap: 30px;
+    }
+
+    .widget-text p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .widget-features {
+        margin-bottom: 30px;
+    }
+
+    .widget-feature {
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+    }
+
+    .widget-feature i {
+        width: 18px;
+        font-size: 0.9rem;
+    }
+
+    .widget-demo {
+        margin: 0 auto;
+        max-width: 320px;
+    }
+
+    .widget-header {
+        padding: 10px 15px;
+    }
+
+    .widget-title {
+        font-size: 0.8rem;
+    }
+
+    .control-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .widget-body {
+        padding: 15px;
+    }
+
+    .widget-sql {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .widget-sql code {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+
+    .result-row {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .widget-buttons .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
 }
+}
+
+/* Mobile menu backdrop */
+body.menu-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -1303,11 +1421,12 @@ footer {
         left: 0;
         width: 100%;
         background-color: white;
-        padding: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 30px 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         transform: translateY(-150%);
         transition: transform 0.3s ease;
         z-index: 99;
+        border-bottom: 1px solid #e0e0e0;
     }
 
     nav.active {
@@ -1316,7 +1435,39 @@ footer {
 
     nav ul {
         flex-direction: column;
+        gap: 24px;
+        align-items: stretch;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        padding: 12px 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+        color: var(--primary);
+        border-bottom-color: var(--primary);
+    }
+
+    .social-icons {
+        justify-content: center;
         gap: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+        margin-top: 20px;
+    }
+
+    .icon-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
     }
 
     .feature-grid {
@@ -1391,5 +1542,31 @@ footer {
         width: 100%;
         max-width: 280px;
         text-align: center;
+    }
+
+    /* Extra small screens optimizations */
+    .widget-demo {
+        max-width: 280px;
+        font-size: 0.85rem;
+    }
+
+    .widget-text h2 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .widget-sql code {
+        font-size: 0.7rem;
+        overflow-x: auto;
+        white-space: pre;
+    }
+
+    .widget-feature {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .container {
+        padding: 0 15px;
     }
 }
