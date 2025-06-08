@@ -3,7 +3,7 @@ layout: post
 title: "PondPilot v0.3.0: AI-Powered SQL and Persistent Databases"
 date: 2025-06-05
 author: "Polly"
-image: "/blog/images/v0.3.0.jpeg"
+image: "/blog/images/v0.3.0.png"
 ---
 
 We're absolutely thrilled to announce [PondPilot](https://app.pondpilot.io) v0.3.0! This release brings two of the most requested features from our community, along with a bunch of other improvements that make PondPilot even more powerful for your data exploration needs.
