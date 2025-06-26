@@ -61,6 +61,23 @@ Copy and fill this out for each new story:
 
 ---
 
+## Dataset Comparison Across Systems
+
+**Who**: Dheeraj Jasti (AWS Certified Data Engineer, BI Consultant)
+
+**Problem**: As a data consultant working with financial institutions, needed to compare datasets exported as Excel files from two different enterprise source systems. This would normally require complex Excel formulas and be very time-consuming in a corporate environment.
+
+**Solution**: Used PondPilot to handle the dataset comparison directly, avoiding the need for complex Excel formulas. The local processing capability was crucial for maintaining data security in financial services.
+
+**Result**: Saved significant time and effort on what would have been a challenging manual task. Introduced PondPilot to his development team, who appreciated the security of keeping data within the organization.
+
+**Quote**: 
+> "Without PondPilot, it would have been a time-consuming challenge filled with complex Excel formulas. I even introduced this to my developers and they really like it. Especially where the data never leaves the org."
+
+**Permission**: Can we use this publicly? [x] Yes [ ] Anonymous only
+
+---
+
 ## Quick Tips
 
 - Keep it short and simple
