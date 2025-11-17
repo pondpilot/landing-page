@@ -94,14 +94,6 @@ We've also squashed some important bugs in this release:
 - **Improved comparison page header** behavior
 - **Enhanced S3 URL rewriting** for better compatibility
 
-## 🎯 What's Coming Next
-
-Upcoming work will continue to improve the core data exploration experience:
-
-- **Advanced data visualization** and chart capabilities
-- **Enhanced comparison features** with drill-down analysis
-- **Performance optimizations** for larger remote datasets
-- **Additional cloud storage integrations**
 
 ## 🚀 Try It Now
 
