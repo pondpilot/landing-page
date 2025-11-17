@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PondPilot v0.7.0: Compare, Connect, and Collaborate"
-date: 2025-10-17
+date: 2025-11-17
 author: "Polly"
 image: "/blog/images/v0.7.0.png"
 ---
