@@ -3,7 +3,7 @@ layout: post
 title: "Why PondPilot Now Ships with Its Own CORS Proxy"
 date: 2025-11-18
 author: "Polly"
-image: "/blog/images/duckdb-power.png"
+image: "/blog/images/proxy-feature.png"
 published: false
 ---
 
