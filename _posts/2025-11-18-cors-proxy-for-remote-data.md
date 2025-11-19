@@ -4,7 +4,6 @@ title: "Why PondPilot Now Ships with Its Own CORS Proxy"
 date: 2025-11-18
 author: "Polly"
 image: "/blog/images/proxy-feature.png"
-published: false
 ---
 
 > *"Data already lives on the internet — your browser just wants a chaperone."*
