@@ -6,136 +6,31 @@
         <title>{% if page.title %}{{ page.title }} - {% endif %}PondPilot</title>
         <link rel="stylesheet" href="/assets/css/styles.css" />
         <link rel="stylesheet" href="/assets/css/blog.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
         <link rel="icon" href="/assets/images/polly.svg" type="image/svg+xml" />
-        <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}PondPilot - A blazing-fast, lightweight, 100% client-side data exploration tool powered by DuckDB{% endif %}">
+        <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}PondPilot - A blazing-fast, lightweight, 100% client-side data exploration tool powered by DuckDB{% endif %}" />
+        <!-- Open Graph -->
+        <meta property="og:title" content="{% if page.title %}{{ page.title }} - PondPilot{% else %}PondPilot{% endif %}" />
+        <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}PondPilot - A blazing-fast, lightweight, 100% client-side data exploration tool powered by DuckDB{% endif %}" />
+        <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+        <meta property="og:url" content="https://pondpilot.io{{ page.url }}" />
+        <meta property="og:image" content="https://pondpilot.io/assets/images/polly.svg" />
     </head>
     <body class="{% if page.layout == 'post' or page.url contains '/blog/' %}blog-page{% endif %}">
-        <header>
-            <div class="container">
-                <div class="logo">
-                    <a href="/" title="Home">
-                        <img src="/assets/images/polly.svg" alt="PondPilot Logo" class="logo-svg" />
-                        <h1>PondPilot</h1>
-                    </a>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="/#features">Features</a></li>
-                        <li><a href="/#demo">Demo</a></li>
-                        <li><a href="/#get-started">Get Started</a></li>
-                        <li><a href="/#shortcuts">Shortcuts</a></li>
-                        <li><a href="/blog" {% if page.url contains '/blog/' %}class="active"{% endif %}>Blog</a></li>
-                        <li class="social-icons">
-                            <a
-                                href="https://widget.pondpilot.io"
-                                class="icon-btn widget-btn"
-                                aria-label="PondPilot Widget"
-                                title="PondPilot Widget"
-                                ><i class="fas fa-code"></i
-                            ></a>
-                            <a href="https://github.com/pondpilot/pondpilot" class="icon-btn github-btn" aria-label="GitHub"
-                                ><i class="fab fa-github"></i
-                            ></a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="mobile-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </header>
+        {% include header.html %}
 
-        <main>
+        <main id="main-content">
             {{ content }}
         </main>
 
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-logo">
-                        <a href="/" title="Home">
-                            <img src="/assets/images/polly.svg" alt="PondPilot Logo" class="logo-svg footer-logo-svg" />
-                            <h2>PondPilot</h2>
-                        </a>
-                    </div>
-                    <div class="footer-links">
-                        <div class="footer-col">
-                            <h3>Product</h3>
-                            <ul>
-                                <li><a href="/#features">Features</a></li>
-                                <li><a href="/#demo">Demo</a></li>
-                                <li><a href="/#get-started">Get Started</a></li>
-                                <li><a href="/#shortcuts">Shortcuts</a></li>
-                                <li><a href="/blog">Blog</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-col">
-                            <h3>Resources</h3>
-                            <ul>
-                                <li><a href="https://github.com/pondpilot/pondpilot">GitHub</a></li>
-                                <li><a href="https://github.com/pondpilot/pondpilot/releases">Releases</a></li>
-                                <li><a href="https://github.com/pondpilot/pondpilot/blob/main/CHANGELOG.md">Changelog</a></li>
-                                <li><a href="https://github.com/pondpilot/pondpilot/blob/main/LICENSE">License</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>Licensed under <a href="https://www.gnu.org/licenses/agpl-3.0">GNU Affero General Public License v3.0</a></p>
-                    <p class="built-by">Built at <a href="https://t1a.com">T1A</a> with ❤️</p>
-                </div>
-            </div>
-        </footer>
+        {% include footer.html %}
 
-        <script>
-            // Mobile navigation functionality
-            const mobileToggle = document.querySelector(".mobile-toggle");
-            const nav = document.querySelector("nav");
-            const navLinks = document.querySelectorAll("nav a");
-
-            function toggleMobileMenu() {
-                nav.classList.toggle("active");
-                mobileToggle.classList.toggle("active");
-                document.body.classList.toggle("menu-open");
-            }
-
-            function closeMobileMenu() {
-                nav.classList.remove("active");
-                mobileToggle.classList.remove("active");
-                document.body.classList.remove("menu-open");
-            }
-
-            // Toggle menu on hamburger click
-            mobileToggle.addEventListener("click", toggleMobileMenu);
-
-            // Close menu when clicking nav links
-            navLinks.forEach(link => {
-                link.addEventListener("click", closeMobileMenu);
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener("click", function(event) {
-                const isClickInsideNav = nav.contains(event.target);
-                const isClickOnToggle = mobileToggle.contains(event.target);
-                
-                if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains("active")) {
-                    closeMobileMenu();
-                }
-            });
-
-            // Close menu on escape key
-            document.addEventListener("keydown", function(event) {
-                if (event.key === "Escape" && nav.classList.contains("active")) {
-                    closeMobileMenu();
-                }
-            });
-        </script>
+        <script src="/assets/js/site.js"></script>
 
         <!-- Cloudflare Web Analytics -->
         <script

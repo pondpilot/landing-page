@@ -1,0 +1,49 @@
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" title="Home">
+                <img src="/assets/images/polly.svg" alt="PondPilot Logo" class="logo-svg" />
+                <h1>PondPilot</h1>
+            </a>
+        </div>
+        <nav id="main-nav" aria-label="Main navigation">
+            <ul>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="products-menu">
+                        Products <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div id="products-menu" class="dropdown-menu" role="menu">
+                        <a href="/app" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-title">PondPilot</span>
+                            <span class="dropdown-desc">SQL explorer for your data</span>
+                        </a>
+                        <a href="/widget" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-title">Widget</span>
+                            <span class="dropdown-desc">Embeddable SQL runner</span>
+                        </a>
+                        <a href="/flowscope" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-title">FlowScope</span>
+                            <span class="dropdown-desc">SQL lineage visualization</span>
+                        </a>
+                    </div>
+                </li>
+                {% if page.url == "/" %}
+                <li><a href="#principles">Principles</a></li>
+                {% else %}
+                <li><a href="/app#features">Features</a></li>
+                <li><a href="/app#demo">Demo</a></li>
+                {% endif %}
+                <li><a href="/blog" {% if page.url contains '/blog/' %}class="active"{% endif %}>Blog</a></li>
+                <li class="social-icons">
+                    <a href="https://github.com/pondpilot" class="icon-btn github-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <button type="button" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>

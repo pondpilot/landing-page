@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PondPilot App - SQL Explorer for Your Data</title>
+    <meta name="description" content="A blazing-fast, lightweight, 100% client-side data exploration tool powered by DuckDB. Query CSV, Parquet, JSON, and DuckDB files directly in your browser." />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/assets/images/polly.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="/" title="Home">
+            <img
+              src="/assets/images/polly.svg"
+              alt="PondPilot Logo"
+              class="logo-svg"
+            />
+            <h1>PondPilot</h1>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li class="nav-dropdown">
+              <a href="/#products">Products <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+              <div class="dropdown-menu">
+                <a href="/app" class="dropdown-item">
+                  <span class="dropdown-title">PondPilot</span>
+                  <span class="dropdown-desc">SQL explorer for your data</span>
+                </a>
+                <a href="/flowscope" class="dropdown-item">
+                  <span class="dropdown-title">FlowScope</span>
+                  <span class="dropdown-desc">SQL lineage visualization</span>
+                </a>
+                <a href="/widget" class="dropdown-item">
+                  <span class="dropdown-title">Widget</span>
+                  <span class="dropdown-desc">Embeddable SQL runner</span>
+                </a>
+              </div>
+            </li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li class="social-icons">
+              <a
+                href="https://github.com/pondpilot/pondpilot"
+                class="icon-btn github-btn"
+                aria-label="GitHub"
+                ><i class="fab fa-github"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>
+            Get your data
+            <img
+              src="/assets/images/polly.svg"
+              alt="Duck"
+              class="inline-duck"
+              style="width: 36px; height: 36px; vertical-align: middle"
+            />
+            in a row
+          </h1>
+          <p>
+            A blazing-fast, lightweight, 100% client-side data exploration tool
+            powered by DuckDB
+          </p>
+          <div class="hero-buttons">
+            <a href="https://app.pondpilot.io" class="btn primary"
+              >Launch App</a
+            >
+            <a
+              href="https://github.com/pondpilot/pondpilot"
+              class="btn secondary"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="browser-mockup">
+            <div class="browser-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="browser-address">app.pondpilot.io</div>
+            <div class="browser-content">
+              <div class="sql-explorer">
+                <div class="explorer-sidebar">
+                  <div class="sidebar-header">
+                    <img
+                      src="/assets/images/polly.svg"
+                      alt="PondPilot Logo"
+                      class="sidebar-logo"
+                    />
+                    <span>Files</span>
+                  </div>
+                  <ul class="file-list">
+                    <li class="file-item">
+                      <i class="fas fa-file-alt"></i> duck_analysis.sql
+                    </li>
+                    <li class="file-item active">
+                      <i class="fas fa-table"></i> pond_data.csv
+                    </li>
+                    <li class="file-item">
+                      <i class="fas fa-table"></i> migration_routes.parquet
+                    </li>
+                    <li class="file-item">
+                      <i class="fas fa-database"></i> quack_metrics.duckdb
+                    </li>
+                  </ul>
+                </div>
+                <div class="sql-workspace">
+                  <div class="workspace-tabs">
+                    <div class="workspace-tab active">
+                      <i class="fas fa-code"></i>
+                      pond_query.sql
+                    </div>
+                    <button class="add-tab">+</button>
+                  </div>
+                  <div class="sql-editor">
+                    <div class="editor-success">Query ran successfully</div>
+                    <pre
+                      class="sql-code"
+                    ><span class="sql-comment">-- Duck pond analysis - Get our ducks in a row!</span>
+<span class="sql-keyword">SELECT</span>
+  duck_type,
+  <span class="sql-keyword">COUNT</span>(*) <span class="sql-keyword">AS</span> duck_count,
+  <span class="sql-keyword">AVG</span>(quacks_per_minute) <span class="sql-keyword">AS</span> quack_rate,
+  <span class="sql-keyword">SUM</span>(bread_consumed) <span class="sql-keyword">AS</span> total_bread
+<span class="sql-keyword">FROM</span> pond_data
+<span class="sql-keyword">WHERE</span> migration_season = <span class="sql-string">'Spring'</span>
+<span class="sql-keyword">GROUP BY</span> duck_type
+<span class="sql-keyword">ORDER BY</span> quack_rate <span class="sql-keyword">DESC</span>;</pre>
+                    <div class="run-button">
+                      <span>Run</span>
+                    </div>
+                  </div>
+                  <div class="result-preview">
+                    <div class="result-header">
+                      <div class="result-count">4 rows</div>
+                      <button class="export-btn">Export CSV</button>
+                    </div>
+                    <table class="result-table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>duck_type</th>
+                          <th>duck_count</th>
+                          <th>quack_rate</th>
+                          <th>total_bread</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Mallard</td>
+                          <td>42</td>
+                          <td>28.5</td>
+                          <td>420 slices</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Wood Duck</td>
+                          <td>18</td>
+                          <td>22.3</td>
+                          <td>217 slices</td>
+                        </tr>
+                        <tr class="active-row">
+                          <td>3</td>
+                          <td>Mandarin</td>
+                          <td>7</td>
+                          <td>19.8</td>
+                          <td>135 slices</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Rubber Duck</td>
+                          <td>1</td>
+                          <td>0.0</td>
+                          <td>0 slices</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="result-footer">
+                      <div class="duck-indicator">
+                        <img
+                          src="/assets/images/polly.svg"
+                          alt="Duck"
+                          class="result-duck"
+                        />
+                        <span>Powered by DuckDB</span>
+                      </div>
+                      <div class="result-stats">Query completed in 0.024s</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Features</div>
+          <h2>Why data professionals love PondPilot</h2>
+          <p class="section-subtitle">Powerful SQL analytics that respects your privacy and works entirely in your browser</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card scroll-animate">
+            <div class="feature-icon privacy">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>100% Client-Side</h3>
+            <p>
+              All processing happens in your browser - no data ever leaves your
+              device
+            </p>
+          </div>
+          <div class="feature-card scroll-animate">
+            <div class="feature-icon pwa">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>PWA Support</h3>
+            <p>Install PondPilot as a Progressive Web App for offline use anywhere</p>
+          </div>
+          <div class="feature-card scroll-animate">
+            <div class="feature-icon sync">
+              <i class="fas fa-arrows-rotate"></i>
+            </div>
+            <h3>Live File Sync</h3>
+            <p>
+              Access files directly with real-time updates when files change
+              externally
+            </p>
+          </div>
+          <div class="feature-card scroll-animate">
+            <div class="feature-icon readonly">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Read-Only Safe</h3>
+            <p>
+              PondPilot never writes to your files, ensuring your data stays
+              safe
+            </p>
+          </div>
+          <div class="feature-card scroll-animate">
+            <div class="feature-icon persist">
+              <i class="fas fa-cloud-arrow-up"></i>
+            </div>
+            <h3>Session Persistence</h3>
+            <p>
+              All data handles and queries automatically saved between browser sessions
+            </p>
+          </div>
+          <div class="feature-card scroll-animate">
+            <div class="feature-icon duckdb">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>DuckDB Powered</h3>
+            <p>Leverage the powerful analytical SQL engine for blazing-fast queries</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="demo">
+      <div class="container">
+        <h2>See PondPilot in action</h2>
+        <div class="demo-wrapper">
+          <div class="video-container">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/vn9Hx7SZ6-g"
+              title="PondPilot Demo"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <div class="demo-cta">
+            <a href="https://app.pondpilot.io" class="btn primary"
+              >Try It Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="get-started" class="get-started">
+      <div class="container">
+        <h2>Get Started in Seconds</h2>
+        <div class="start-options">
+          <div class="start-option">
+            <h3>Using the Web App</h3>
+            <ol>
+              <li>
+                Visit <a href="https://app.pondpilot.io">app.pondpilot.io</a>
+              </li>
+              <li>Click "Add file" or use shortcut (Ctrl+F)</li>
+              <li>Start exploring your data!</li>
+            </ol>
+            <a href="https://app.pondpilot.io" class="btn primary"
+              >Launch App</a
+            >
+          </div>
+          <div class="start-option">
+            <h3>Running Locally</h3>
+            <div class="code-block">
+              <div class="code-container">
+                <pre><code>docker run -d -p 4173:80 --name pondpilot ghcr.io/pondpilot/pondpilot:latest</code></pre>
+                <button class="copy-btn" title="Copy to clipboard">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <p>Visit <code>http://localhost:4173</code> to access</p>
+            <a
+              href="https://github.com/pondpilot/pondpilot"
+              class="btn secondary"
+              >View Docs</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shortcuts" class="shortcuts">
+      <div class="container">
+        <h2>Keyboard Shortcuts</h2>
+        <div class="shortcuts-grid">
+          <div class="shortcut">
+            <div class="keys"><span>Ctrl</span> + <span>K</span></div>
+            <div class="description">Open spotlight menu</div>
+          </div>
+          <div class="shortcut">
+            <div class="keys"><span>Ctrl</span> + <span>Enter</span></div>
+            <div class="description">Run the entire script</div>
+          </div>
+          <div class="shortcut">
+            <div class="keys">
+              <span>Ctrl</span> + <span>Shift</span> + <span>Enter</span>
+            </div>
+            <div class="description">Run query under cursor</div>
+          </div>
+          <div class="shortcut">
+            <div class="keys"><span>Ctrl</span> + <span>F</span></div>
+            <div class="description">Add file to analyze</div>
+          </div>
+          <div class="shortcut">
+            <div class="keys"><span>Ctrl</span> + <span>D</span></div>
+            <div class="description">Add DuckDB file</div>
+          </div>
+          <div class="shortcut">
+            <div class="keys"><span>Ctrl</span> + <span>I</span></div>
+            <div class="description">Import SQL files</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to explore your data?</h2>
+          <p>
+            Get your data
+            <img
+              src="/assets/images/polly.svg"
+              alt="Duck"
+              class="inline-duck"
+              style="width: 28px; height: 28px; vertical-align: middle"
+            />
+            in a row with the fastest, most private way to analyze your datasets
+          </p>
+          <a href="https://app.pondpilot.io" class="btn primary"
+            >Launch PondPilot</a
+          >
+          <p class="cta-tagline">Part of the PondPilot Flock</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <a href="/" title="Home">
+                <img
+                  src="/assets/images/polly.svg"
+                  alt="PondPilot Logo"
+                  class="logo-svg footer-logo-svg"
+                />
+                <h2>PondPilot</h2>
+              </a>
+            </div>
+            <p class="footer-tagline">
+              A suite of client-side data tools. Your data never leaves your device.
+            </p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h3>Products</h3>
+              <ul>
+                <li><a href="/app">PondPilot App</a></li>
+                <li><a href="/widget">Widget</a></li>
+                <li><a href="/flowscope">FlowScope</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="/app#features">Features</a></li>
+                <li><a href="/app#demo">Demo</a></li>
+                <li><a href="/blog">Blog</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h3>Open Source</h3>
+              <ul>
+                <li>
+                  <a href="https://github.com/pondpilot/pondpilot">GitHub</a>
+                </li>
+                <li>
+                  <a href="https://github.com/pondpilot/pondpilot/releases"
+                    >Releases</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/pondpilot/pondpilot/blob/main/CHANGELOG.md"
+                    >Changelog</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            Licensed under
+            <a href="https://www.gnu.org/licenses/agpl-3.0"
+              >GNU AGPL v3.0</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile navigation functionality
+      const mobileToggle = document.querySelector(".mobile-toggle");
+      const nav = document.querySelector("nav");
+      const navLinks = document.querySelectorAll("nav a");
+
+      function toggleMobileMenu() {
+        nav.classList.toggle("active");
+        mobileToggle.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+      }
+
+      function closeMobileMenu() {
+        nav.classList.remove("active");
+        mobileToggle.classList.remove("active");
+        document.body.classList.remove("menu-open");
+      }
+
+      // Toggle menu on hamburger click
+      mobileToggle.addEventListener("click", toggleMobileMenu);
+
+      // Close menu when clicking nav links
+      navLinks.forEach(link => {
+        link.addEventListener("click", closeMobileMenu);
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function(event) {
+        const isClickInsideNav = nav.contains(event.target);
+        const isClickOnToggle = mobileToggle.contains(event.target);
+
+        if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains("active")) {
+          closeMobileMenu();
+        }
+      });
+
+      // Close menu on escape key
+      document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape" && nav.classList.contains("active")) {
+          closeMobileMenu();
+        }
+      });
+
+      // Copy to clipboard functionality
+      document
+        .querySelector(".copy-btn")
+        .addEventListener("click", function () {
+          const codeText = document.querySelector(
+            ".code-container code",
+          ).textContent;
+          navigator.clipboard
+            .writeText(codeText)
+            .then(() => {
+              // Show visual feedback
+              const icon = this.querySelector("i");
+              icon.className = "fas fa-check";
+              setTimeout(() => {
+                icon.className = "fas fa-copy";
+              }, 2000);
+            })
+            .catch((err) => {
+              console.error("Failed to copy: ", err);
+            });
+        });
+
+      // Header scroll effect
+      const header = document.querySelector("header");
+      const handleScroll = () => {
+        if (window.scrollY > 20) {
+          header.setAttribute("data-scrolled", "true");
+        } else {
+          header.setAttribute("data-scrolled", "false");
+        }
+      };
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll();
+
+      // Scroll animations with IntersectionObserver
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll(".scroll-animate");
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
+        });
+
+        elements.forEach(el => observer.observe(el));
+      };
+
+      // Add stagger class to grids
+      const featureGrid = document.querySelector(".feature-grid");
+      if (featureGrid) featureGrid.classList.add("stagger-children");
+
+      // Initialize scroll animations
+      if ("IntersectionObserver" in window) {
+        animateOnScroll();
+      } else {
+        // Fallback for older browsers
+        document.querySelectorAll(".scroll-animate").forEach(el => {
+          el.classList.add("is-visible");
+        });
+      }
+    </script>
+
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "6dc7e9d760c8409290a9502dce84c0c8"}'
+    ></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
+</html>
