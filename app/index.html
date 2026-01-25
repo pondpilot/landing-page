@@ -1,76 +1,33 @@
+---
+title: PondPilot App - SQL Explorer for Your Data
+description: A blazing-fast, lightweight, 100% client-side data exploration tool powered by DuckDB. Query CSV, Parquet, JSON, and DuckDB files directly in your browser.
+---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PondPilot App - SQL Explorer for Your Data</title>
-    <meta name="description" content="A blazing-fast, lightweight, 100% client-side data exploration tool powered by DuckDB. Query CSV, Parquet, JSON, and DuckDB files directly in your browser." />
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="icon" href="/assets/images/polly.svg" type="image/svg+xml" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pondpilot.io/app" />
+    <meta property="og:image" content="https://pondpilot.io/assets/images/polly.svg" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="logo">
-          <a href="/" title="Home">
-            <img
-              src="/assets/images/polly.svg"
-              alt="PondPilot Logo"
-              class="logo-svg"
-            />
-            <h1>PondPilot</h1>
-          </a>
-        </div>
-        <nav>
-          <ul>
-            <li class="nav-dropdown">
-              <a href="/#products">Products <i class="fas fa-chevron-down dropdown-arrow"></i></a>
-              <div class="dropdown-menu">
-                <a href="/app" class="dropdown-item">
-                  <span class="dropdown-title">PondPilot</span>
-                  <span class="dropdown-desc">SQL explorer for your data</span>
-                </a>
-                <a href="/flowscope" class="dropdown-item">
-                  <span class="dropdown-title">FlowScope</span>
-                  <span class="dropdown-desc">SQL lineage visualization</span>
-                </a>
-                <a href="/widget" class="dropdown-item">
-                  <span class="dropdown-title">Widget</span>
-                  <span class="dropdown-desc">Embeddable SQL runner</span>
-                </a>
-              </div>
-            </li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#demo">Demo</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li class="social-icons">
-              <a
-                href="https://github.com/pondpilot/pondpilot"
-                class="icon-btn github-btn"
-                aria-label="GitHub"
-                ><i class="fab fa-github"></i
-              ></a>
-            </li>
-          </ul>
-        </nav>
-        <div class="mobile-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </header>
+    {% include header.html %}
 
+    <main id="main-content">
     <section class="hero">
       <div class="container">
         <div class="hero-content">
@@ -78,9 +35,10 @@
             Get your data
             <img
               src="/assets/images/polly.svg"
-              alt="Duck"
+              alt=""
               class="inline-duck"
               style="width: 36px; height: 36px; vertical-align: middle"
+              aria-hidden="true"
             />
             in a row
           </h1>
@@ -89,14 +47,8 @@
             powered by DuckDB
           </p>
           <div class="hero-buttons">
-            <a href="https://app.pondpilot.io" class="btn primary"
-              >Launch App</a
-            >
-            <a
-              href="https://github.com/pondpilot/pondpilot"
-              class="btn secondary"
-              >View on GitHub</a
-            >
+            <a href="https://app.pondpilot.io" class="btn primary">Launch App</a>
+            <a href="https://github.com/pondpilot/pondpilot" class="btn secondary">View on GitHub</a>
           </div>
         </div>
         <div class="hero-image">
@@ -111,41 +63,35 @@
               <div class="sql-explorer">
                 <div class="explorer-sidebar">
                   <div class="sidebar-header">
-                    <img
-                      src="/assets/images/polly.svg"
-                      alt="PondPilot Logo"
-                      class="sidebar-logo"
-                    />
+                    <img src="/assets/images/polly.svg" alt="" class="sidebar-logo" aria-hidden="true" />
                     <span>Files</span>
                   </div>
                   <ul class="file-list">
                     <li class="file-item">
-                      <i class="fas fa-file-alt"></i> duck_analysis.sql
+                      <i class="fas fa-file-alt" aria-hidden="true"></i> duck_analysis.sql
                     </li>
                     <li class="file-item active">
-                      <i class="fas fa-table"></i> pond_data.csv
+                      <i class="fas fa-table" aria-hidden="true"></i> pond_data.csv
                     </li>
                     <li class="file-item">
-                      <i class="fas fa-table"></i> migration_routes.parquet
+                      <i class="fas fa-table" aria-hidden="true"></i> migration_routes.parquet
                     </li>
                     <li class="file-item">
-                      <i class="fas fa-database"></i> quack_metrics.duckdb
+                      <i class="fas fa-database" aria-hidden="true"></i> quack_metrics.duckdb
                     </li>
                   </ul>
                 </div>
                 <div class="sql-workspace">
                   <div class="workspace-tabs">
                     <div class="workspace-tab active">
-                      <i class="fas fa-code"></i>
+                      <i class="fas fa-code" aria-hidden="true"></i>
                       pond_query.sql
                     </div>
                     <button class="add-tab">+</button>
                   </div>
                   <div class="sql-editor">
                     <div class="editor-success">Query ran successfully</div>
-                    <pre
-                      class="sql-code"
-                    ><span class="sql-comment">-- Duck pond analysis - Get our ducks in a row!</span>
+                    <pre class="sql-code"><span class="sql-comment">-- Duck pond analysis - Get our ducks in a row!</span>
 <span class="sql-keyword">SELECT</span>
   duck_type,
   <span class="sql-keyword">COUNT</span>(*) <span class="sql-keyword">AS</span> duck_count,
@@ -207,11 +153,7 @@
                     </table>
                     <div class="result-footer">
                       <div class="duck-indicator">
-                        <img
-                          src="/assets/images/polly.svg"
-                          alt="Duck"
-                          class="result-duck"
-                        />
+                        <img src="/assets/images/polly.svg" alt="" class="result-duck" aria-hidden="true" />
                         <span>Powered by DuckDB</span>
                       </div>
                       <div class="result-stats">Query completed in 0.024s</div>
@@ -235,53 +177,42 @@
         <div class="feature-grid">
           <div class="feature-card scroll-animate">
             <div class="feature-icon privacy">
-              <i class="fas fa-shield-alt"></i>
+              <i class="fas fa-shield-alt" aria-hidden="true"></i>
             </div>
             <h3>100% Client-Side</h3>
-            <p>
-              All processing happens in your browser - no data ever leaves your
-              device
-            </p>
+            <p>All processing happens in your browser - no data ever leaves your device</p>
           </div>
           <div class="feature-card scroll-animate">
             <div class="feature-icon pwa">
-              <i class="fas fa-mobile-alt"></i>
+              <i class="fas fa-mobile-alt" aria-hidden="true"></i>
             </div>
             <h3>PWA Support</h3>
             <p>Install PondPilot as a Progressive Web App for offline use anywhere</p>
           </div>
           <div class="feature-card scroll-animate">
             <div class="feature-icon sync">
-              <i class="fas fa-arrows-rotate"></i>
+              <i class="fas fa-arrows-rotate" aria-hidden="true"></i>
             </div>
             <h3>Live File Sync</h3>
-            <p>
-              Access files directly with real-time updates when files change
-              externally
-            </p>
+            <p>Access files directly with real-time updates when files change externally</p>
           </div>
           <div class="feature-card scroll-animate">
             <div class="feature-icon readonly">
-              <i class="fas fa-eye"></i>
+              <i class="fas fa-eye" aria-hidden="true"></i>
             </div>
             <h3>Read-Only Safe</h3>
-            <p>
-              PondPilot never writes to your files, ensuring your data stays
-              safe
-            </p>
+            <p>PondPilot never writes to your files, ensuring your data stays safe</p>
           </div>
           <div class="feature-card scroll-animate">
             <div class="feature-icon persist">
-              <i class="fas fa-cloud-arrow-up"></i>
+              <i class="fas fa-cloud-arrow-up" aria-hidden="true"></i>
             </div>
             <h3>Session Persistence</h3>
-            <p>
-              All data handles and queries automatically saved between browser sessions
-            </p>
+            <p>All data handles and queries automatically saved between browser sessions</p>
           </div>
           <div class="feature-card scroll-animate">
             <div class="feature-icon duckdb">
-              <i class="fas fa-bolt"></i>
+              <i class="fas fa-bolt" aria-hidden="true"></i>
             </div>
             <h3>DuckDB Powered</h3>
             <p>Leverage the powerful analytical SQL engine for blazing-fast queries</p>
@@ -307,9 +238,7 @@
             </iframe>
           </div>
           <div class="demo-cta">
-            <a href="https://app.pondpilot.io" class="btn primary"
-              >Try It Now</a
-            >
+            <a href="https://app.pondpilot.io" class="btn primary">Try It Now</a>
           </div>
         </div>
       </div>
@@ -322,15 +251,11 @@
           <div class="start-option">
             <h3>Using the Web App</h3>
             <ol>
-              <li>
-                Visit <a href="https://app.pondpilot.io">app.pondpilot.io</a>
-              </li>
+              <li>Visit <a href="https://app.pondpilot.io">app.pondpilot.io</a></li>
               <li>Click "Add file" or use shortcut (Ctrl+F)</li>
               <li>Start exploring your data!</li>
             </ol>
-            <a href="https://app.pondpilot.io" class="btn primary"
-              >Launch App</a
-            >
+            <a href="https://app.pondpilot.io" class="btn primary">Launch App</a>
           </div>
           <div class="start-option">
             <h3>Running Locally</h3>
@@ -338,16 +263,12 @@
               <div class="code-container">
                 <pre><code>docker run -d -p 4173:80 --name pondpilot ghcr.io/pondpilot/pondpilot:latest</code></pre>
                 <button class="copy-btn" title="Copy to clipboard">
-                  <i class="fas fa-copy"></i>
+                  <i class="fas fa-copy" aria-hidden="true"></i>
                 </button>
               </div>
             </div>
             <p>Visit <code>http://localhost:4173</code> to access</p>
-            <a
-              href="https://github.com/pondpilot/pondpilot"
-              class="btn secondary"
-              >View Docs</a
-            >
+            <a href="https://github.com/pondpilot/pondpilot" class="btn secondary">View Docs</a>
           </div>
         </div>
       </div>
@@ -366,9 +287,7 @@
             <div class="description">Run the entire script</div>
           </div>
           <div class="shortcut">
-            <div class="keys">
-              <span>Ctrl</span> + <span>Shift</span> + <span>Enter</span>
-            </div>
+            <div class="keys"><span>Ctrl</span> + <span>Shift</span> + <span>Enter</span></div>
             <div class="description">Run query under cursor</div>
           </div>
           <div class="shortcut">
@@ -395,197 +314,23 @@
             Get your data
             <img
               src="/assets/images/polly.svg"
-              alt="Duck"
+              alt=""
               class="inline-duck"
               style="width: 28px; height: 28px; vertical-align: middle"
+              aria-hidden="true"
             />
             in a row with the fastest, most private way to analyze your datasets
           </p>
-          <a href="https://app.pondpilot.io" class="btn primary"
-            >Launch PondPilot</a
-          >
+          <a href="https://app.pondpilot.io" class="btn primary">Launch PondPilot</a>
           <p class="cta-tagline">Part of the PondPilot Flock</p>
         </div>
       </div>
     </section>
+    </main>
 
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <div class="footer-logo">
-              <a href="/" title="Home">
-                <img
-                  src="/assets/images/polly.svg"
-                  alt="PondPilot Logo"
-                  class="logo-svg footer-logo-svg"
-                />
-                <h2>PondPilot</h2>
-              </a>
-            </div>
-            <p class="footer-tagline">
-              A suite of client-side data tools. Your data never leaves your device.
-            </p>
-          </div>
-          <div class="footer-links">
-            <div class="footer-col">
-              <h3>Products</h3>
-              <ul>
-                <li><a href="/app">PondPilot App</a></li>
-                <li><a href="/widget">Widget</a></li>
-                <li><a href="/flowscope">FlowScope</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h3>Resources</h3>
-              <ul>
-                <li><a href="/app#features">Features</a></li>
-                <li><a href="/app#demo">Demo</a></li>
-                <li><a href="/blog">Blog</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h3>Open Source</h3>
-              <ul>
-                <li>
-                  <a href="https://github.com/pondpilot/pondpilot">GitHub</a>
-                </li>
-                <li>
-                  <a href="https://github.com/pondpilot/pondpilot/releases"
-                    >Releases</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/pondpilot/pondpilot/blob/main/CHANGELOG.md"
-                    >Changelog</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>
-            Licensed under
-            <a href="https://www.gnu.org/licenses/agpl-3.0"
-              >GNU AGPL v3.0</a
-            >
-          </p>
-        </div>
-      </div>
-    </footer>
+    {% include footer.html %}
 
-    <script>
-      // Mobile navigation functionality
-      const mobileToggle = document.querySelector(".mobile-toggle");
-      const nav = document.querySelector("nav");
-      const navLinks = document.querySelectorAll("nav a");
-
-      function toggleMobileMenu() {
-        nav.classList.toggle("active");
-        mobileToggle.classList.toggle("active");
-        document.body.classList.toggle("menu-open");
-      }
-
-      function closeMobileMenu() {
-        nav.classList.remove("active");
-        mobileToggle.classList.remove("active");
-        document.body.classList.remove("menu-open");
-      }
-
-      // Toggle menu on hamburger click
-      mobileToggle.addEventListener("click", toggleMobileMenu);
-
-      // Close menu when clicking nav links
-      navLinks.forEach(link => {
-        link.addEventListener("click", closeMobileMenu);
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener("click", function(event) {
-        const isClickInsideNav = nav.contains(event.target);
-        const isClickOnToggle = mobileToggle.contains(event.target);
-
-        if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains("active")) {
-          closeMobileMenu();
-        }
-      });
-
-      // Close menu on escape key
-      document.addEventListener("keydown", function(event) {
-        if (event.key === "Escape" && nav.classList.contains("active")) {
-          closeMobileMenu();
-        }
-      });
-
-      // Copy to clipboard functionality
-      document
-        .querySelector(".copy-btn")
-        .addEventListener("click", function () {
-          const codeText = document.querySelector(
-            ".code-container code",
-          ).textContent;
-          navigator.clipboard
-            .writeText(codeText)
-            .then(() => {
-              // Show visual feedback
-              const icon = this.querySelector("i");
-              icon.className = "fas fa-check";
-              setTimeout(() => {
-                icon.className = "fas fa-copy";
-              }, 2000);
-            })
-            .catch((err) => {
-              console.error("Failed to copy: ", err);
-            });
-        });
-
-      // Header scroll effect
-      const header = document.querySelector("header");
-      const handleScroll = () => {
-        if (window.scrollY > 20) {
-          header.setAttribute("data-scrolled", "true");
-        } else {
-          header.setAttribute("data-scrolled", "false");
-        }
-      };
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      handleScroll();
-
-      // Scroll animations with IntersectionObserver
-      const animateOnScroll = () => {
-        const elements = document.querySelectorAll(".scroll-animate");
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px"
-        });
-
-        elements.forEach(el => observer.observe(el));
-      };
-
-      // Add stagger class to grids
-      const featureGrid = document.querySelector(".feature-grid");
-      if (featureGrid) featureGrid.classList.add("stagger-children");
-
-      // Initialize scroll animations
-      if ("IntersectionObserver" in window) {
-        animateOnScroll();
-      } else {
-        // Fallback for older browsers
-        document.querySelectorAll(".scroll-animate").forEach(el => {
-          el.classList.add("is-visible");
-        });
-      }
-    </script>
+    <script src="/assets/js/site.js"></script>
 
     <!-- Cloudflare Web Analytics -->
     <script

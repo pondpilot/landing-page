@@ -1,22 +1,29 @@
+---
+title: PondPilot Widget - Interactive SQL Playgrounds
+description: Transform static SQL into interactive DuckDB sessions. Embed in docs, blogs, and workshops. Zero backend, works anywhere.
+---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PondPilot Widget - Interactive SQL Playgrounds</title>
-    <meta name="description" content="Transform static SQL into interactive DuckDB sessions. Embed in docs, blogs, and workshops. Zero backend, works anywhere." />
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="icon" href="/assets/images/polly-widget.svg" type="image/svg+xml" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pondpilot.io/widget" />
+    <meta property="og:image" content="https://pondpilot.io/assets/images/polly-widget.svg" />
+    <!-- PondPilot Widget -->
     <script src="https://unpkg.com/pondpilot-widget@1.4.0"></script>
     <script>
       // Register custom themes after widget loads
@@ -101,58 +108,9 @@
     </script>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="logo">
-          <a href="/" title="Home">
-            <img
-              src="/assets/images/polly-widget.svg"
-              alt="Widget Logo"
-              class="logo-svg"
-            />
-            <h1>Widget</h1>
-          </a>
-        </div>
-        <nav>
-          <ul>
-            <li class="nav-dropdown">
-              <a href="/#products">Products <i class="fas fa-chevron-down dropdown-arrow"></i></a>
-              <div class="dropdown-menu">
-                <a href="/app" class="dropdown-item">
-                  <span class="dropdown-title">PondPilot</span>
-                  <span class="dropdown-desc">SQL explorer for your data</span>
-                </a>
-                <a href="/flowscope" class="dropdown-item">
-                  <span class="dropdown-title">FlowScope</span>
-                  <span class="dropdown-desc">SQL lineage visualization</span>
-                </a>
-                <a href="/widget" class="dropdown-item">
-                  <span class="dropdown-title">Widget</span>
-                  <span class="dropdown-desc">Embeddable SQL runner</span>
-                </a>
-              </div>
-            </li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#themes">Themes</a></li>
-            <li><a href="#installation">Install</a></li>
-            <li class="social-icons">
-              <a
-                href="https://github.com/pondpilot/pondpilot-widget"
-                class="icon-btn github-btn"
-                aria-label="GitHub"
-                ><i class="fab fa-github"></i
-              ></a>
-            </li>
-          </ul>
-        </nav>
-        <div class="mobile-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </header>
+    {% include header.html %}
 
+    <main id="main-content">
     <section class="hero widget-hero">
       <div class="container">
         <div class="hero-content">
@@ -162,16 +120,8 @@
             Embed in documentation, blogs, and workshops. Zero backend required.
           </p>
           <div class="hero-buttons">
-            <a
-              href="https://github.com/pondpilot/pondpilot-widget"
-              class="btn primary"
-              >Get Started</a
-            >
-            <a
-              href="https://www.npmjs.com/package/pondpilot-widget"
-              class="btn secondary"
-              >View on npm</a
-            >
+            <a href="https://github.com/pondpilot/pondpilot-widget" class="btn primary">Get Started</a>
+            <a href="https://www.npmjs.com/package/pondpilot-widget" class="btn secondary">View on npm</a>
           </div>
         </div>
         <div class="hero-image">
@@ -207,50 +157,42 @@ ORDER BY count DESC;</pre>
         <div class="feature-grid">
           <div class="feature-card scroll-animate">
             <div class="feature-icon duckdb">
-              <i class="fas fa-bolt"></i>
+              <i class="fas fa-bolt" aria-hidden="true"></i>
             </div>
             <h3>DuckDB Powered</h3>
-            <p>
-              Full SQL analytics with the latest DuckDB runtime - no server latency
-            </p>
+            <p>Full SQL analytics with the latest DuckDB runtime - no server latency</p>
           </div>
           <div class="feature-card scroll-animate">
             <div class="feature-icon pwa">
-              <i class="fas fa-palette"></i>
+              <i class="fas fa-palette" aria-hidden="true"></i>
             </div>
             <h3>Custom Theming</h3>
             <p>Complete control over fonts, colors, and syntax highlighting with built-in themes</p>
           </div>
           <div class="feature-card scroll-animate">
             <div class="feature-icon sync">
-              <i class="fas fa-play"></i>
+              <i class="fas fa-play" aria-hidden="true"></i>
             </div>
             <h3>Init/Reset Queries</h3>
-            <p>
-              Automated setup and teardown workflows for data preparation
-            </p>
+            <p>Automated setup and teardown workflows for data preparation</p>
           </div>
           <div class="feature-card scroll-animate">
             <div class="feature-icon readonly">
-              <i class="fas fa-broadcast-tower"></i>
+              <i class="fas fa-broadcast-tower" aria-hidden="true"></i>
             </div>
             <h3>Event-Driven Results</h3>
-            <p>
-              <code>pondpilot:results</code> event emits structured row data for custom visualizations
-            </p>
+            <p><code>pondpilot:results</code> event emits structured row data for custom visualizations</p>
           </div>
           <div class="feature-card scroll-animate">
             <div class="feature-icon privacy">
-              <i class="fas fa-keyboard"></i>
+              <i class="fas fa-keyboard" aria-hidden="true"></i>
             </div>
             <h3>Keyboard Shortcuts</h3>
-            <p>
-              Ctrl/Cmd+Enter executes queries directly - familiar developer experience
-            </p>
+            <p>Ctrl/Cmd+Enter executes queries directly - familiar developer experience</p>
           </div>
           <div class="feature-card scroll-animate">
             <div class="feature-icon persist">
-              <i class="fas fa-feather"></i>
+              <i class="fas fa-feather" aria-hidden="true"></i>
             </div>
             <h3>Zero Backend</h3>
             <p>Lightweight, CSP-ready, works on any static HTML platform</p>
@@ -300,7 +242,7 @@ ORDER BY count DESC;</pre>
 SELECT 'Hello DuckDB' AS greeting;
 &lt;/pre&gt;</code></pre>
                 <button class="copy-btn" title="Copy to clipboard">
-                  <i class="fas fa-copy"></i>
+                  <i class="fas fa-copy" aria-hidden="true"></i>
                 </button>
               </div>
             </div>
@@ -312,7 +254,7 @@ SELECT 'Hello DuckDB' AS greeting;
               <div class="code-container">
                 <pre><code>npm install pondpilot-widget</code></pre>
                 <button class="copy-btn" title="Copy to clipboard">
-                  <i class="fas fa-copy"></i>
+                  <i class="fas fa-copy" aria-hidden="true"></i>
                 </button>
               </div>
             </div>
@@ -328,7 +270,7 @@ new PondPilot.Widget(el, {
   showPoweredBy: false
 });</code></pre>
                 <button class="copy-btn" title="Copy to clipboard">
-                  <i class="fas fa-copy"></i>
+                  <i class="fas fa-copy" aria-hidden="true"></i>
                 </button>
               </div>
             </div>
@@ -347,28 +289,28 @@ new PondPilot.Widget(el, {
         <div class="use-cases-grid">
           <div class="use-case-card scroll-animate">
             <div class="use-case-icon">
-              <i class="fas fa-book"></i>
+              <i class="fas fa-book" aria-hidden="true"></i>
             </div>
             <h3>Documentation</h3>
             <p>Docusaurus, VitePress, Astro, and any Markdown-based docs platform.</p>
           </div>
           <div class="use-case-card scroll-animate">
             <div class="use-case-icon">
-              <i class="fab fa-react"></i>
+              <i class="fab fa-react" aria-hidden="true"></i>
             </div>
             <h3>React & Next.js</h3>
             <p>Import as an ES module and use programmatically in your components.</p>
           </div>
           <div class="use-case-card scroll-animate">
             <div class="use-case-icon">
-              <i class="fas fa-chalkboard-teacher"></i>
+              <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
             </div>
             <h3>Workshops</h3>
             <p>Create interactive SQL workshops and presentation tools.</p>
           </div>
           <div class="use-case-card scroll-animate">
             <div class="use-case-icon">
-              <i class="fas fa-file-code"></i>
+              <i class="fas fa-file-code" aria-hidden="true"></i>
             </div>
             <h3>Static Sites</h3>
             <p>Plain HTML with a single script tag - no build step required.</p>
@@ -386,190 +328,18 @@ new PondPilot.Widget(el, {
             Free, open-source, and privacy-focused.
           </p>
           <div class="hero-buttons" style="justify-content: center;">
-            <a
-              href="https://github.com/pondpilot/pondpilot-widget"
-              class="btn primary"
-              >Get Started</a
-            >
-            <a
-              href="https://www.npmjs.com/package/pondpilot-widget"
-              class="btn secondary"
-                            >View on npm</a
-            >
+            <a href="https://github.com/pondpilot/pondpilot-widget" class="btn primary">Get Started</a>
+            <a href="https://www.npmjs.com/package/pondpilot-widget" class="btn secondary">View on npm</a>
           </div>
           <p class="cta-tagline">Part of the PondPilot Flock</p>
         </div>
       </div>
     </section>
+    </main>
 
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <div class="footer-logo">
-              <a href="/" title="Home">
-                <img
-                  src="/assets/images/polly.svg"
-                  alt="PondPilot Logo"
-                  class="logo-svg footer-logo-svg"
-                />
-                <h2>PondPilot</h2>
-              </a>
-            </div>
-            <p class="footer-tagline">
-              A suite of client-side data tools. Your data never leaves your device.
-            </p>
-          </div>
-          <div class="footer-links">
-            <div class="footer-col">
-              <h3>Products</h3>
-              <ul>
-                <li><a href="/app">PondPilot App</a></li>
-                <li><a href="/widget">Widget</a></li>
-                <li><a href="/flowscope">FlowScope</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h3>Widget</h3>
-              <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#themes">Themes</a></li>
-                <li><a href="#installation">Installation</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h3>Open Source</h3>
-              <ul>
-                <li>
-                  <a href="https://github.com/pondpilot/pondpilot-widget">GitHub</a>
-                </li>
-                <li>
-                  <a href="https://www.npmjs.com/package/pondpilot-widget">npm</a>
-                </li>
-                <li><a href="/blog">Blog</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>
-            Licensed under
-            <a href="https://opensource.org/licenses/MIT"
-              >MIT License</a
-            >
-          </p>
-        </div>
-      </div>
-    </footer>
+    {% include footer.html %}
 
-    <script>
-      // Mobile navigation functionality
-      const mobileToggle = document.querySelector(".mobile-toggle");
-      const nav = document.querySelector("nav");
-      const navLinks = document.querySelectorAll("nav a");
-
-      function toggleMobileMenu() {
-        nav.classList.toggle("active");
-        mobileToggle.classList.toggle("active");
-        document.body.classList.toggle("menu-open");
-      }
-
-      function closeMobileMenu() {
-        nav.classList.remove("active");
-        mobileToggle.classList.remove("active");
-        document.body.classList.remove("menu-open");
-      }
-
-      // Toggle menu on hamburger click
-      mobileToggle.addEventListener("click", toggleMobileMenu);
-
-      // Close menu when clicking nav links
-      navLinks.forEach(link => {
-        link.addEventListener("click", closeMobileMenu);
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener("click", function(event) {
-        const isClickInsideNav = nav.contains(event.target);
-        const isClickOnToggle = mobileToggle.contains(event.target);
-
-        if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains("active")) {
-          closeMobileMenu();
-        }
-      });
-
-      // Close menu on escape key
-      document.addEventListener("keydown", function(event) {
-        if (event.key === "Escape" && nav.classList.contains("active")) {
-          closeMobileMenu();
-        }
-      });
-
-      // Copy to clipboard functionality
-      document.querySelectorAll(".copy-btn").forEach(btn => {
-        btn.addEventListener("click", function () {
-          const codeBlock = this.closest('.code-container').querySelector('code');
-          const codeText = codeBlock.textContent;
-          navigator.clipboard
-            .writeText(codeText)
-            .then(() => {
-              const icon = this.querySelector("i");
-              icon.className = "fas fa-check";
-              setTimeout(() => {
-                icon.className = "fas fa-copy";
-              }, 2000);
-            })
-            .catch((err) => {
-              console.error("Failed to copy: ", err);
-            });
-        });
-      });
-
-      // Header scroll effect
-      const header = document.querySelector("header");
-      const handleScroll = () => {
-        if (window.scrollY > 20) {
-          header.setAttribute("data-scrolled", "true");
-        } else {
-          header.setAttribute("data-scrolled", "false");
-        }
-      };
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      handleScroll();
-
-      // Scroll animations with IntersectionObserver
-      const animateOnScroll = () => {
-        const elements = document.querySelectorAll(".scroll-animate");
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px"
-        });
-
-        elements.forEach(el => observer.observe(el));
-      };
-
-      // Add stagger class to grids
-      document.querySelectorAll(".feature-grid, .use-cases-grid, .themes-showcase").forEach(grid => {
-        grid.classList.add("stagger-children");
-      });
-
-      // Initialize scroll animations
-      if ("IntersectionObserver" in window) {
-        animateOnScroll();
-      } else {
-        document.querySelectorAll(".scroll-animate").forEach(el => {
-          el.classList.add("is-visible");
-        });
-      }
-    </script>
+    <script src="/assets/js/site.js"></script>
 
     <!-- Cloudflare Web Analytics -->
     <script
