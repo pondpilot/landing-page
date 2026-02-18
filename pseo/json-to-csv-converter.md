@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Convert JSON to CSV Online — Query First, Then Export"
 description: "Convert JSON files to CSV in the browser with SQL transformations. Flatten nested objects, filter rows, select fields. No uploads."
 permalink: /formats/json-to-csv-converter/
 ---
 
-# JSON to CSV Converter
 
 JSON is great for APIs and developers. CSV is great for spreadsheets and non-technical stakeholders. PondPilot bridges the two — with SQL in between so you can flatten, filter, and reshape before exporting.
 

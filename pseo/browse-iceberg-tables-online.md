@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Browse Iceberg Tables Online — No Spark, No Trino"
 description: "Explore Apache Iceberg tables from your browser. Connect to REST Catalogs, browse schemas, query data — no infrastructure required."
 permalink: /use-cases/browse-iceberg-tables-online/
 ---
 
-# Browse Iceberg Tables Online
 
 Apache Iceberg tables are everywhere now — but browsing them still feels like it requires a PhD in distributed systems. PondPilot lets you explore Iceberg tables from a browser tab. No Spark session, no Trino cluster, no Docker compose files.
 

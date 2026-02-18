@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "DuckDB WASM SQL Editor — Full SQL in the Browser"
 description: "A polished SQL editor powered by DuckDB WASM. Syntax highlighting, autocomplete, multi-file support. Runs entirely client-side."
 permalink: /duckdb/wasm-sql-editor/
 ---
 
-# DuckDB WASM SQL Editor
 
 DuckDB WASM is powerful, but using it raw means writing JavaScript glue code. PondPilot wraps it in a proper SQL editor with everything you'd expect from a desktop tool — running entirely in your browser.
 

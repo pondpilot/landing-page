@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "SQL Explorer for Students — Learn SQL Free, No Setup"
 description: "Practice SQL with your own data in the browser. No database installation, no signup. Perfect for students learning data analysis."
 permalink: /audience/sql-explorer-for-students/
 ---
 
-# SQL Explorer for Students
 
 Learning SQL shouldn't require setting up PostgreSQL, configuring Docker, or paying for a cloud database. PondPilot gives you a SQL environment in your browser — bring your own data and start practicing.
 

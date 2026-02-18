@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "DuckDB Browser Tool — Run DuckDB in Your Browser"
 description: "Use DuckDB directly in your browser. Query CSV, Parquet, JSON files with SQL. No installation, powered by DuckDB WASM."
 permalink: /duckdb/browser-tool/
 ---
 
-# DuckDB Browser Tool
 
 DuckDB is a fast, embeddable analytical database. PondPilot puts it in your browser — no installation, no terminal, no Python. Just open a tab and start querying.
 

@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Data Tools for Journalists — Investigate Data Privately"
 description: "Analyze datasets for investigations without uploading to cloud services. PondPilot runs SQL in your browser — source protection built in."
 permalink: /audience/data-tools-for-journalists/
 ---
 
-# Data Tools for Journalists
 
 Investigative journalism runs on data. Public records, leaked documents, FOI responses — they all need analysis. But uploading sensitive datasets to cloud tools puts sources at risk. PondPilot keeps your analysis local.
 

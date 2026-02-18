@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Free Mode Analytics Alternative — SQL Analytics Without the SaaS"
 description: "A free, private alternative to Mode Analytics. Run SQL against local files in your browser. No cloud, no subscription, no data uploads."
 permalink: /alternatives/mode-analytics-alternative/
 ---
 
-# Free Mode Analytics Alternative
 
 Mode Analytics is a collaborative SQL analytics platform. It's also a SaaS product that requires uploading your data, managing connections, and paying per seat. PondPilot gives you SQL analytics for free — in your browser, on your data, with zero cloud dependency.
 

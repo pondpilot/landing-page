@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "SQL Data Cleaning Tool — Clean Messy Data in Your Browser"
 description: "Clean and transform messy CSV data with SQL. Remove duplicates, fix formats, filter junk — all in your browser, no uploads."
 permalink: /use-cases/sql-data-cleaning-tool/
 ---
 
-# SQL Data Cleaning Tool
 
 Messy data is the norm. Duplicate rows, inconsistent formats, null values, junk entries. PondPilot lets you clean data with SQL — a more powerful and reproducible approach than manual spreadsheet editing.
 

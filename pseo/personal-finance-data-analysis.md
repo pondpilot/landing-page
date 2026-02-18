@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Personal Finance Data Analysis — Private, Local, Free"
 description: "Analyze your bank statements and financial data with SQL in your browser. Your money data never leaves your machine."
 permalink: /use-cases/personal-finance-data-analysis/
 ---
 
-# Personal Finance Data Analysis Tool
 
 Your bank lets you export transactions as CSV. Most analysis tools want you to upload that file to their servers. PondPilot doesn't — your financial data stays on your machine, period.
 

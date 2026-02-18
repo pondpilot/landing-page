@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Iceberg Browser Client — Query Iceberg Catalogs from Your Browser"
 description: "Connect to Iceberg REST Catalogs directly from your browser with PondPilot. No infrastructure, no JVM, no Spark cluster. Powered by DuckDB WASM."
 permalink: /use-cases/iceberg-browser-client/
 ---
 
-# Iceberg Browser Client
 
 What if you could browse and query your Iceberg tables from a browser tab? No Spark cluster, no Trino deployment, no JVM. Just open PondPilot, point it at your Iceberg REST Catalog, and start running SQL.
 

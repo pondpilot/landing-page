@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "DuckDB Parquet Viewer — Browse and Query Parquet Files"
 description: "View and query Apache Parquet files using DuckDB in your browser. Schema inspection, predicate pushdown, zero installation."
 permalink: /duckdb/parquet-viewer/
 ---
 
-# DuckDB Parquet Viewer
 
 Parquet files are binary — you can't just open them in a text editor. PondPilot uses DuckDB WASM to let you browse, inspect, and query Parquet files directly in your browser.
 

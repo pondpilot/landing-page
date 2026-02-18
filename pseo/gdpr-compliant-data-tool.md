@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "GDPR Compliant Data Tool — No Data Processing Agreements Needed"
 description: "Analyze data without GDPR concerns. PondPilot processes everything client-side — no data leaves your browser, no DPA required."
 permalink: /privacy/gdpr-compliant-data-tool/
 ---
 
-# GDPR Compliant Data Analysis
 
 Most analytics tools require a Data Processing Agreement because they process your data on their servers. PondPilot doesn't process your data at all — your browser does.
 

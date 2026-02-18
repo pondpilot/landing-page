@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Open SPSS .sav Files in Your Browser — No SPSS License Needed"
 description: "View and query SPSS .sav files in the browser with PondPilot. No IBM SPSS license, no uploads, no servers. Data stays local."
 permalink: /formats/open-spss-files-in-browser/
 ---
 
-# Open SPSS Files in Your Browser
 
 IBM SPSS Statistics starts at over $1,000/year. If someone sent you an `.sav` file and you just need to see what's in it, that's an expensive peek. PondPilot opens SPSS `.sav` files directly in the browser — for free, with no software to install.
 

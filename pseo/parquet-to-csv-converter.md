@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Parquet to CSV Converter — Convert in Browser with SQL"
 description: "Convert Parquet files to CSV in your browser. Filter, transform, and export with SQL. No upload, no Python, no command line."
 permalink: /use-cases/parquet-to-csv-converter/
 ---
 
-# Parquet to CSV Converter
 
 Need to convert a Parquet file to CSV? PondPilot does it in your browser — and unlike simple converters, you can filter and transform the data with SQL before exporting.
 

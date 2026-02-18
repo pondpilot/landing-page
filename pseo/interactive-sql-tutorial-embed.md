@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Interactive SQL Tutorial Embed — Runnable Examples"
 description: "Embed interactive SQL tutorials in your website. Readers edit and run queries in-browser. No server needed."
 permalink: /use-cases/interactive-sql-tutorial-embed/
 ---
 
-# Embed Interactive SQL Tutorials
 
 Teaching SQL with static code blocks is like teaching driving with a textbook. PondPilot Widget lets you embed interactive, runnable SQL examples that students can modify and experiment with.
 

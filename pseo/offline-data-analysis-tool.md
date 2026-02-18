@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Offline Data Analysis Tool — SQL Without Internet"
 description: "Analyze CSV, Parquet, and JSON files with SQL offline. PondPilot works as a PWA — install once, use anywhere, no internet needed."
 permalink: /privacy/offline-data-analysis-tool/
 ---
 
-# Offline Data Analysis Tool
 
 PondPilot works without an internet connection. Install it as a Progressive Web App, go offline, and analyze your data with full SQL support.
 

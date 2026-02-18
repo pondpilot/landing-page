@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Convert SAS to Parquet Online — Modernize Legacy Data"
 description: "Convert .sas7bdat files to Parquet in the browser. No SAS license, no servers. Migrate legacy SAS data to a modern columnar format."
 permalink: /formats/sas-to-parquet-converter/
 ---
 
-# SAS to Parquet Converter
 
 Parquet is the standard for modern data infrastructure. SAS `.sas7bdat` is a legacy format tied to expensive proprietary software. PondPilot bridges the gap — convert SAS files to Parquet directly in your browser, no license required.
 

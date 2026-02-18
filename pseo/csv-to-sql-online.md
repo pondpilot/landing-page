@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "CSV to SQL Online — Query Spreadsheet Data Instantly"
 description: "Convert CSV files into queryable SQL tables in your browser. No upload, no conversion step — just drop and query."
 permalink: /use-cases/csv-to-sql-online/
 ---
 
-# CSV to SQL Online
 
 You have a CSV. You want to query it with SQL. PondPilot skips the conversion step — drop a CSV file and it's immediately a SQL table.
 

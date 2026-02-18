@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Open SAS Files in Your Browser — No SAS License Needed"
 description: "View and query SAS .sas7bdat files directly in your browser with PondPilot. No SAS license, no uploads, no installs. Your data stays local."
 permalink: /formats/open-sas-files-in-browser/
 ---
 
-# Open SAS Files in Your Browser
 
 SAS licenses cost tens of thousands of dollars per year. But maybe you just need to look at a `.sas7bdat` file someone sent you. Maybe you need to run a quick query, check row counts, or export it to CSV. You shouldn't need a five-figure license for that.
 

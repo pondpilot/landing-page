@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Excel Alternative for Data Analysis — SQL Beats Spreadsheets"
 description: "Analyze large datasets without Excel's limitations. PondPilot lets you use SQL on CSV files in your browser — faster, more powerful, free."
 permalink: /alternatives/excel-alternative-for-data-analysis/
 ---
 
-# Excel Alternative for Data Analysis
 
 Excel is great for small datasets and quick formatting. But when you're analyzing thousands (or millions) of rows, it falls apart. PondPilot lets you use SQL instead — faster, more powerful, and it runs in your browser.
 

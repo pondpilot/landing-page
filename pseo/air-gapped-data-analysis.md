@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Air-Gapped Data Analysis — SQL Without Network Access"
 description: "Run SQL analytics on air-gapped machines. PondPilot works offline as a PWA — no internet, no servers, no data exfiltration risk."
 permalink: /privacy/air-gapped-data-analysis/
 ---
 
-# Air-Gapped Data Analysis
 
 Some environments have no internet access by design. Classified networks, secure facilities, isolated lab machines. PondPilot works on all of them — install it once while online, then use it forever offline.
 

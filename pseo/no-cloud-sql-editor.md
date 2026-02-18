@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "No-Cloud SQL Editor — Run Queries Without a Server"
 description: "A SQL editor that runs entirely in your browser. No cloud infrastructure, no data uploads, no account. DuckDB WASM powered."
 permalink: /privacy/no-cloud-sql-editor/
 ---
 
-# No-Cloud SQL Editor
 
 Cloud SQL editors are convenient until you think about where your data goes. PondPilot gives you the same convenience with none of the cloud: queries run in your browser, data stays on your machine.
 

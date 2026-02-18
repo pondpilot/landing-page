@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "DuckDB CSV Query — Query CSV Files with DuckDB SQL"
 description: "Use DuckDB's SQL to query CSV files directly in your browser. Auto-detection, fast parsing, and full analytical SQL."
 permalink: /duckdb/csv-query/
 ---
 
-# Query CSV Files with DuckDB
 
 DuckDB's CSV reader is exceptional — it auto-detects delimiters, headers, and types, then lets you query the file with full analytical SQL. PondPilot brings this to your browser with zero setup.
 

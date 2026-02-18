@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Compare Datasets in Browser — Diff CSV, Parquet, JSON"
 description: "Compare two datasets side by side using SQL in your browser. Find differences, reconcile data, and validate changes without uploading anything."
 permalink: /use-cases/compare-datasets-in-browser/
 ---
 
-# Compare Datasets in Your Browser
 
 Need to diff two CSV exports? Reconcile last month's report against this month's? Validate that a data migration didn't drop rows? PondPilot makes dataset comparison straightforward with SQL.
 

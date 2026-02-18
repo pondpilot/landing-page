@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Data Analysis Without Uploading — 100% Client-Side"
 description: "Analyze data without uploading it anywhere. PondPilot runs SQL entirely in your browser. Zero servers, zero data collection."
 permalink: /privacy/data-analysis-without-uploading/
 ---
 
-# Data Analysis Without Uploading
 
 Every cloud analytics tool has the same ask: upload your data to our servers. PondPilot takes a different approach — your data never leaves your browser.
 

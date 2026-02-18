@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Interactive SQL Blog Widget — Let Readers Run Queries"
 description: "Embed interactive SQL in your blog posts. Readers edit and execute queries in-browser. Powered by DuckDB WASM, no server needed."
 permalink: /tools/interactive-sql-blog-widget/
 ---
 
-# Interactive SQL Blog Widget
 
 Writing a blog post about data analysis? Don't just show the SQL — let readers run it. PondPilot Widget embeds a live SQL editor that turns passive readers into active explorers.
 

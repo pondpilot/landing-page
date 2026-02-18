@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Statistical Data Format Converter — SAS, Stata, SPSS to CSV/Parquet"
 description: "Convert between SAS, Stata, SPSS, CSV, Parquet, and more in the browser. No licenses, no uploads. Open source and privacy-first."
 permalink: /formats/statistical-data-format-converter/
 ---
 
-# Statistical Data Format Converter
 
 SAS, Stata, and SPSS have been the backbone of academic and government research for decades. But their file formats are proprietary, and the licenses are expensive. PondPilot reads all three — and converts them to modern, open formats — entirely in your browser.
 

@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Explore JSON Data Locally with SQL"
 description: "Query JSON files with SQL in your browser. Flatten nested structures, filter arrays, and export results. No server, no uploads."
 permalink: /use-cases/explore-json-data-locally/
 ---
 
-# Explore JSON Data Locally with SQL
 
 API responses, log files, config exports — JSON is everywhere. But exploring nested JSON in a text editor is tedious. PondPilot lets you query JSON files with SQL, locally in your browser.
 
