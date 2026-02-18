@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Iceberg Data Exploration Tool — SQL in the Browser"
 description: "Explore Apache Iceberg data with SQL directly in your browser. No infrastructure, no JVM, no setup. Powered by DuckDB WASM."
 permalink: /use-cases/iceberg-data-exploration-tool/
 ---
 
-# Iceberg Data Exploration Tool
 
 Exploration is how you build intuition about data. But with Iceberg, exploration has traditionally required the same heavy infrastructure as production queries. PondPilot changes that — connect to an Iceberg REST Catalog from your browser and start exploring immediately.
 

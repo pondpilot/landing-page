@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Analyze CSV in Browser — No Upload, No Signup"
 description: "Query and analyze CSV files directly in your browser with SQL. No server uploads, no accounts. Powered by DuckDB WASM."
 permalink: /use-cases/analyze-csv-in-browser/
 ---
 
-# Analyze CSV Files in Your Browser with SQL
 
 Drop a CSV file into PondPilot and start writing SQL against it immediately. No uploads to any server. No account creation. No waiting.
 

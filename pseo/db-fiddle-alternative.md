@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "DB Fiddle Alternative — SQL Playground Without Server"
 description: "A DB Fiddle alternative that runs entirely in your browser. No shared server, no query limits. Query your own files with DuckDB SQL."
 permalink: /alternatives/db-fiddle-alternative/
 ---
 
-# DB Fiddle Alternative
 
 [DB Fiddle](https://www.db-fiddle.com/) is useful for testing SQL snippets online. But it runs queries on a shared server, supports limited databases, and you can't bring your own data. PondPilot is a different kind of SQL playground.
 

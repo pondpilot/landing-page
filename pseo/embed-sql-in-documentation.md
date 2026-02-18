@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Embed SQL in Documentation — Interactive, Runnable Queries"
 description: "Add interactive SQL to your docs and blog posts. Readers run and modify queries in-browser. No backend, no API keys."
 permalink: /tools/embed-sql-in-documentation/
 ---
 
-# Embed SQL in Documentation
 
 Static code blocks show SQL. Interactive embeds let readers *run* SQL. PondPilot Widget turns your documentation into a hands-on learning experience.
 

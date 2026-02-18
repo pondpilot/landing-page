@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Data Quality Check Tool — Validate Data with SQL"
 description: "Run data quality checks on CSV and Parquet files using SQL. Find nulls, duplicates, outliers, and schema issues in your browser."
 permalink: /tools/data-quality-check-tool/
 ---
 
-# Data Quality Check Tool
 
 Before you trust a dataset, you need to check it. PondPilot lets you run data quality checks with SQL — find nulls, duplicates, type mismatches, and outliers without uploading data anywhere.
 

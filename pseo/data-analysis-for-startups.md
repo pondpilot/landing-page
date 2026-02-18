@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Data Analysis for Startups — Free SQL Tool, No Infrastructure"
 description: "Analyze your startup's data without paying for analytics tools. PondPilot is free, runs in your browser, and needs zero infrastructure."
 permalink: /audience/data-analysis-for-startups/
 ---
 
-# Data Analysis for Startups
 
 Early-stage startups don't need a $50K/year analytics platform. You need to query CSVs from Stripe, your CRM, and your product database. PondPilot does that for free, in your browser, with zero infrastructure.
 

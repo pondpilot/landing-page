@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Browser Data Format Converter — CSV, Parquet, JSON, Excel, SAS, Stata, SPSS"
 description: "Convert between data formats in your browser. Supports CSV, Parquet, JSON, Excel, DuckDB, SAS, Stata, and SPSS. Free, private, open source."
 permalink: /formats/data-format-converter-browser/
 ---
 
-# Data Format Converter — In Your Browser
 
 PondPilot is the Swiss Army knife of data format conversion. Open a file in any supported format, optionally transform it with SQL, and export to any other format. It runs entirely in your browser — no uploads, no accounts, no servers.
 

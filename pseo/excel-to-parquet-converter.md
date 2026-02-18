@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Convert Excel to Parquet Online — Free, In-Browser"
 description: "Convert Excel .xlsx files to Parquet directly in the browser. No uploads, no installs. Clean data with SQL before exporting."
 permalink: /formats/excel-to-parquet-converter/
 ---
 
-# Excel to Parquet Converter
 
 Excel is where data goes to lose its types. Dates become numbers, integers become floats, and "TRUE" becomes a string. Converting to Parquet fixes all of that — and PondPilot lets you do it in the browser with SQL-powered transformations.
 

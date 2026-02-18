@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Convert SAS to CSV Online — Free, No SAS License"
 description: "Convert .sas7bdat files to CSV directly in your browser. No SAS license, no uploads, no installs. Powered by DuckDB WebAssembly."
 permalink: /formats/sas-to-csv-converter/
 ---
 
-# SAS to CSV Converter
 
 Need to get data out of a `.sas7bdat` file and into CSV? PondPilot converts SAS files to CSV entirely in your browser. No SAS license. No Python environment. No uploading files to some random website.
 

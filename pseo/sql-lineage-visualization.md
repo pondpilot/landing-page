@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "SQL Lineage Visualization — Trace Data Flow in SQL"
 description: "Visualize SQL data lineage at the column level. FlowScope parses SQL and maps data flow — open source, multi-dialect, Rust+WASM."
 permalink: /tools/sql-lineage-visualization/
 ---
 
-# SQL Lineage Visualization
 
 Understanding how data flows through SQL transformations is critical for debugging, auditing, and refactoring pipelines. FlowScope, part of the PondPilot family, gives you column-level SQL lineage visualization.
 

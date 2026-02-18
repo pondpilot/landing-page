@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Parquet Viewer Online — Browse and Query Parquet Files in the Browser"
 description: "View Parquet files online with PondPilot. Browse schemas, preview data, run SQL queries, and export results. No uploads, no installs."
 permalink: /formats/parquet-viewer-online/
 ---
 
-# Parquet Viewer Online
 
 Parquet files are great for storage and performance. They're terrible for quick inspection — you can't just open them in a text editor. PondPilot gives you a fast, browser-based Parquet viewer with full SQL support.
 

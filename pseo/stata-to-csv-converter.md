@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Convert Stata .dta to CSV Online — Free, No License"
 description: "Convert Stata .dta files to CSV in the browser. No Stata license needed. Data stays on your machine. Powered by DuckDB WASM."
 permalink: /formats/stata-to-csv-converter/
 ---
 
-# Stata to CSV Converter
 
 Someone sent you a `.dta` file and you need it in CSV. You don't have Stata, and you don't want to install Python just for this. PondPilot converts Stata files to CSV in your browser — zero setup, zero cost.
 

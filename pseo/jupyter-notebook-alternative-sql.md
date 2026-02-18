@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Jupyter Notebook Alternative for SQL — No Setup, No Kernels"
 description: "Run SQL without Jupyter's complexity. PondPilot is a browser-based SQL environment — no Python, no kernels, no package management."
 permalink: /alternatives/jupyter-notebook-alternative-for-sql/
 ---
 
-# Jupyter Notebook Alternative for SQL
 
 If you're using Jupyter just to run SQL queries against data files, you're maintaining a Python environment, managing kernels, and installing packages for something that should be simpler. PondPilot gives you SQL on files without any of that.
 

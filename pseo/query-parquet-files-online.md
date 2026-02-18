@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Query Parquet Files Online — Browser-Based SQL"
 description: "Open and query Apache Parquet files in your browser with SQL. No Python, no Spark, no server. DuckDB WASM powered."
 permalink: /use-cases/query-parquet-files-online/
 ---
 
-# Query Parquet Files Online
 
 Parquet is the go-to columnar format for analytics, but querying it usually means spinning up Python, Spark, or a database. PondPilot lets you query Parquet files directly in your browser with SQL.
 

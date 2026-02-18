@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Datasette Alternative — Client-Side Data Exploration"
 description: "Looking for a Datasette alternative? PondPilot offers browser-based SQL exploration with zero server setup. No Python, no deployment."
 permalink: /alternatives/datasette-alternative/
 ---
 
-# Datasette Alternative
 
 [Datasette](https://datasette.io/) is a great tool for publishing and exploring SQLite databases. But it requires Python, a server process, and deployment if you want to share. PondPilot takes a different approach: everything runs in your browser.
 

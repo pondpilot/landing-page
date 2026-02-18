@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "DuckDB JSON Query — Query JSON with SQL in Browser"
 description: "Query JSON files with DuckDB SQL in your browser. Flatten nested data, filter arrays, join with CSV. No server, no upload."
 permalink: /duckdb/json-query/
 ---
 
-# Query JSON Files with DuckDB
 
 JSON is everywhere — API responses, log files, NoSQL exports. DuckDB's JSON support is best-in-class, and PondPilot puts it in your browser.
 

@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Open Stata .dta Files in Your Browser — Free, No License"
 description: "View and query Stata .dta files directly in the browser with PondPilot. No Stata license required. Data stays on your machine."
 permalink: /formats/open-stata-files-in-browser/
 ---
 
-# Open Stata Files in Your Browser
 
 Got a `.dta` file but no Stata license? You're not alone. Stata is standard in economics and social science research, but the software costs hundreds to thousands of dollars. Sometimes you just need to inspect a dataset a colleague shared.
 

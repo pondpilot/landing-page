@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Free SAS File Viewer — Open .sas7bdat Without SAS"
 description: "View SAS .sas7bdat files for free in your browser. No SAS license, no installation, no data uploads. Query with SQL, export to CSV or Parquet."
 permalink: /formats/sas-file-viewer-free/
 ---
 
-# Free SAS File Viewer
 
 Looking for a way to open `.sas7bdat` files without paying for SAS? PondPilot is a free, browser-based SAS file viewer that lets you inspect, query, and export SAS datasets. No license, no installation, no data uploads.
 

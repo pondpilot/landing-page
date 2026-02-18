@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Column-Level Lineage Tool — Trace SQL Data Flow Precisely"
 description: "Map data flow at the column level in SQL queries. FlowScope provides precise lineage analysis — Rust+WASM, multi-dialect, open source."
 permalink: /tools/column-level-lineage-tool/
 ---
 
-# Column-Level Lineage Tool
 
 Table-level lineage tells you "this query reads from table A and writes to table B." Column-level lineage tells you exactly which columns in B came from which columns in A, and how they were transformed. That precision matters.
 

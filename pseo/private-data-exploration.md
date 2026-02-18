@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Private Data Exploration — Analyze Sensitive Data Locally"
 description: "Explore sensitive datasets without exposing them to cloud services. PondPilot runs SQL in your browser — zero data leaves your machine."
 permalink: /privacy/private-data-exploration/
 ---
 
-# Private Data Exploration
 
 Some data shouldn't touch the cloud. Medical records, financial statements, employee data, customer PII — you need to analyze it, but you also need it to stay private. PondPilot lets you explore data with SQL while keeping everything local.
 

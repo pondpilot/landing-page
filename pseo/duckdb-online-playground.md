@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "DuckDB Online Playground — Try DuckDB Instantly"
 description: "Try DuckDB SQL in your browser without installing anything. Load your own data, write queries, see results. Free and open source."
 permalink: /duckdb/online-playground/
 ---
 
-# DuckDB Online Playground
 
 Want to try DuckDB without installing it? PondPilot is a polished, browser-based DuckDB playground where you can write SQL against your own data — instantly.
 

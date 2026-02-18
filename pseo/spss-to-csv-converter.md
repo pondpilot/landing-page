@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Convert SPSS .sav to CSV Online — Free, No License"
 description: "Convert SPSS .sav files to CSV directly in the browser. No IBM SPSS license. No data uploads. Runs locally via DuckDB WebAssembly."
 permalink: /formats/spss-to-csv-converter/
 ---
 
-# SPSS to CSV Converter
 
 IBM SPSS is expensive and you probably don't need a full license just to convert a `.sav` file to CSV. PondPilot does it in the browser — free, private, instant.
 

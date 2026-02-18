@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Local Data Analysis Tool — Everything Runs on Your Machine"
 description: "Analyze data locally without cloud dependencies. PondPilot runs SQL in your browser, processes files on your machine, stores nothing remotely."
 permalink: /privacy/local-data-analysis-tool/
 ---
 
-# Local Data Analysis Tool
 
 "Local" means something specific: your data is processed on your machine, stored on your machine, and never transmitted anywhere else. PondPilot is local in the strictest sense.
 

@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Browser SQL Analytics — Analyze Data Without Installing Anything"
 description: "Run SQL analytics in your browser. Query CSV, Parquet, JSON files with DuckDB. No installation, no cloud, no signup."
 permalink: /use-cases/browser-sql-analytics/
 ---
 
-# Browser SQL Analytics
 
 You shouldn't need to install software to analyze a data file. PondPilot runs a full SQL analytics engine in your browser — open a tab, drop a file, get answers.
 

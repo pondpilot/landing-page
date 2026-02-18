@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Iceberg REST Catalog Viewer — Browse Tables in Your Browser"
 description: "Browse and explore Iceberg REST Catalog tables from your browser. See schemas, partitions, and snapshots without Spark or Trino."
 permalink: /use-cases/iceberg-rest-catalog-viewer/
 ---
 
-# Iceberg REST Catalog Viewer
 
 You have an Iceberg REST Catalog. You want to see what's in it — namespaces, tables, schemas, partitions. Normally that means firing up Spark, Trino, or at least a Python notebook with pyiceberg. PondPilot lets you browse it all from a browser tab.
 

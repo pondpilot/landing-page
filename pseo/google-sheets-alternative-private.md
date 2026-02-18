@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Private Google Sheets Alternative — No Cloud, No Google"
 description: "Analyze spreadsheet data without Google. PondPilot processes CSV files locally in your browser with SQL. No uploads, no Google account."
 permalink: /alternatives/google-sheets-alternative-private/
 ---
 
-# Private Google Sheets Alternative
 
 Google Sheets is convenient. It's also a Google product that stores your data on Google's servers, scans it for features, and requires a Google account. If you want spreadsheet-style data analysis without the Google dependency, PondPilot is an option.
 

@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Open Source SQL Editor — Free, Transparent, Community-Driven"
 description: "A fully open source SQL editor that runs in your browser. Inspect the code, contribute, or self-host. Powered by DuckDB WASM."
 permalink: /use-cases/open-source-sql-editor/
 ---
 
-# Open Source SQL Editor
 
 PondPilot is fully open source under a permissive license. Every line of code is on [GitHub](https://github.com/pondpilot). No proprietary backend, no hidden telemetry, no "open core" bait-and-switch.
 

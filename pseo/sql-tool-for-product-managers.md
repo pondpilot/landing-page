@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "SQL Tool for Product Managers — Query Data Without Engineering"
 description: "Analyze product data with SQL without bothering your data team. PondPilot runs in your browser on CSV exports — no database access needed."
 permalink: /audience/sql-tool-for-product-managers/
 ---
 
-# SQL Tool for Product Managers
 
 You have a CSV export from your analytics tool. You want to slice the data a way the dashboard doesn't support. Your options: wait for the data team, fumble with Excel pivot tables, or learn enough SQL to answer your own questions. PondPilot makes option three easy.
 

@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "SQL Playground — No Signup, No Account Required"
 description: "Practice SQL instantly in your browser. No signup, no email, no account. Write queries against your own data or built-in examples."
 permalink: /use-cases/sql-playground-no-signup/
 ---
 
-# SQL Playground — No Signup Required
 
 Every SQL playground on the internet wants your email. PondPilot doesn't. Open the app, write SQL, get results.
 

@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "DuckDB + Iceberg + WASM — Query Iceberg Tables from the Browser"
 description: "The DuckDB Iceberg extension now works in WebAssembly. PondPilot puts it in a real SQL editor you can use today."
 permalink: /use-cases/duckdb-iceberg-wasm/
 ---
 
-# DuckDB + Iceberg + WASM
 
 DuckDB's Iceberg extension [now runs in WebAssembly](https://duckdb.org/2025/12/16/iceberg-in-the-browser). This means a browser can connect to an Iceberg REST Catalog, resolve table metadata, and query Parquet data files — all without a server. PondPilot wraps this capability in a proper SQL editor with a real UI.
 

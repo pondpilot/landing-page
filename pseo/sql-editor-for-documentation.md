@@ -1,11 +1,10 @@
 ---
-layout: default
+layout: page
 title: "SQL Editor for Documentation — Embed Interactive Queries"
 description: "Embed a live SQL editor in your docs, blog, or tutorial. Readers run queries in-browser. No backend required."
 permalink: /use-cases/sql-editor-for-documentation/
 ---
 
-# SQL Editor for Documentation
 
 Static SQL code blocks in docs are fine until your reader wants to tweak a query. PondPilot Widget lets you embed a live, interactive SQL editor that readers can actually run.
 
