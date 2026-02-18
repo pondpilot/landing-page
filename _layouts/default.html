@@ -13,13 +13,7 @@
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
         <link rel="icon" href="/assets/images/polly.svg" type="image/svg+xml" />
-        <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}PondPilot - A blazing-fast, lightweight, 100% client-side data exploration tool powered by DuckDB{% endif %}" />
-        <!-- Open Graph -->
-        <meta property="og:title" content="{% if page.title %}{{ page.title }} - PondPilot{% else %}PondPilot{% endif %}" />
-        <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}PondPilot - A blazing-fast, lightweight, 100% client-side data exploration tool powered by DuckDB{% endif %}" />
-        <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
-        <meta property="og:url" content="https://pondpilot.io{{ page.url }}" />
-        <meta property="og:image" content="https://pondpilot.io/assets/images/polly.svg" />
+        {% seo %}
     </head>
     <body class="{% if page.layout == 'post' or page.url contains '/blog/' %}blog-page{% endif %}">
         {% include header.html %}

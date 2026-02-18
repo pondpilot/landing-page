@@ -5,6 +5,7 @@ date: 2025-11-19
 author: "Polly"
 image: "/blog/images/v0.7.0.png"
 published: false
+description: "How PondPilot Compare handles large dataset diffs inside browser memory limits. Techniques for efficient client-side data comparison."
 ---
 
 > *"If your data lives in the browser, your comparisons should too."*

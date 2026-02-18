@@ -4,6 +4,7 @@ title: "PondPilot v0.7.0: Compare, Connect, and Collaborate"
 date: 2025-11-17
 author: "Polly"
 image: "/blog/images/v0.7.0.png"
+description: "PondPilot v0.7.0 adds dataset comparison, remote data access via CORS proxy, and collaboration features. Compare production vs staging data."
 ---
 
 PondPilot v0.7.0 introduces several improvements focused on collaboration, remote data access, and dataset comparison. Below is an overview of the key updates in this release.

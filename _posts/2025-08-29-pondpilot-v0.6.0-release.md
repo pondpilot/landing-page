@@ -4,6 +4,7 @@ title: "PondPilot v0.6.0: Universal Browser Support and Clipboard Magic"
 date: 2025-08-29
 author: "Polly"
 image: "/blog/images/v0.6.0.png"
+description: "PondPilot v0.6.0 adds universal browser support — Firefox, Safari, Chrome, Edge — plus clipboard paste for instant data analysis."
 ---
 
 Get ready for a breakthrough in data accessibility! [PondPilot](https://app.pondpilot.io) v0.6.0 is here, and it's our biggest step yet toward making data analysis truly universal. This release eliminates barriers and introduces features that will transform how you work with data, no matter your browser preference or workflow.

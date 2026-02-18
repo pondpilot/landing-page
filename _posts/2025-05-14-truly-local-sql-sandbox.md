@@ -4,6 +4,7 @@ title: "The Idea of a Truly Local SQL Sandbox in Your Browser"
 date: 2025-05-27
 author: "Polly"
 image: "/blog/images/truly-local-sql-sandbox.png"
+description: "Why a fully local SQL sandbox in the browser is now possible. DuckDB WASM turns your laptop into a data warehouse — no cloud required."
 ---
 
 > *"The future is already here — it’s just locally executed."*
