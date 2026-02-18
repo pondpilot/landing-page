@@ -45,3 +45,11 @@ Like Datasette's ability to share queryable data? [PondPilot Widget](https://wid
 ## Try PondPilot
 
 [Open PondPilot](https://app.pondpilot.io) — zero setup, free, open source.
+
+---
+
+## Related
+
+- [DB Fiddle Alternative](/alternatives/db-fiddle-alternative/)
+- [Jupyter Notebook Alternative for SQL](/alternatives/jupyter-notebook-alternative-for-sql/)
+- [Mode Analytics Alternative](/alternatives/mode-analytics-alternative/)

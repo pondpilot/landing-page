@@ -53,3 +53,11 @@ Use [PondPilot Widget](https://widget.pondpilot.io) to embed interactive SQL in 
 ## Start Analyzing
 
 [Open PondPilot](https://app.pondpilot.io) — free, private, open source.
+
+---
+
+## Related
+
+- [Data Analysis for Startups](/audience/data-analysis-for-startups/)
+- [Private Data Exploration](/privacy/private-data-exploration/)
+- [Data Analysis Without Uploading](/privacy/data-analysis-without-uploading/)

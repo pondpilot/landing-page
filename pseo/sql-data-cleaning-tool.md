@@ -51,6 +51,10 @@ FROM events.csv;
 
 **Powerful:** SQL handles operations that are painful in spreadsheets — deduplication, regex matching, cross-file validation, type casting.
 
+## Chain Multiple Cleaning Steps
+
+Real datasets often need several rounds of cleaning. With PondPilot, you can use CTEs (Common Table Expressions) to chain cleaning steps in a single query — first deduplicate, then standardize formats, then filter invalid rows. Each step is explicit and auditable. Save your cleaning query as a template and reuse it every time you receive a new data export, turning a tedious manual process into a repeatable one-click operation.
+
 ## The Workflow
 
 1. Drop your messy CSV into [PondPilot](https://app.pondpilot.io)
@@ -65,3 +69,11 @@ Cleaning often involves raw, unprocessed data — the messiest and most sensitiv
 ## Try It
 
 [Open PondPilot](https://app.pondpilot.io) and clean your data with SQL.
+
+---
+
+## Related
+
+- [Data Quality Check Tool](/tools/data-quality-check-tool/)
+- [CSV to SQL Online](/use-cases/csv-to-sql-online/)
+- [Compare Datasets in Browser](/use-cases/compare-datasets-in-browser/)

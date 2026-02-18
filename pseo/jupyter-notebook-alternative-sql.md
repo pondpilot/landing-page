@@ -58,3 +58,11 @@ Query data in PondPilot for quick exploration, export results, and load them int
 ## Try PondPilot
 
 [Open PondPilot](https://app.pondpilot.io) — SQL on files, zero setup.
+
+---
+
+## Related
+
+- [Datasette Alternative](/alternatives/datasette-alternative/)
+- [Mode Analytics Alternative](/alternatives/mode-analytics-alternative/)
+- [Open Source SQL Editor](/use-cases/open-source-sql-editor/)

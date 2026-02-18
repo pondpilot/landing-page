@@ -44,3 +44,11 @@ For maximum privacy, install PondPilot as a PWA and disconnect from the internet
 ## Explore Privately
 
 [Open PondPilot](https://app.pondpilot.io). No account, no tracking, no data collection.
+
+---
+
+## Related
+
+- [Data Analysis Without Uploading](/privacy/data-analysis-without-uploading/)
+- [GDPR Compliant Data Tool](/privacy/gdpr-compliant-data-tool/)
+- [Local Data Analysis Tool](/privacy/local-data-analysis-tool/)

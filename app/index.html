@@ -17,12 +17,7 @@ description: A blazing-fast, lightweight, 100% client-side data exploration tool
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="icon" href="/assets/images/polly.svg" type="image/svg+xml" />
-    <!-- Open Graph -->
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:description" content="{{ page.description }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pondpilot.io/app" />
-    <meta property="og:image" content="https://pondpilot.io/assets/images/polly.svg" />
+    {% seo %}
   </head>
   <body>
     {% include header.html %}

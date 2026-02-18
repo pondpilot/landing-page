@@ -59,3 +59,11 @@ Query results can be exported back to CSV. Clean up messy data with SQL, then ex
 ## Try It
 
 [Open PondPilot](https://app.pondpilot.io), drop a CSV, and experience DuckDB's CSV handling firsthand.
+
+---
+
+## Related
+
+- [DuckDB Browser Tool](/duckdb/browser-tool/)
+- [Analyze CSV in Browser](/use-cases/analyze-csv-in-browser/)
+- [DuckDB Parquet Viewer](/duckdb/parquet-viewer/)

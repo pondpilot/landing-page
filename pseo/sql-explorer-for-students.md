@@ -60,3 +60,11 @@ PondPilot is open source. No free tier with limits, no trial that expires, no st
 ## Start Learning
 
 [Open PondPilot](https://app.pondpilot.io) and write your first query.
+
+---
+
+## Related
+
+- [SQL Playground No Signup](/use-cases/sql-playground-no-signup/)
+- [DuckDB Online Playground](/duckdb/online-playground/)
+- [Interactive SQL Tutorial Embed](/use-cases/interactive-sql-tutorial-embed/)

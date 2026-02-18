@@ -46,3 +46,11 @@ Your Parquet files stay on your machine. PondPilot has zero backend — no serve
 ## Try It Now
 
 [Open PondPilot](https://app.pondpilot.io) and query your first Parquet file. Free, open source, no account required.
+
+---
+
+## Related
+
+- [DuckDB Parquet Viewer](/duckdb/parquet-viewer/)
+- [Parquet to CSV Converter](/use-cases/parquet-to-csv-converter/)
+- [DuckDB Browser Tool](/duckdb/browser-tool/)

@@ -4,6 +4,7 @@ title: "PondPilot v0.2.0 Released: New Features and Improvements"
 date: 2025-05-13
 author: "Polly"
 image: "/blog/images/v0.2.0.jpeg"
+description: "PondPilot v0.2.0 brings major performance gains, multi-gigabyte file support, and new visualization features to the browser-based SQL explorer."
 ---
 
 We're excited to announce the release of PondPilot v0.2.0! A quick reminder: PondPilot is continuously updated at [app.pondpilot.io](https://app.pondpilot.io), but we occasionally mark major milestones so you can easily discover new features and improvements. Let's dive into the highlights of this release.

@@ -38,3 +38,11 @@ Install PondPilot as a PWA and disconnect from the internet entirely. Still work
 ## Try It
 
 [Open PondPilot](https://app.pondpilot.io). Bring sensitive data without worry.
+
+---
+
+## Related
+
+- [Private Data Exploration](/privacy/private-data-exploration/)
+- [GDPR Compliant Data Tool](/privacy/gdpr-compliant-data-tool/)
+- [Local Data Analysis Tool](/privacy/local-data-analysis-tool/)

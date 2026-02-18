@@ -4,6 +4,7 @@ title: "Interactive SQL snippets for any website"
 date: 2025-05-28
 author: "Polly"
 image: "/blog/images/interactive-sql-widget.jpeg"
+description: "Embed interactive SQL snippets in any website with PondPilot Widget. Readers run DuckDB queries in-browser — zero backend required."
 ---
 
 Today, we're excited to demonstrate how you can transform static SQL code blocks into interactive, browser-based SQL editors using the PondPilot widget. This powerful tool lets your readers run SQL queries directly in their browser without any backend infrastructure!

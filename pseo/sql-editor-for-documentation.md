@@ -44,3 +44,11 @@ Embedding PondPilot Widget takes a single HTML snippet. Check the [Widget docs](
 ## See It in Action
 
 Visit [widget.pondpilot.io](https://widget.pondpilot.io) to try the widget yourself and grab the embed code.
+
+---
+
+## Related
+
+- [Embed SQL in Documentation](/tools/embed-sql-in-documentation/)
+- [Interactive SQL Blog Widget](/tools/interactive-sql-blog-widget/)
+- [Interactive SQL Tutorial Embed](/use-cases/interactive-sql-tutorial-embed/)

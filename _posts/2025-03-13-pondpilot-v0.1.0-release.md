@@ -4,6 +4,7 @@ title: "PondPilot v0.1.0: Our First Official Release"
 date: 2025-03-13
 author: "Polly"
 image: "/blog/images/v0.1.0.jpeg"
+description: "PondPilot v0.1.0 is here — a fast, 100% client-side SQL data explorer powered by DuckDB. Query CSV, Parquet, and JSON files in your browser."
 ---
 
 We're thrilled to announce the first official release of PondPilot v0.1.0! After months of development and testing, we've reached this important milestone in our journey to provide a fast, secure, and easy-to-use data exploration tool powered by DuckDB.

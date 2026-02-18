@@ -43,3 +43,11 @@ PondPilot works best when you have data as files (CSV exports, Parquet dumps, JS
 ## Try It
 
 [Open PondPilot](https://app.pondpilot.io) — free SQL analytics, no signup required.
+
+---
+
+## Related
+
+- [Datasette Alternative](/alternatives/datasette-alternative/)
+- [Excel Alternative for Data Analysis](/alternatives/excel-alternative-for-data-analysis/)
+- [Browser SQL Analytics](/use-cases/browser-sql-analytics/)

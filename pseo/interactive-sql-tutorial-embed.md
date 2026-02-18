@@ -42,3 +42,11 @@ Whether you're building a data bootcamp, writing internal training docs, or crea
 ## Get Started
 
 Visit [widget.pondpilot.io](https://widget.pondpilot.io) for embed code and examples. It's open source and free.
+
+---
+
+## Related
+
+- [Interactive SQL Blog Widget](/tools/interactive-sql-blog-widget/)
+- [Embed SQL in Documentation](/tools/embed-sql-in-documentation/)
+- [SQL Explorer for Students](/audience/sql-explorer-for-students/)

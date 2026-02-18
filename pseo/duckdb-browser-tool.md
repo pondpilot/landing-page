@@ -50,3 +50,11 @@ Use DuckDB CLI or Python for heavy lifting, PondPilot for quick visual explorati
 ## Try DuckDB in Your Browser
 
 [Open PondPilot](https://app.pondpilot.io) — no signup, free, open source.
+
+---
+
+## Related
+
+- [DuckDB Online Playground](/duckdb/online-playground/)
+- [DuckDB WASM SQL Editor](/duckdb/wasm-sql-editor/)
+- [DuckDB CSV Query](/duckdb/csv-query/)

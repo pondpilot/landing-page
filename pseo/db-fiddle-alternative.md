@@ -49,3 +49,11 @@ DB Fiddle stores your queries on their servers and assigns them public URLs. Pon
 ## Try It
 
 [Open PondPilot](https://app.pondpilot.io) — a better SQL playground for modern analytics.
+
+---
+
+## Related
+
+- [SQL Playground No Signup](/use-cases/sql-playground-no-signup/)
+- [Datasette Alternative](/alternatives/datasette-alternative/)
+- [DuckDB Online Playground](/duckdb/online-playground/)

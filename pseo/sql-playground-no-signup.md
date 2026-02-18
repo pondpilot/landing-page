@@ -50,3 +50,11 @@ Install PondPilot as a PWA and practice SQL on a plane, in a café, or anywhere 
 ## Start Now
 
 [Open PondPilot](https://app.pondpilot.io) — zero friction, zero tracking, zero cost.
+
+---
+
+## Related
+
+- [DuckDB Online Playground](/duckdb/online-playground/)
+- [DB Fiddle Alternative](/alternatives/db-fiddle-alternative/)
+- [Open Source SQL Editor](/use-cases/open-source-sql-editor/)

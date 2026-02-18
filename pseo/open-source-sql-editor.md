@@ -52,3 +52,11 @@ Open source means no one can take it away. Even if the project stops being maint
 ## Get Started
 
 [Open PondPilot](https://app.pondpilot.io) or browse the [source code](https://github.com/pondpilot).
+
+---
+
+## Related
+
+- [DuckDB WASM SQL Editor](/duckdb/wasm-sql-editor/)
+- [No-Cloud SQL Editor](/privacy/no-cloud-sql-editor/)
+- [SQL Playground No Signup](/use-cases/sql-playground-no-signup/)

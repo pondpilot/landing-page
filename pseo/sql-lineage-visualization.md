@@ -42,3 +42,11 @@ This is essential for impact analysis ("if I change this column, what breaks?") 
 ## Try FlowScope
 
 Visit [FlowScope](https://pondpilot.io/flowscope/) to paste SQL and see lineage visualized instantly. Open source, free, no signup.
+
+---
+
+## Related
+
+- [Column-Level Lineage Tool](/tools/column-level-lineage-tool/)
+- [Data Quality Check Tool](/tools/data-quality-check-tool/)
+- [Open Source SQL Editor](/use-cases/open-source-sql-editor/)

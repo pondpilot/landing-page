@@ -49,3 +49,11 @@ Adding PondPilot Widget to a page takes a small HTML snippet. It loads asynchron
 ## Get the Widget
 
 Visit [widget.pondpilot.io](https://widget.pondpilot.io) for setup instructions and live demos.
+
+---
+
+## Related
+
+- [Interactive SQL Blog Widget](/tools/interactive-sql-blog-widget/)
+- [SQL Editor for Documentation](/use-cases/sql-editor-for-documentation/)
+- [Interactive SQL Tutorial Embed](/use-cases/interactive-sql-tutorial-embed/)

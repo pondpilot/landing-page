@@ -50,6 +50,10 @@ See column names and types, then decide what to include in your CSV export.
 
 Your Parquet file stays on your machine. The conversion happens in your browser via DuckDB WebAssembly. No server processes your data.
 
+## Why Parquet Needs a Smart Converter
+
+Parquet files are columnar and compressed — great for storage and analytics, but unreadable without specialized tools. Most online converters require you to upload your file to a remote server, which is a non-starter for sensitive data. PondPilot handles the conversion entirely in your browser using DuckDB's native Parquet reader, giving you full control over which columns and rows to include in the output. The result is a clean, focused CSV ready for sharing with colleagues who prefer spreadsheets.
+
 ## Free and Unlimited
 
 No file size limits (beyond browser memory), no conversion quotas, no accounts. Convert as many files as you need.
@@ -57,3 +61,11 @@ No file size limits (beyond browser memory), no conversion quotas, no accounts. 
 ## Try It
 
 [Open PondPilot](https://app.pondpilot.io) and convert your Parquet files to CSV.
+
+---
+
+## Related
+
+- [DuckDB Parquet Viewer](/duckdb/parquet-viewer/)
+- [Query Parquet Files Online](/use-cases/query-parquet-files-online/)
+- [Analyze CSV in Browser](/use-cases/analyze-csv-in-browser/)

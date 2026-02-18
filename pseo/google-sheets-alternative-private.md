@@ -48,3 +48,11 @@ Google Sheets gives you collaboration and convenience. PondPilot gives you priva
 ## Try It
 
 [Open PondPilot](https://app.pondpilot.io). Export your Google Sheet as CSV and query it privately.
+
+---
+
+## Related
+
+- [Excel Alternative for Data Analysis](/alternatives/excel-alternative-for-data-analysis/)
+- [Data Analysis Without Uploading](/privacy/data-analysis-without-uploading/)
+- [Private Data Exploration](/privacy/private-data-exploration/)

@@ -58,3 +58,11 @@ PondPilot runs DuckDB WASM in your browser. Your Parquet files stay on your mach
 PondPilot is free and open source. No limits on file size (beyond your browser's memory), no feature gates, no accounts.
 
 [Open PondPilot](https://app.pondpilot.io) and drop your first Parquet file.
+
+---
+
+## Related
+
+- [Query Parquet Files Online](/use-cases/query-parquet-files-online/)
+- [Parquet to CSV Converter](/use-cases/parquet-to-csv-converter/)
+- [DuckDB Browser Tool](/duckdb/browser-tool/)

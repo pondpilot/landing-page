@@ -53,3 +53,11 @@ No API keys, no usage limits, no premium tier. PondPilot Widget is open source. 
 ## Get Started
 
 Visit [widget.pondpilot.io](https://widget.pondpilot.io) for embed code and examples.
+
+---
+
+## Related
+
+- [Embed SQL in Documentation](/tools/embed-sql-in-documentation/)
+- [Interactive SQL Tutorial Embed](/use-cases/interactive-sql-tutorial-embed/)
+- [SQL Editor for Documentation](/use-cases/sql-editor-for-documentation/)

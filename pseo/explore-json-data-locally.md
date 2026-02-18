@@ -60,3 +60,11 @@ Once you've flattened and filtered your JSON data, export the results as CSV. Gr
 ## Try It
 
 [Open PondPilot](https://app.pondpilot.io), drop a JSON file, and start querying. No signup, no upload, no backend.
+
+---
+
+## Related
+
+- [DuckDB JSON Query](/duckdb/json-query/)
+- [Local Data Analysis Tool](/privacy/local-data-analysis-tool/)
+- [Browser SQL Analytics](/use-cases/browser-sql-analytics/)

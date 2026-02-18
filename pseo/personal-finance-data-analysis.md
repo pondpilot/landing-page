@@ -55,3 +55,11 @@ Install PondPilot as a PWA. Analyze your finances on a flight, in a café, or an
 ## Start Analyzing
 
 [Open PondPilot](https://app.pondpilot.io) and drop in your first bank export. It's free, open source, and your data stays yours.
+
+---
+
+## Related
+
+- [Private Data Exploration](/privacy/private-data-exploration/)
+- [Data Analysis Without Uploading](/privacy/data-analysis-without-uploading/)
+- [Analyze CSV in Browser](/use-cases/analyze-csv-in-browser/)

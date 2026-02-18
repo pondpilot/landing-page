@@ -62,3 +62,11 @@ PondPilot runs in any modern browser. No software to install, no Python to confi
 ## Try It Now
 
 [Open PondPilot](https://app.pondpilot.io) and drop a CSV file to start querying.
+
+---
+
+## Related
+
+- [Analyze CSV in Browser](/use-cases/analyze-csv-in-browser/)
+- [DuckDB CSV Query](/duckdb/csv-query/)
+- [SQL Data Cleaning Tool](/use-cases/sql-data-cleaning-tool/)

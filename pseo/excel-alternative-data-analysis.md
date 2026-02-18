@@ -58,3 +58,11 @@ Colleagues still need Excel? Run your SQL analysis in PondPilot, export results 
 ## Try It
 
 [Open PondPilot](https://app.pondpilot.io) and bring a CSV you'd normally open in Excel.
+
+---
+
+## Related
+
+- [Google Sheets Alternative (Private)](/alternatives/google-sheets-alternative-private/)
+- [Jupyter Notebook Alternative for SQL](/alternatives/jupyter-notebook-alternative-for-sql/)
+- [Analyze CSV in Browser](/use-cases/analyze-csv-in-browser/)

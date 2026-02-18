@@ -48,3 +48,11 @@ Some "offline" apps still try to sync data when they detect a connection. PondPi
 3. Go offline and use it whenever you need
 
 Free, open source, no account required.
+
+---
+
+## Related
+
+- [Air-Gapped Data Analysis](/privacy/air-gapped-data-analysis/)
+- [Local Data Analysis Tool](/privacy/local-data-analysis-tool/)
+- [No-Cloud SQL Editor](/privacy/no-cloud-sql-editor/)

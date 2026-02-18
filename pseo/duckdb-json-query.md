@@ -60,6 +60,10 @@ SELECT json_keys(data) FROM events.json LIMIT 1;
 
 Discover the structure before writing your analysis queries.
 
+## Handle Complex JSON Structures
+
+Real-world JSON is rarely flat. API responses nest objects inside arrays inside objects. DuckDB handles recursive extraction, so you can reach deeply nested fields in a single query without writing custom parsers. Combined with PondPilot's instant file loading, you can iterate on complex JSON structures interactively — adjust your query, see results immediately, and refine until you get the exact output you need. This workflow replaces fragile Python scripts or jq pipelines with readable SQL that anyone on your team can understand and modify.
+
 ## All Local
 
 Your JSON files stay on your machine. PondPilot processes everything in your browser via DuckDB WASM. No server, no uploads.
@@ -67,3 +71,11 @@ Your JSON files stay on your machine. PondPilot processes everything in your bro
 ## Try It
 
 [Open PondPilot](https://app.pondpilot.io) and query your JSON files with SQL.
+
+---
+
+## Related
+
+- [Explore JSON Data Locally](/use-cases/explore-json-data-locally/)
+- [DuckDB Browser Tool](/duckdb/browser-tool/)
+- [DuckDB WASM SQL Editor](/duckdb/wasm-sql-editor/)

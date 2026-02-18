@@ -48,3 +48,11 @@ Install PondPilot as a PWA for offline access. Works on planes, in secure enviro
 ## Start Analyzing
 
 [Open PondPilot](https://app.pondpilot.io) — browser SQL analytics, zero friction.
+
+---
+
+## Related
+
+- [Analyze CSV in Browser](/use-cases/analyze-csv-in-browser/)
+- [DuckDB Browser Tool](/duckdb/browser-tool/)
+- [SQL Playground No Signup](/use-cases/sql-playground-no-signup/)

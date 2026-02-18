@@ -48,3 +48,11 @@ PondPilot is fully open source on [GitHub](https://github.com/pondpilot). Contri
 ## Start Querying
 
 [Open PondPilot](https://app.pondpilot.io) and experience DuckDB WASM with a proper editor.
+
+---
+
+## Related
+
+- [DuckDB Online Playground](/duckdb/online-playground/)
+- [Open Source SQL Editor](/use-cases/open-source-sql-editor/)
+- [DuckDB Browser Tool](/duckdb/browser-tool/)

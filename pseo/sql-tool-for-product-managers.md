@@ -55,3 +55,11 @@ PondPilot is a web app. No installation, no software request, no procurement pro
 ## Try It
 
 [Open PondPilot](https://app.pondpilot.io) — SQL on your CSV exports, zero friction.
+
+---
+
+## Related
+
+- [Data Analysis for Startups](/audience/data-analysis-for-startups/)
+- [Browser SQL Analytics](/use-cases/browser-sql-analytics/)
+- [Excel Alternative for Data Analysis](/alternatives/excel-alternative-for-data-analysis/)

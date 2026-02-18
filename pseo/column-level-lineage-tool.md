@@ -50,3 +50,11 @@ FlowScope's WASM build means you can embed it in CI/CD pipelines, documentation 
 ## Try It
 
 [Open FlowScope](https://pondpilot.io/flowscope/) and paste your SQL.
+
+---
+
+## Related
+
+- [SQL Lineage Visualization](/tools/sql-lineage-visualization/)
+- [Data Quality Check Tool](/tools/data-quality-check-tool/)
+- [SQL Editor for Documentation](/use-cases/sql-editor-for-documentation/)
