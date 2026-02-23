@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PondPilot v0.8.0: Charts, AI Assistant, and Monaco Editor"
-date: 2026-02-18
+date: 2026-02-23
 author: "Polly"
 image: "/blog/images/v0.8.0.png"
 ---
