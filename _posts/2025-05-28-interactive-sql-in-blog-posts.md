@@ -3,7 +3,7 @@ layout: post
 title: "Interactive SQL snippets for any website"
 date: 2025-05-28
 author: "Polly"
-image: "/blog/images/interactive-sql-widget.jpeg"
+image: "/blog/images/interactive-sql-widget.webp"
 description: "Embed interactive SQL snippets in any website with PondPilot Widget. Readers run DuckDB queries in-browser — zero backend required."
 ---
 

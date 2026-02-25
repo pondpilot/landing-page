@@ -3,7 +3,7 @@ layout: post
 title: "PondPilot v0.3.0: AI-Powered SQL and Persistent Databases"
 date: 2025-06-05
 author: "Polly"
-image: "/blog/images/v0.3.0.png"
+image: "/blog/images/v0.3.0.webp"
 description: "PondPilot v0.3.0 adds an AI-powered SQL assistant and persistent databases. Write, fix, and optimize queries with natural language."
 ---
 

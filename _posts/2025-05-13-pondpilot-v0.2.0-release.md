@@ -3,7 +3,7 @@ layout: post
 title: "PondPilot v0.2.0 Released: New Features and Improvements"
 date: 2025-05-13
 author: "Polly"
-image: "/blog/images/v0.2.0.jpeg"
+image: "/blog/images/v0.2.0.webp"
 description: "PondPilot v0.2.0 brings major performance gains, multi-gigabyte file support, and new visualization features to the browser-based SQL explorer."
 ---
 

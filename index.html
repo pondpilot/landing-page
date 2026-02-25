@@ -8,11 +8,13 @@
     <title>PondPilot - Client-Side Data Tools</title>
     <meta name="description" content="A suite of client-side data tools powered by DuckDB. Explore data and embed SQL widgets - all without uploading your data anywhere." />
     <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=general-sans@400,500,600&display=swap" as="style" />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="icon" href="/assets/images/polly.svg" type="image/svg+xml" />
     <!-- Open Graph -->
@@ -60,7 +62,7 @@
         <div class="product-grid">
           <article class="product-card featured scroll-animate">
             <div class="product-header">
-              <img src="/assets/images/polly.svg" alt="" class="product-mascot" aria-hidden="true" />
+              <img src="/assets/images/polly.svg" alt="" class="product-mascot" aria-hidden="true" loading="lazy" width="48" height="48" />
               <div class="product-meta">
                 <h3 class="product-name" id="product-app">PondPilot App</h3>
                 <p class="product-tagline">The flagship SQL explorer</p>
@@ -84,7 +86,7 @@
 
           <article class="product-card secondary scroll-animate">
             <div class="product-header">
-              <img src="/assets/images/polly-widget.svg" alt="" class="product-mascot" aria-hidden="true" />
+              <img src="/assets/images/polly-widget.svg" alt="" class="product-mascot" aria-hidden="true" loading="lazy" width="48" height="48" />
               <div class="product-meta">
                 <h3 class="product-name" id="product-widget">Widget</h3>
                 <p class="product-tagline">Embeddable SQL runner</p>
@@ -100,7 +102,7 @@
 
           <article class="product-card secondary scroll-animate">
             <div class="product-header">
-              <img src="/assets/images/polly-flowscope.svg" alt="" class="product-mascot" aria-hidden="true" />
+              <img src="/assets/images/polly-flowscope.svg" alt="" class="product-mascot" aria-hidden="true" loading="lazy" width="48" height="48" />
               <div class="product-meta">
                 <h3 class="product-name" id="product-flowscope">FlowScope</h3>
                 <p class="product-tagline">SQL lineage visualization</p>
@@ -168,6 +170,8 @@
               class="inline-duck"
               style="width: 28px; height: 28px; vertical-align: middle"
               aria-hidden="true"
+              width="28"
+              height="28"
             />
             in a row with the fastest, most private way to analyze your datasets
           </p>
@@ -181,7 +185,7 @@
 
     {% include footer.html %}
 
-    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/site.js" defer></script>
 
     <!-- Cloudflare Web Analytics -->
     <script

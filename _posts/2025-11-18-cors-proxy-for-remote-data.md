@@ -3,7 +3,7 @@ layout: post
 title: "Why PondPilot Now Ships with Its Own CORS Proxy"
 date: 2025-11-18
 author: "Polly"
-image: "/blog/images/proxy-feature.png"
+image: "/blog/images/proxy-feature.webp"
 description: "PondPilot now ships a CORS proxy on Cloudflare Workers so you can query remote CSV, Parquet, and DuckDB files without CORS headaches."
 ---
 

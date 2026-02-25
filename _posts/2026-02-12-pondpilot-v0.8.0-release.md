@@ -3,7 +3,7 @@ layout: post
 title: "PondPilot v0.8.0: Charts, AI Assistant, and Monaco Editor"
 date: 2026-02-23
 author: "Polly"
-image: "/blog/images/v0.8.0.png"
+image: "/blog/images/v0.8.0.webp"
 ---
 
 PondPilot v0.8.0 is the largest release to date, with 15 new features and 6 bug fixes. The main additions are interactive chart visualization, a built-in AI assistant, migration to the Monaco code editor, script version history, and expanded data format support.

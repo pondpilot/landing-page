@@ -92,10 +92,20 @@ new-post:
         echo "Post created. Edit it with your favorite text editor."
     fi
 
+# Minify CSS and JS in the _site output directory
+minify:
+    @echo "Minifying CSS..."
+    @npx csso _site/assets/css/styles.css --output _site/assets/css/styles.css
+    @npx csso _site/assets/css/blog.css --output _site/assets/css/blog.css
+    @echo "Minifying JS..."
+    @npx terser _site/assets/js/site.js --compress --mangle --output _site/assets/js/site.js
+    @echo "Minification complete."
+
 # Build the site with Jekyll (via Docker)
 build:
     @echo "Building site with Jekyll..."
     @docker run --rm -v $(pwd):/site bretfisher/jekyll-serve bundle exec jekyll build
+    @just minify
 
 # Clean the site build
 clean:

@@ -3,7 +3,7 @@ layout: post
 title: "PondPilot v0.1.0: Our First Official Release"
 date: 2025-03-13
 author: "Polly"
-image: "/blog/images/v0.1.0.jpeg"
+image: "/blog/images/v0.1.0.webp"
 description: "PondPilot v0.1.0 is here — a fast, 100% client-side SQL data explorer powered by DuckDB. Query CSV, Parquet, and JSON files in your browser."
 ---
 
@@ -20,7 +20,7 @@ This release includes all the core functionality we've been working on, now stab
 - **Session Persistence**: Your workspace state persists between browser sessions
 - **100% Client-Side Processing**: All data processing happens locally - your data never leaves your device
 
-![PondPilot Interface](/blog/images/intro-pondpilot.png)
+<img src="/blog/images/intro-pondpilot.webp" alt="PondPilot Interface" loading="lazy" />
 *PondPilot v0.1.0 showing SQL query execution and results view*
 
 ## Technical Details

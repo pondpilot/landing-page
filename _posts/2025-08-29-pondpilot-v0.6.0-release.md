@@ -3,7 +3,7 @@ layout: post
 title: "PondPilot v0.6.0: Universal Browser Support and Clipboard Magic"
 date: 2025-08-29
 author: "Polly"
-image: "/blog/images/v0.6.0.png"
+image: "/blog/images/v0.6.0.webp"
 description: "PondPilot v0.6.0 adds universal browser support — Firefox, Safari, Chrome, Edge — plus clipboard paste for instant data analysis."
 ---
 

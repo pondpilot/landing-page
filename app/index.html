@@ -10,11 +10,13 @@ description: A blazing-fast, lightweight, 100% client-side data exploration tool
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description }}" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=general-sans@400,500,600&display=swap" as="style" />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="icon" href="/assets/images/polly.svg" type="image/svg+xml" />
     {% seo %}
@@ -34,6 +36,8 @@ description: A blazing-fast, lightweight, 100% client-side data exploration tool
               class="inline-duck"
               style="width: 36px; height: 36px; vertical-align: middle"
               aria-hidden="true"
+              width="36"
+              height="36"
             />
             in a row
           </h1>
@@ -58,7 +62,7 @@ description: A blazing-fast, lightweight, 100% client-side data exploration tool
               <div class="sql-explorer">
                 <div class="explorer-sidebar">
                   <div class="sidebar-header">
-                    <img src="/assets/images/polly.svg" alt="" class="sidebar-logo" aria-hidden="true" />
+                    <img src="/assets/images/polly.svg" alt="" class="sidebar-logo" aria-hidden="true" loading="lazy" width="20" height="20" />
                     <span>Files</span>
                   </div>
                   <ul class="file-list">
@@ -148,7 +152,7 @@ description: A blazing-fast, lightweight, 100% client-side data exploration tool
                     </table>
                     <div class="result-footer">
                       <div class="duck-indicator">
-                        <img src="/assets/images/polly.svg" alt="" class="result-duck" aria-hidden="true" />
+                        <img src="/assets/images/polly.svg" alt="" class="result-duck" aria-hidden="true" loading="lazy" width="16" height="16" />
                         <span>Powered by DuckDB</span>
                       </div>
                       <div class="result-stats">Query completed in 0.024s</div>
@@ -313,6 +317,8 @@ description: A blazing-fast, lightweight, 100% client-side data exploration tool
               class="inline-duck"
               style="width: 28px; height: 28px; vertical-align: middle"
               aria-hidden="true"
+              width="28"
+              height="28"
             />
             in a row with the fastest, most private way to analyze your datasets
           </p>
@@ -325,7 +331,7 @@ description: A blazing-fast, lightweight, 100% client-side data exploration tool
 
     {% include footer.html %}
 
-    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/site.js" defer></script>
 
     <!-- Cloudflare Web Analytics -->
     <script
