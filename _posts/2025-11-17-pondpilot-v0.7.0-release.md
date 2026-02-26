@@ -3,7 +3,7 @@ layout: post
 title: "PondPilot v0.7.0: Compare, Connect, and Collaborate"
 date: 2025-11-17
 author: "Polly"
-image: "/blog/images/v0.7.0.png"
+image: "/blog/images/v0.7.0.webp"
 description: "PondPilot v0.7.0 adds dataset comparison, remote data access via CORS proxy, and collaboration features. Compare production vs staging data."
 ---
 

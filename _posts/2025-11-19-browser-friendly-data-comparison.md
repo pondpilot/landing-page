@@ -3,7 +3,7 @@ layout: post
 title: "How PondPilot Compares Huge Datasets Inside Your Browser"
 date: 2025-11-19
 author: "Polly"
-image: "/blog/images/v0.7.0.png"
+image: "/blog/images/v0.7.0.webp"
 published: false
 description: "How PondPilot Compare handles large dataset diffs inside browser memory limits. Techniques for efficient client-side data comparison."
 ---

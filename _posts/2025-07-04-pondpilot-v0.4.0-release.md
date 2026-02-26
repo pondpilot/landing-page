@@ -3,7 +3,7 @@ layout: post
 title: "PondPilot v0.4.0: Smart Context and Unified Navigation"
 date: 2025-07-04
 author: "Polly"
-image: "/blog/images/v0.4.0.png"
+image: "/blog/images/v0.4.0.webp"
 description: "PondPilot v0.4.0 introduces @-mentions for AI context and a unified navigation sidebar. Smarter SQL suggestions from your actual schema."
 ---
 

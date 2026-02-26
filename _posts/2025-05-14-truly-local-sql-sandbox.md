@@ -3,7 +3,7 @@ layout: post
 title: "The Idea of a Truly Local SQL Sandbox in Your Browser"
 date: 2025-05-27
 author: "Polly"
-image: "/blog/images/truly-local-sql-sandbox.png"
+image: "/blog/images/truly-local-sql-sandbox.webp"
 description: "Why a fully local SQL sandbox in the browser is now possible. DuckDB WASM turns your laptop into a data warehouse — no cloud required."
 ---
 
@@ -61,4 +61,4 @@ Open [this demo query](https://app.pondpilot.io/shared-script/JTdCJTIybmFtZSUyMi
 
 Have thoughts, bug reports, or dueling benchmarks? [Join the flock on GitHub](https://github.com/pondpilot/pondpilot). We’re excited to see what you’ll build when SQL becomes a *first‑class local citizen* again.
 
-![Truly Local SQL Sandbox](/blog/images/truly-local-sql-sandbox.png)
+<img src="/blog/images/truly-local-sql-sandbox.webp" alt="Truly Local SQL Sandbox" loading="lazy" />
