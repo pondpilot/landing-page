@@ -22,3 +22,6 @@ npm-debug.log
 # Ruby environment
 .ruby-version
 .ruby-gemset
+
+# Worktrees
+.worktrees/
