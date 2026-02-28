@@ -457,6 +457,10 @@ nav ul li {
     transform: translateY(-2px);
 }
 
+.mobile-nav-label {
+    display: none;
+}
+
 .mobile-toggle {
     display: none;
     flex-direction: column;
@@ -2487,23 +2491,6 @@ footer {
         top: 135px;
     }
 
-    /* Nav dropdown - hide on mobile, show in menu */
-    .nav-dropdown .dropdown-menu {
-        position: static;
-        transform: none;
-        opacity: 1;
-        visibility: visible;
-        box-shadow: none;
-        border: none;
-        padding: var(--space-2) 0 var(--space-2) var(--space-4);
-        background: transparent;
-        min-width: auto;
-    }
-
-    .dropdown-arrow {
-        display: none;
-    }
-
     .nav-cta {
         margin-top: var(--space-4);
         width: 100%;
@@ -2766,29 +2753,52 @@ body.menu-open {
         transition: var(--transition-fast);
     }
 
-    nav a:hover {
-        color: var(--primary);
+    /* Mobile: flatten dropdown into plain list */
+    .nav-dropdown {
+        display: contents;
     }
 
-    /* Mobile dropdown styling */
+    .nav-dropdown-trigger {
+        display: none;
+    }
+
     .nav-dropdown .dropdown-menu {
-        position: static;
-        transform: none;
-        opacity: 1;
-        visibility: visible;
-        box-shadow: none;
-        border: none;
-        padding: var(--space-2) 0 var(--space-2) var(--space-4);
-        background: transparent;
-        min-width: auto;
+        display: contents;
     }
 
     .dropdown-item {
-        padding: var(--space-2) var(--space-3);
+        display: flex;
+        align-items: baseline;
+        gap: var(--space-3);
+        padding: var(--space-3) 0;
+        font-size: 1rem;
+        border-bottom: 1px solid transparent;
+    }
+
+    .dropdown-title {
+        font-weight: 600;
+        color: var(--slate-900);
+    }
+
+    .dropdown-desc {
+        display: inline;
+        font-size: 0.85rem;
+        color: var(--slate-400);
+        font-weight: 400;
     }
 
     .dropdown-arrow {
         display: none;
+    }
+
+    .mobile-nav-label {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--slate-400);
+        padding: var(--space-2) 0 0;
     }
 
     .nav-cta {
@@ -2989,5 +2999,155 @@ body.menu-open {
 
     .cta p {
         font-size: 1rem;
+    }
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+    a:hover {
+        color: var(--primary-dark);
+    }
+
+    nav a:hover {
+        color: var(--slate-700);
+    }
+
+    nav a:hover::after {
+        width: 0;
+    }
+
+    .nav-dropdown-trigger:hover {
+        color: var(--slate-700);
+    }
+
+    .nav-dropdown:hover .dropdown-arrow {
+        transform: none;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .dropdown-item:hover {
+        background: transparent;
+        color: inherit;
+    }
+
+    .nav-cta:hover {
+        background: var(--primary);
+        color: var(--white) !important;
+        transform: none;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    }
+
+    .github-btn:hover {
+        color: var(--dark) !important;
+        transform: none;
+    }
+
+    .widget-btn:hover {
+        color: var(--dark) !important;
+        transform: none;
+    }
+
+    .mobile-toggle:hover {
+        background-color: transparent;
+    }
+
+    .primary:hover {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: white;
+        transform: none;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    }
+
+    .secondary:hover {
+        background-color: var(--white);
+        color: var(--slate-700);
+        border-color: var(--slate-200);
+        transform: none;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .file-item:hover {
+        background-color: transparent;
+    }
+
+    .run-button:hover {
+        background-color: var(--primary);
+        transform: none;
+    }
+
+    .export-btn:hover {
+        background-color: #f0f0f0;
+    }
+
+    .result-table tr:hover {
+        background-color: transparent;
+    }
+
+    .feature-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: none;
+        border-color: var(--slate-200);
+    }
+
+    .suggest-feature:hover {
+        border-color: var(--slate-300);
+        background-color: var(--slate-50);
+    }
+
+    .suggest-feature a:hover {
+        color: var(--primary);
+    }
+
+    .product-card:hover {
+        transform: none;
+    }
+
+    .product-card.secondary:hover {
+        border-color: var(--slate-200);
+        transform: none;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .product-card.featured .btn.primary:hover {
+        background: var(--white);
+        transform: none;
+    }
+
+    .product-card.featured .btn.secondary:hover {
+        background: transparent;
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .copy-btn:hover {
+        background-color: transparent;
+    }
+
+    .cta .btn.primary:hover {
+        background: white;
+        transform: none;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta .btn.secondary:hover {
+        background: transparent;
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-col a:hover {
+        color: var(--slate-300);
+    }
+
+    .built-by a:hover {
+        color: var(--primary);
+    }
+
+    .use-case-card:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: var(--slate-200);
     }
 }

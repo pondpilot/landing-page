@@ -1,129 +1,27 @@
 ---
+layout: default
 title: PondPilot Widget - Interactive SQL Playgrounds
 description: Transform static SQL into interactive DuckDB sessions. Embed in docs, blogs, and workshops. Zero backend, works anywhere.
+favicon: /assets/images/polly-widget.svg
+widget_page: true
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }}</title>
-    <meta name="description" content="{{ page.description }}" />
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></noscript>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" /></noscript>
-    <link rel="icon" href="/assets/images/polly-widget.svg" type="image/svg+xml" />
-    {% seo %}
-    <!-- PondPilot Widget -->
-    <script src="https://unpkg.com/pondpilot-widget@1.4.0"></script>
-    <script>
-      // Register custom themes after widget loads
-      window.PondPilot.registerTheme('midnight-neon', {
-        extends: 'dark',
-        config: {
-          bgColor: '#0c1022',
-          textColor: '#e7ecff',
-          borderColor: 'rgba(56, 189, 248, 0.18)',
-          editorBg: '#050814',
-          editorText: '#eaf6ff',
-          editorFocusBg: '#09102a',
-          controlsBg: 'rgba(56, 189, 248, 0.14)',
-          primaryBg: '#22d3ee',
-          primaryHover: '#0ea5e9',
-          secondaryBg: 'rgba(34, 211, 238, 0.18)',
-          secondaryText: '#c4f1ff',
-          syntaxKeyword: '#38bdf8',
-          syntaxString: '#fb7185',
-          syntaxNumber: '#a855f7',
-          syntaxComment: '#94a3b8',
-          syntaxSpecial: '#f97316',
-          syntaxIdentifier: '#facc15',
-          tableHeaderBg: 'rgba(34, 211, 238, 0.16)',
-          tableHeaderText: '#d5f5ff',
-          outputBg: '#111321',
-        },
-      });
 
-      window.PondPilot.registerTheme('sunset-sorbet', {
-        extends: 'light',
-        config: {
-          bgColor: '#fff7ed',
-          borderColor: 'rgba(249, 115, 22, 0.12)',
-          editorBg: '#fff0e6',
-          editorText: '#7c2d12',
-          editorFocusBg: '#ffe8d7',
-          controlsBg: 'rgba(249, 115, 22, 0.14)',
-          primaryBg: '#f97316',
-          primaryHover: '#ea580c',
-          secondaryBg: 'rgba(249, 115, 22, 0.2)',
-          secondaryText: '#7c2d12',
-          syntaxKeyword: '#c2410c',
-          syntaxString: '#0f766e',
-          syntaxNumber: '#2563eb',
-          syntaxComment: '#9a3412',
-          syntaxSpecial: '#dc2626',
-          syntaxIdentifier: '#d97706',
-          tableHeaderBg: 'rgba(249, 115, 22, 0.16)',
-          tableHeaderText: '#7c2d12',
-        },
-      });
-
-      window.PondPilot.registerTheme('retro-terminal', {
-        extends: 'dark',
-        config: {
-          bgColor: '#121212',
-          borderColor: 'rgba(0, 255, 133, 0.14)',
-          editorBg: '#050505',
-          editorText: '#eafff2',
-          editorFocusBg: '#111b14',
-          controlsBg: 'rgba(0, 255, 133, 0.14)',
-          primaryBg: '#00ff85',
-          primaryHover: '#0ddf7d',
-          secondaryBg: 'rgba(0, 255, 133, 0.12)',
-          secondaryText: '#9ef2c3',
-          syntaxKeyword: '#00ff85',
-          syntaxString: '#ff9f1c',
-          syntaxNumber: '#2ec4b6',
-          syntaxComment: '#94e2b8',
-          syntaxIdentifier: '#fdffb6',
-          tableHeaderBg: 'rgba(0, 255, 133, 0.12)',
-          tableHeaderText: '#d1fbee',
-          fontFamily: "'IBM Plex Mono', 'SFMono-Regular', monospace",
-          editorFontFamily: "'IBM Plex Mono', 'SFMono-Regular', monospace",
-        },
-      });
-
-      document.addEventListener('DOMContentLoaded', () => {
-        window.PondPilot.init();
-      });
-    </script>
-  </head>
-  <body>
-    {% include header.html %}
-
-    <main id="main-content">
-    <section class="hero widget-hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Interactive SQL Playgrounds</h1>
-          <p>
-            Transform static SQL into interactive DuckDB sessions.
-            Embed in documentation, blogs, and workshops. Zero backend required.
-          </p>
-          <div class="hero-buttons">
-            <a href="https://github.com/pondpilot/pondpilot-widget" class="btn primary">Get Started</a>
-            <a href="https://www.npmjs.com/package/pondpilot-widget" class="btn secondary">View on npm</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <div class="live-widget-demo">
-            <pre class="pondpilot-snippet">-- Try it! Edit and run with Ctrl+Enter
+<section class="hero widget-hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Interactive SQL Playgrounds</h1>
+      <p>
+        Transform static SQL into interactive DuckDB sessions.
+        Embed in documentation, blogs, and workshops. Zero backend required.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://github.com/pondpilot/pondpilot-widget" class="btn primary">Get Started</a>
+        <a href="https://www.npmjs.com/package/pondpilot-widget" class="btn secondary">View on npm</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="live-widget-demo">
+        <pre class="pondpilot-snippet">-- Try it! Edit and run with Ctrl+Enter
 SELECT
   species,
   COUNT(*) as count,
@@ -139,126 +37,126 @@ FROM (
 ) AS ducks(species, weight_kg)
 GROUP BY species
 ORDER BY count DESC;</pre>
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="features" class="features">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-badge">Features</div>
-          <h2>Built for developers and educators</h2>
-          <p class="section-subtitle">Everything you need to add interactive SQL to your content</p>
+<section id="features" class="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Features</div>
+      <h2>Built for developers and educators</h2>
+      <p class="section-subtitle">Everything you need to add interactive SQL to your content</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon duckdb">
+          <i class="fas fa-bolt" aria-hidden="true"></i>
         </div>
-        <div class="feature-grid">
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon duckdb">
-              <i class="fas fa-bolt" aria-hidden="true"></i>
-            </div>
-            <h3>DuckDB Powered</h3>
-            <p>Full SQL analytics with the latest DuckDB runtime - no server latency</p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon pwa">
-              <i class="fas fa-palette" aria-hidden="true"></i>
-            </div>
-            <h3>Custom Theming</h3>
-            <p>Complete control over fonts, colors, and syntax highlighting with built-in themes</p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon sync">
-              <i class="fas fa-play" aria-hidden="true"></i>
-            </div>
-            <h3>Init/Reset Queries</h3>
-            <p>Automated setup and teardown workflows for data preparation</p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon readonly">
-              <i class="fas fa-broadcast-tower" aria-hidden="true"></i>
-            </div>
-            <h3>Event-Driven Results</h3>
-            <p><code>pondpilot:results</code> event emits structured row data for custom visualizations</p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon privacy">
-              <i class="fas fa-keyboard" aria-hidden="true"></i>
-            </div>
-            <h3>Keyboard Shortcuts</h3>
-            <p>Ctrl/Cmd+Enter executes queries directly - familiar developer experience</p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon persist">
-              <i class="fas fa-feather" aria-hidden="true"></i>
-            </div>
-            <h3>Zero Backend</h3>
-            <p>Lightweight, CSP-ready, works on any static HTML platform</p>
-          </div>
-        </div>
+        <h3>DuckDB Powered</h3>
+        <p>Full SQL analytics with the latest DuckDB runtime - no server latency</p>
       </div>
-    </section>
-
-    <section id="themes" class="demo themes-section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-badge">Themes</div>
-          <h2>Beautiful built-in themes</h2>
-          <p class="section-subtitle">Choose from pre-built themes or customize your own</p>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon pwa">
+          <i class="fas fa-palette" aria-hidden="true"></i>
         </div>
-        <div class="themes-showcase">
-          <div class="theme-demo-card scroll-animate">
-            <h3>Midnight Neon</h3>
-            <p>Dark synthwave aesthetic with electric blues and cyan accents</p>
-            <pre class="pondpilot-snippet" data-theme="midnight-neon" data-powered-by="false">SELECT 'Midnight Neon' as theme, 42 as answer;</pre>
-          </div>
-          <div class="theme-demo-card scroll-animate">
-            <h3>Sunset Sorbet</h3>
-            <p>Light theme with warm oranges and soft browns</p>
-            <pre class="pondpilot-snippet" data-theme="sunset-sorbet" data-powered-by="false">SELECT 'Sunset Sorbet' as theme, 42 as answer;</pre>
-          </div>
-          <div class="theme-demo-card scroll-animate">
-            <h3>Retro Terminal</h3>
-            <p>Vintage terminal with IBM Plex Mono, neon green and amber</p>
-            <pre class="pondpilot-snippet" data-theme="retro-terminal" data-powered-by="false">SELECT 'Retro Terminal' as theme, 42 as answer;</pre>
-          </div>
-        </div>
+        <h3>Custom Theming</h3>
+        <p>Complete control over fonts, colors, and syntax highlighting with built-in themes</p>
       </div>
-    </section>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon sync">
+          <i class="fas fa-play" aria-hidden="true"></i>
+        </div>
+        <h3>Init/Reset Queries</h3>
+        <p>Automated setup and teardown workflows for data preparation</p>
+      </div>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon readonly">
+          <i class="fas fa-broadcast-tower" aria-hidden="true"></i>
+        </div>
+        <h3>Event-Driven Results</h3>
+        <p><code>pondpilot:results</code> event emits structured row data for custom visualizations</p>
+      </div>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon privacy">
+          <i class="fas fa-keyboard" aria-hidden="true"></i>
+        </div>
+        <h3>Keyboard Shortcuts</h3>
+        <p>Ctrl/Cmd+Enter executes queries directly - familiar developer experience</p>
+      </div>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon persist">
+          <i class="fas fa-feather" aria-hidden="true"></i>
+        </div>
+        <h3>Zero Backend</h3>
+        <p>Lightweight, CSP-ready, works on any static HTML platform</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="installation" class="get-started">
-      <div class="container">
-        <h2>Quick Start</h2>
-        <div class="start-options">
-          <div class="start-option">
-            <h3>CDN / Script Tag</h3>
-            <div class="code-block">
-              <div class="code-container">
-                <pre><code>&lt;script src="https://unpkg.com/pondpilot-widget@1.4.0"&gt;&lt;/script&gt;
+<section id="themes" class="demo themes-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Themes</div>
+      <h2>Beautiful built-in themes</h2>
+      <p class="section-subtitle">Choose from pre-built themes or customize your own</p>
+    </div>
+    <div class="themes-showcase">
+      <div class="theme-demo-card scroll-animate">
+        <h3>Midnight Neon</h3>
+        <p>Dark synthwave aesthetic with electric blues and cyan accents</p>
+        <pre class="pondpilot-snippet" data-theme="midnight-neon" data-powered-by="false">SELECT 'Midnight Neon' as theme, 42 as answer;</pre>
+      </div>
+      <div class="theme-demo-card scroll-animate">
+        <h3>Sunset Sorbet</h3>
+        <p>Light theme with warm oranges and soft browns</p>
+        <pre class="pondpilot-snippet" data-theme="sunset-sorbet" data-powered-by="false">SELECT 'Sunset Sorbet' as theme, 42 as answer;</pre>
+      </div>
+      <div class="theme-demo-card scroll-animate">
+        <h3>Retro Terminal</h3>
+        <p>Vintage terminal with IBM Plex Mono, neon green and amber</p>
+        <pre class="pondpilot-snippet" data-theme="retro-terminal" data-powered-by="false">SELECT 'Retro Terminal' as theme, 42 as answer;</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="installation" class="get-started">
+  <div class="container">
+    <h2>Quick Start</h2>
+    <div class="start-options">
+      <div class="start-option">
+        <h3>CDN / Script Tag</h3>
+        <div class="code-block">
+          <div class="code-container">
+            <pre><code>&lt;script src="https://unpkg.com/pondpilot-widget@1.4.0"&gt;&lt;/script&gt;
 
 &lt;pre class="pondpilot-snippet"&gt;
 SELECT 'Hello DuckDB' AS greeting;
 &lt;/pre&gt;</code></pre>
-                <button class="copy-btn" title="Copy to clipboard">
-                  <i class="fas fa-copy" aria-hidden="true"></i>
-                </button>
-              </div>
-            </div>
-            <p>Add the script tag and mark your SQL blocks with the <code>pondpilot-snippet</code> class.</p>
+            <button class="copy-btn" title="Copy to clipboard">
+              <i class="fas fa-copy" aria-hidden="true"></i>
+            </button>
           </div>
-          <div class="start-option">
-            <h3>npm / Programmatic</h3>
-            <div class="code-block">
-              <div class="code-container">
-                <pre><code>npm install pondpilot-widget</code></pre>
-                <button class="copy-btn" title="Copy to clipboard">
-                  <i class="fas fa-copy" aria-hidden="true"></i>
-                </button>
-              </div>
-            </div>
-            <p>Then use programmatically:</p>
-            <div class="code-block">
-              <div class="code-container">
-                <pre><code>import 'pondpilot-widget';
+        </div>
+        <p>Add the script tag and mark your SQL blocks with the <code>pondpilot-snippet</code> class.</p>
+      </div>
+      <div class="start-option">
+        <h3>npm / Programmatic</h3>
+        <div class="code-block">
+          <div class="code-container">
+            <pre><code>npm install pondpilot-widget</code></pre>
+            <button class="copy-btn" title="Copy to clipboard">
+              <i class="fas fa-copy" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <p>Then use programmatically:</p>
+        <div class="code-block">
+          <div class="code-container">
+            <pre><code>import 'pondpilot-widget';
 
 const el = document.querySelector('#report');
 new PondPilot.Widget(el, {
@@ -266,84 +164,69 @@ new PondPilot.Widget(el, {
   duckdbInstance: dbPromise,
   showPoweredBy: false
 });</code></pre>
-                <button class="copy-btn" title="Copy to clipboard">
-                  <i class="fas fa-copy" aria-hidden="true"></i>
-                </button>
-              </div>
-            </div>
+            <button class="copy-btn" title="Copy to clipboard">
+              <i class="fas fa-copy" aria-hidden="true"></i>
+            </button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="frameworks" class="features" style="background: var(--slate-50);">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-badge">Frameworks</div>
-          <h2>Works everywhere</h2>
-          <p class="section-subtitle">Drop it into any platform or framework</p>
+<section id="frameworks" class="features" style="background: var(--slate-50);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Frameworks</div>
+      <h2>Works everywhere</h2>
+      <p class="section-subtitle">Drop it into any platform or framework</p>
+    </div>
+    <div class="use-cases-grid">
+      <div class="use-case-card scroll-animate">
+        <div class="use-case-icon">
+          <i class="fas fa-book" aria-hidden="true"></i>
         </div>
-        <div class="use-cases-grid">
-          <div class="use-case-card scroll-animate">
-            <div class="use-case-icon">
-              <i class="fas fa-book" aria-hidden="true"></i>
-            </div>
-            <h3>Documentation</h3>
-            <p>Docusaurus, VitePress, Astro, and any Markdown-based docs platform.</p>
-          </div>
-          <div class="use-case-card scroll-animate">
-            <div class="use-case-icon">
-              <i class="fab fa-react" aria-hidden="true"></i>
-            </div>
-            <h3>React & Next.js</h3>
-            <p>Import as an ES module and use programmatically in your components.</p>
-          </div>
-          <div class="use-case-card scroll-animate">
-            <div class="use-case-icon">
-              <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
-            </div>
-            <h3>Workshops</h3>
-            <p>Create interactive SQL workshops and presentation tools.</p>
-          </div>
-          <div class="use-case-card scroll-animate">
-            <div class="use-case-icon">
-              <i class="fas fa-file-code" aria-hidden="true"></i>
-            </div>
-            <h3>Static Sites</h3>
-            <p>Plain HTML with a single script tag - no build step required.</p>
-          </div>
-        </div>
+        <h3>Documentation</h3>
+        <p>Docusaurus, VitePress, Astro, and any Markdown-based docs platform.</p>
       </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Ready to add interactive SQL?</h2>
-          <p>
-            Start embedding powerful SQL examples in minutes.
-            Free, open-source, and privacy-focused.
-          </p>
-          <div class="hero-buttons" style="justify-content: center;">
-            <a href="https://github.com/pondpilot/pondpilot-widget" class="btn primary">Get Started</a>
-            <a href="https://www.npmjs.com/package/pondpilot-widget" class="btn secondary">View on npm</a>
-          </div>
-          <p class="cta-tagline">Part of the PondPilot Flock</p>
+      <div class="use-case-card scroll-animate">
+        <div class="use-case-icon">
+          <i class="fab fa-react" aria-hidden="true"></i>
         </div>
+        <h3>React & Next.js</h3>
+        <p>Import as an ES module and use programmatically in your components.</p>
       </div>
-    </section>
-    </main>
+      <div class="use-case-card scroll-animate">
+        <div class="use-case-icon">
+          <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+        </div>
+        <h3>Workshops</h3>
+        <p>Create interactive SQL workshops and presentation tools.</p>
+      </div>
+      <div class="use-case-card scroll-animate">
+        <div class="use-case-icon">
+          <i class="fas fa-file-code" aria-hidden="true"></i>
+        </div>
+        <h3>Static Sites</h3>
+        <p>Plain HTML with a single script tag - no build step required.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    {% include footer.html %}
-
-    <script src="/assets/js/site.js" defer></script>
-
-    <!-- Cloudflare Web Analytics -->
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "6dc7e9d760c8409290a9502dce84c0c8"}'
-    ></script>
-    <!-- End Cloudflare Web Analytics -->
-  </body>
-</html>
+<section class="cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to add interactive SQL?</h2>
+      <p>
+        Start embedding powerful SQL examples in minutes.
+        Free, open-source, and privacy-focused.
+      </p>
+      <div class="hero-buttons" style="justify-content: center;">
+        <a href="https://github.com/pondpilot/pondpilot-widget" class="btn primary">Get Started</a>
+        <a href="https://www.npmjs.com/package/pondpilot-widget" class="btn secondary">View on npm</a>
+      </div>
+      <p class="cta-tagline">Part of the PondPilot Flock</p>
+    </div>
+  </div>
+</section>

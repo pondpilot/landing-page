@@ -1,0 +1,86 @@
+<!-- IBM Plex Mono for widget retro-terminal theme -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" /></noscript>
+<!-- PondPilot Widget -->
+<script src="https://unpkg.com/pondpilot-widget@1.4.0"></script>
+<script>
+  // Register custom themes after widget loads
+  window.PondPilot.registerTheme('midnight-neon', {
+    extends: 'dark',
+    config: {
+      bgColor: '#0c1022',
+      textColor: '#e7ecff',
+      borderColor: 'rgba(56, 189, 248, 0.18)',
+      editorBg: '#050814',
+      editorText: '#eaf6ff',
+      editorFocusBg: '#09102a',
+      controlsBg: 'rgba(56, 189, 248, 0.14)',
+      primaryBg: '#22d3ee',
+      primaryHover: '#0ea5e9',
+      secondaryBg: 'rgba(34, 211, 238, 0.18)',
+      secondaryText: '#c4f1ff',
+      syntaxKeyword: '#38bdf8',
+      syntaxString: '#fb7185',
+      syntaxNumber: '#a855f7',
+      syntaxComment: '#94a3b8',
+      syntaxSpecial: '#f97316',
+      syntaxIdentifier: '#facc15',
+      tableHeaderBg: 'rgba(34, 211, 238, 0.16)',
+      tableHeaderText: '#d5f5ff',
+      outputBg: '#111321',
+    },
+  });
+
+  window.PondPilot.registerTheme('sunset-sorbet', {
+    extends: 'light',
+    config: {
+      bgColor: '#fff7ed',
+      borderColor: 'rgba(249, 115, 22, 0.12)',
+      editorBg: '#fff0e6',
+      editorText: '#7c2d12',
+      editorFocusBg: '#ffe8d7',
+      controlsBg: 'rgba(249, 115, 22, 0.14)',
+      primaryBg: '#f97316',
+      primaryHover: '#ea580c',
+      secondaryBg: 'rgba(249, 115, 22, 0.2)',
+      secondaryText: '#7c2d12',
+      syntaxKeyword: '#c2410c',
+      syntaxString: '#0f766e',
+      syntaxNumber: '#2563eb',
+      syntaxComment: '#9a3412',
+      syntaxSpecial: '#dc2626',
+      syntaxIdentifier: '#d97706',
+      tableHeaderBg: 'rgba(249, 115, 22, 0.16)',
+      tableHeaderText: '#7c2d12',
+    },
+  });
+
+  window.PondPilot.registerTheme('retro-terminal', {
+    extends: 'dark',
+    config: {
+      bgColor: '#121212',
+      borderColor: 'rgba(0, 255, 133, 0.14)',
+      editorBg: '#050505',
+      editorText: '#eafff2',
+      editorFocusBg: '#111b14',
+      controlsBg: 'rgba(0, 255, 133, 0.14)',
+      primaryBg: '#00ff85',
+      primaryHover: '#0ddf7d',
+      secondaryBg: 'rgba(0, 255, 133, 0.12)',
+      secondaryText: '#9ef2c3',
+      syntaxKeyword: '#00ff85',
+      syntaxString: '#ff9f1c',
+      syntaxNumber: '#2ec4b6',
+      syntaxComment: '#94e2b8',
+      syntaxIdentifier: '#fdffb6',
+      tableHeaderBg: 'rgba(0, 255, 133, 0.12)',
+      tableHeaderText: '#d1fbee',
+      fontFamily: "'IBM Plex Mono', 'SFMono-Regular', monospace",
+      editorFontFamily: "'IBM Plex Mono', 'SFMono-Regular', monospace",
+    },
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    window.PondPilot.init();
+  });
+</script>

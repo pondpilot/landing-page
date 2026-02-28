@@ -4,18 +4,23 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{% if page.title %}{{ page.title }} - {% endif %}PondPilot</title>
+        {% include critical-css.html %}
         <link rel="stylesheet" href="/assets/css/styles.css" />
+        {% if page.layout == 'post' or page.url contains '/blog/' %}
         <link rel="stylesheet" href="/assets/css/blog.css" />
+        {% endif %}
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></noscript>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+        <link rel="preload" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=general-sans@400,500,600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=general-sans@400,500,600&display=swap" /></noscript>
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
-        <link rel="icon" href="/assets/images/polly.svg" type="image/svg+xml" />
+        <link rel="icon" href="{{ page.favicon | default: '/assets/images/polly.svg' }}" type="image/svg+xml" />
         {% seo %}
+        {% if page.widget_page %}{% include widget-head.html %}{% endif %}
     </head>
     <body class="{% if page.layout == 'post' or page.url contains '/blog/' %}blog-page{% endif %}">
         {% include header.html %}

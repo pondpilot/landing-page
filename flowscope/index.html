@@ -1,66 +1,46 @@
 ---
+layout: default
 title: FlowScope - SQL Lineage Visualization
 description: Visualize SQL data lineage and understand how data flows through your queries. See column-level dependencies at a glance.
+favicon: /assets/images/polly-flowscope.svg
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }}</title>
-    <meta name="description" content="{{ page.description }}" />
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></noscript>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
-    <link rel="icon" href="/assets/images/polly-flowscope.svg" type="image/svg+xml" />
-    {% seo %}
-  </head>
-  <body>
-    {% include header.html %}
 
-    <main id="main-content">
-    <section class="hero flowscope-hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>See How Your Data Flows</h1>
-          <p>
-            Visualize SQL data lineage and understand column-level dependencies
-            at a glance. Trace data from source to output in seconds.
-          </p>
-          <div class="hero-buttons">
-            <a href="https://flowscope.pondpilot.io" class="btn primary">Launch App</a>
-            <a href="https://github.com/pondpilot/flowscope" class="btn secondary">View on GitHub</a>
-          </div>
+<section class="hero flowscope-hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>See How Your Data Flows</h1>
+      <p>
+        Visualize SQL data lineage and understand column-level dependencies
+        at a glance. Trace data from source to output in seconds.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://flowscope.pondpilot.io" class="btn primary">Launch App</a>
+        <a href="https://github.com/pondpilot/flowscope" class="btn secondary">View on GitHub</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="browser-mockup flowscope-mockup">
+        <div class="browser-dots">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="hero-image">
-          <div class="browser-mockup flowscope-mockup">
-            <div class="browser-dots">
-              <span></span>
-              <span></span>
-              <span></span>
+        <div class="browser-address">flowscope.pondpilot.io</div>
+        <div class="browser-content">
+          <div class="fs-app">
+            <div class="fs-toolbar">
+              <span class="fs-filename"><i class="fas fa-file-code" aria-hidden="true"></i> customer_360.sql</span>
+              <span class="fs-run-btn"><i class="fas fa-play" aria-hidden="true"></i> Run</span>
+              <div class="fs-tabs">
+                <span class="fs-tab active">Lineage</span>
+                <span class="fs-tab">Hierarchy</span>
+                <span class="fs-tab">Matrix</span>
+              </div>
             </div>
-            <div class="browser-address">flowscope.pondpilot.io</div>
-            <div class="browser-content">
-              <div class="fs-app">
-                <div class="fs-toolbar">
-                  <span class="fs-filename"><i class="fas fa-file-code" aria-hidden="true"></i> customer_360.sql</span>
-                  <span class="fs-run-btn"><i class="fas fa-play" aria-hidden="true"></i> Run</span>
-                  <div class="fs-tabs">
-                    <span class="fs-tab active">Lineage</span>
-                    <span class="fs-tab">Hierarchy</span>
-                    <span class="fs-tab">Matrix</span>
-                  </div>
-                </div>
-                <div class="fs-workspace">
-                  <div class="fs-editor">
-                    <div class="fs-line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12</div>
-                    <pre class="fs-code"><span class="sql-keyword">WITH</span> orders <span class="sql-keyword">AS</span> (
+            <div class="fs-workspace">
+              <div class="fs-editor">
+                <div class="fs-line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12</div>
+                <pre class="fs-code"><span class="sql-keyword">WITH</span> orders <span class="sql-keyword">AS</span> (
   <span class="sql-keyword">SELECT</span> * <span class="sql-keyword">FROM</span>
     warehouse.core.orders
 ),
@@ -73,44 +53,42 @@ customer_orders <span class="sql-keyword">AS</span> (
   <span class="sql-keyword">FROM</span> orders
   <span class="sql-keyword">GROUP BY</span> user_id
 )</pre>
+              </div>
+              <div class="fs-lineage">
+                <div class="fs-lineage-flow">
+                  <div class="fs-node">
+                    <div class="fs-node-header source">orders</div>
+                    <div class="fs-node-cols">
+                      <span>order_id</span>
+                      <span class="highlighted">user_id</span>
+                      <span class="highlighted">amount</span>
+                      <span>created_at</span>
+                    </div>
                   </div>
-                  <div class="fs-lineage">
-                    <div class="fs-lineage-flow">
-                      <div class="fs-node">
-                        <div class="fs-node-header source">orders</div>
-                        <div class="fs-node-cols">
-                          <span>order_id</span>
-                          <span class="highlighted">user_id</span>
-                          <span class="highlighted">amount</span>
-                          <span>created_at</span>
-                        </div>
-                      </div>
-                      <svg class="fs-edge-svg" width="60" height="140" viewBox="0 0 60 140" aria-hidden="true">
-                        <path d="M0,50 C30,50 30,40 60,40" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
-                        <path d="M0,70 C30,70 30,60 60,60" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
-                        <path d="M0,70 C30,70 30,80 60,80" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
-                      </svg>
-                      <div class="fs-node">
-                        <div class="fs-node-header cte">customer_orders</div>
-                        <div class="fs-node-cols">
-                          <span class="highlighted">customer_id</span>
-                          <span class="highlighted">num_orders</span>
-                          <span class="highlighted">total_spent</span>
-                        </div>
-                      </div>
-                      <svg class="fs-edge-svg" width="60" height="140" viewBox="0 0 60 140" aria-hidden="true">
-                        <path d="M0,40 C30,40 30,40 60,40" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
-                        <path d="M0,60 C30,60 30,60 60,60" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
-                        <path d="M0,80 C30,80 30,80 60,80" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
-                      </svg>
-                      <div class="fs-node">
-                        <div class="fs-node-header output">customer_summary</div>
-                        <div class="fs-node-cols">
-                          <span class="highlighted">customer_id</span>
-                          <span class="highlighted">num_orders</span>
-                          <span class="highlighted">total_spent</span>
-                        </div>
-                      </div>
+                  <svg class="fs-edge-svg" width="60" height="140" viewBox="0 0 60 140" aria-hidden="true">
+                    <path d="M0,50 C30,50 30,40 60,40" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
+                    <path d="M0,70 C30,70 30,60 60,60" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
+                    <path d="M0,70 C30,70 30,80 60,80" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
+                  </svg>
+                  <div class="fs-node">
+                    <div class="fs-node-header cte">customer_orders</div>
+                    <div class="fs-node-cols">
+                      <span class="highlighted">customer_id</span>
+                      <span class="highlighted">num_orders</span>
+                      <span class="highlighted">total_spent</span>
+                    </div>
+                  </div>
+                  <svg class="fs-edge-svg" width="60" height="140" viewBox="0 0 60 140" aria-hidden="true">
+                    <path d="M0,40 C30,40 30,40 60,40" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
+                    <path d="M0,60 C30,60 30,60 60,60" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
+                    <path d="M0,80 C30,80 30,80 60,80" stroke="#A78BFA" stroke-width="1.5" fill="none"/>
+                  </svg>
+                  <div class="fs-node">
+                    <div class="fs-node-header output">customer_summary</div>
+                    <div class="fs-node-cols">
+                      <span class="highlighted">customer_id</span>
+                      <span class="highlighted">num_orders</span>
+                      <span class="highlighted">total_spent</span>
                     </div>
                   </div>
                 </div>
@@ -119,125 +97,112 @@ customer_orders <span class="sql-keyword">AS</span> (
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="features" class="features">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-badge">Features</div>
-          <h2>Understand your SQL at a glance</h2>
-          <p class="section-subtitle">Automatic lineage extraction and visualization for any SQL query</p>
+<section id="features" class="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Features</div>
+      <h2>Understand your SQL at a glance</h2>
+      <p class="section-subtitle">Automatic lineage extraction and visualization for any SQL query</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon privacy">
+          <i class="fas fa-project-diagram" aria-hidden="true"></i>
         </div>
-        <div class="feature-grid">
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon privacy">
-              <i class="fas fa-project-diagram" aria-hidden="true"></i>
-            </div>
-            <h3>Column-Level Lineage</h3>
-            <p>See exactly which source columns feed into each output column</p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon pwa">
-              <i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>
-            </div>
-            <h3>Auto-Detection</h3>
-            <p>Paste any SQL and get instant lineage visualization - no setup required</p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon sync">
-              <i class="fas fa-diagram-project" aria-hidden="true"></i>
-            </div>
-            <h3>Complex Query Support</h3>
-            <p>CTEs, subqueries, joins, unions - FlowScope handles them all</p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon readonly">
-              <i class="fas fa-share-nodes" aria-hidden="true"></i>
-            </div>
-            <h3>Export & Share</h3>
-            <p>Export lineage diagrams as images or share interactive links</p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon persist">
-              <i class="fas fa-lock" aria-hidden="true"></i>
-            </div>
-            <h3>Privacy First</h3>
-            <p>100% client-side - your SQL never leaves your browser</p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon duckdb">
-              <i class="fas fa-plug" aria-hidden="true"></i>
-            </div>
-            <h3>PondPilot Integration</h3>
-            <p>Seamlessly works with PondPilot App for combined query and lineage analysis</p>
-          </div>
-        </div>
+        <h3>Column-Level Lineage</h3>
+        <p>See exactly which source columns feed into each output column</p>
       </div>
-    </section>
-
-    <section id="use-cases" class="demo">
-      <div class="container">
-        <h2>Use Cases</h2>
-        <div class="use-cases-grid">
-          <div class="use-case-card scroll-animate">
-            <div class="use-case-icon pwa">
-              <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
-            </div>
-            <h3>Debug Complex Queries</h3>
-            <p>Trace data flow through CTEs and subqueries to find where transformations happen.</p>
-          </div>
-          <div class="use-case-card scroll-animate">
-            <div class="use-case-icon privacy">
-              <i class="fas fa-file-contract" aria-hidden="true"></i>
-            </div>
-            <h3>Documentation</h3>
-            <p>Auto-generate visual documentation for your SQL transformations.</p>
-          </div>
-          <div class="use-case-card scroll-animate">
-            <div class="use-case-icon sync">
-              <i class="fas fa-code-pull-request" aria-hidden="true"></i>
-            </div>
-            <h3>Code Review</h3>
-            <p>Quickly understand SQL changes in PRs with visual lineage diffs.</p>
-          </div>
-          <div class="use-case-card scroll-animate">
-            <div class="use-case-icon persist">
-              <i class="fas fa-scale-balanced" aria-hidden="true"></i>
-            </div>
-            <h3>Impact Analysis</h3>
-            <p>See which outputs are affected when source columns change.</p>
-          </div>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon pwa">
+          <i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>
         </div>
+        <h3>Auto-Detection</h3>
+        <p>Paste any SQL and get instant lineage visualization - no setup required</p>
       </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Ready to visualize your SQL?</h2>
-          <p>
-            Paste any SQL and instantly see how your data flows from source to output.
-          </p>
-          <div class="hero-buttons" style="justify-content: center;">
-            <a href="https://flowscope.pondpilot.io" class="btn primary">Try FlowScope</a>
-            <a href="/app" class="btn secondary">Explore PondPilot App</a>
-          </div>
-          <p class="cta-tagline">Part of the PondPilot Flock</p>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon sync">
+          <i class="fas fa-diagram-project" aria-hidden="true"></i>
         </div>
+        <h3>Complex Query Support</h3>
+        <p>CTEs, subqueries, joins, unions - FlowScope handles them all</p>
       </div>
-    </section>
-    </main>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon readonly">
+          <i class="fas fa-share-nodes" aria-hidden="true"></i>
+        </div>
+        <h3>Export & Share</h3>
+        <p>Export lineage diagrams as images or share interactive links</p>
+      </div>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon persist">
+          <i class="fas fa-lock" aria-hidden="true"></i>
+        </div>
+        <h3>Privacy First</h3>
+        <p>100% client-side - your SQL never leaves your browser</p>
+      </div>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon duckdb">
+          <i class="fas fa-plug" aria-hidden="true"></i>
+        </div>
+        <h3>PondPilot Integration</h3>
+        <p>Seamlessly works with PondPilot App for combined query and lineage analysis</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    {% include footer.html %}
+<section id="use-cases" class="demo">
+  <div class="container">
+    <h2>Use Cases</h2>
+    <div class="use-cases-grid">
+      <div class="use-case-card scroll-animate">
+        <div class="use-case-icon pwa">
+          <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+        </div>
+        <h3>Debug Complex Queries</h3>
+        <p>Trace data flow through CTEs and subqueries to find where transformations happen.</p>
+      </div>
+      <div class="use-case-card scroll-animate">
+        <div class="use-case-icon privacy">
+          <i class="fas fa-file-contract" aria-hidden="true"></i>
+        </div>
+        <h3>Documentation</h3>
+        <p>Auto-generate visual documentation for your SQL transformations.</p>
+      </div>
+      <div class="use-case-card scroll-animate">
+        <div class="use-case-icon sync">
+          <i class="fas fa-code-pull-request" aria-hidden="true"></i>
+        </div>
+        <h3>Code Review</h3>
+        <p>Quickly understand SQL changes in PRs with visual lineage diffs.</p>
+      </div>
+      <div class="use-case-card scroll-animate">
+        <div class="use-case-icon persist">
+          <i class="fas fa-scale-balanced" aria-hidden="true"></i>
+        </div>
+        <h3>Impact Analysis</h3>
+        <p>See which outputs are affected when source columns change.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="/assets/js/site.js" defer></script>
-
-    <!-- Cloudflare Web Analytics -->
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "6dc7e9d760c8409290a9502dce84c0c8"}'
-    ></script>
-    <!-- End Cloudflare Web Analytics -->
-  </body>
-</html>
+<section class="cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to visualize your SQL?</h2>
+      <p>
+        Paste any SQL and instantly see how your data flows from source to output.
+      </p>
+      <div class="hero-buttons" style="justify-content: center;">
+        <a href="https://flowscope.pondpilot.io" class="btn primary">Try FlowScope</a>
+        <a href="/app" class="btn secondary">Explore PondPilot App</a>
+      </div>
+      <p class="cta-tagline">Part of the PondPilot Flock</p>
+    </div>
+  </div>
+</section>

@@ -1,198 +1,155 @@
 ---
+layout: default
+title: PondPilot - Client-Side Data Tools
+description: A suite of client-side data tools powered by DuckDB. Explore data and embed SQL widgets - all without uploading your data anywhere.
+image: /assets/images/polly.svg
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PondPilot - Client-Side Data Tools</title>
-    <meta name="description" content="A suite of client-side data tools powered by DuckDB. Explore data and embed SQL widgets - all without uploading your data anywhere." />
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></noscript>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
-    <link rel="icon" href="/assets/images/polly.svg" type="image/svg+xml" />
-    <!-- Open Graph -->
-    <meta property="og:title" content="PondPilot - Client-Side Data Tools" />
-    <meta property="og:description" content="A suite of client-side data tools powered by DuckDB. Explore data and embed SQL widgets - all without uploading your data anywhere." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pondpilot.io/" />
-    <meta property="og:image" content="https://pondpilot.io/assets/images/polly.svg" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="PondPilot - Client-Side Data Tools" />
-    <meta name="twitter:description" content="A suite of client-side data tools powered by DuckDB. Explore data and embed SQL widgets - all without uploading your data anywhere." />
-    <meta name="twitter:image" content="https://pondpilot.io/assets/images/polly.svg" />
-    <link rel="canonical" href="https://pondpilot.io/" />
-  </head>
-  <body>
-    {% include header.html %}
 
-    <main id="main-content">
-    <section class="hero family-hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>
-            Data tools that respect your privacy
-          </h1>
-          <p>
-            A suite of 100% client-side data tools. Query files, embed interactive SQL,
-            and visualize data lineage - all without uploading your data anywhere.
-          </p>
-          <div class="hero-badges">
-            <span class="hero-badge"><i class="fas fa-shield-halved"></i> 100% Client-Side</span>
-            <span class="hero-badge"><i class="fas fa-bolt"></i> Powered by DuckDB</span>
-            <span class="hero-badge"><i class="fab fa-github"></i> Open Source</span>
+<section class="hero family-hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>
+        Data tools that respect your privacy
+      </h1>
+      <p>
+        A suite of 100% client-side data tools. Query files, embed interactive SQL,
+        and visualize data lineage - all without uploading your data anywhere.
+      </p>
+      <div class="hero-badges">
+        <span class="hero-badge"><i class="fas fa-shield-halved"></i> 100% Client-Side</span>
+        <span class="hero-badge"><i class="fas fa-bolt"></i> Powered by DuckDB</span>
+        <span class="hero-badge"><i class="fab fa-github"></i> Open Source</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="ecosystem">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Products</div>
+      <h2>Meet the Flock</h2>
+      <p class="section-subtitle">A suite of tools for modern data exploration</p>
+    </div>
+    <div class="product-grid">
+      <article class="product-card featured scroll-animate">
+        <div class="product-header">
+          <img src="/assets/images/polly.svg" alt="" class="product-mascot" aria-hidden="true" loading="lazy" width="48" height="48" />
+          <div class="product-meta">
+            <h3 class="product-name" id="product-app">PondPilot App</h3>
+            <p class="product-tagline">The flagship SQL explorer</p>
+          </div>
+          <span class="product-badge">Flagship</span>
+        </div>
+        <p class="product-description">
+          The complete data exploration experience. Query CSV, Parquet, JSON, and DuckDB files directly in your browser with a powerful SQL editor, instant results, and zero data uploads.
+        </p>
+        <ul class="product-features">
+          <li><i class="fas fa-check" aria-hidden="true"></i> Full SQL editor with syntax highlighting</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i> Multi-file support and session persistence</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i> Export results to CSV or copy to clipboard</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i> Works offline as a PWA</li>
+        </ul>
+        <div class="product-actions">
+          <a href="/app" class="btn secondary" aria-labelledby="product-app">Learn More</a>
+        </div>
+      </article>
+
+
+      <article class="product-card secondary scroll-animate">
+        <div class="product-header">
+          <img src="/assets/images/polly-widget.svg" alt="" class="product-mascot" aria-hidden="true" loading="lazy" width="48" height="48" />
+          <div class="product-meta">
+            <h3 class="product-name" id="product-widget">Widget</h3>
+            <p class="product-tagline">Embeddable SQL runner</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="products" class="ecosystem">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-badge">Products</div>
-          <h2>Meet the Flock</h2>
-          <p class="section-subtitle">A suite of tools for modern data exploration</p>
+        <p class="product-description">
+          Add interactive SQL examples to your documentation, tutorials, or blog posts. Lightweight and customizable.
+        </p>
+        <div class="product-actions">
+          <a href="/widget" class="btn secondary" aria-labelledby="product-widget">Learn More</a>
         </div>
-        <div class="product-grid">
-          <article class="product-card featured scroll-animate">
-            <div class="product-header">
-              <img src="/assets/images/polly.svg" alt="" class="product-mascot" aria-hidden="true" loading="lazy" width="48" height="48" />
-              <div class="product-meta">
-                <h3 class="product-name" id="product-app">PondPilot App</h3>
-                <p class="product-tagline">The flagship SQL explorer</p>
-              </div>
-              <span class="product-badge">Flagship</span>
-            </div>
-            <p class="product-description">
-              The complete data exploration experience. Query CSV, Parquet, JSON, and DuckDB files directly in your browser with a powerful SQL editor, instant results, and zero data uploads.
-            </p>
-            <ul class="product-features">
-              <li><i class="fas fa-check" aria-hidden="true"></i> Full SQL editor with syntax highlighting</li>
-              <li><i class="fas fa-check" aria-hidden="true"></i> Multi-file support and session persistence</li>
-              <li><i class="fas fa-check" aria-hidden="true"></i> Export results to CSV or copy to clipboard</li>
-              <li><i class="fas fa-check" aria-hidden="true"></i> Works offline as a PWA</li>
-            </ul>
-            <div class="product-actions">
-              <a href="/app" class="btn secondary" aria-labelledby="product-app">Learn More</a>
-            </div>
-          </article>
+      </article>
 
-
-          <article class="product-card secondary scroll-animate">
-            <div class="product-header">
-              <img src="/assets/images/polly-widget.svg" alt="" class="product-mascot" aria-hidden="true" loading="lazy" width="48" height="48" />
-              <div class="product-meta">
-                <h3 class="product-name" id="product-widget">Widget</h3>
-                <p class="product-tagline">Embeddable SQL runner</p>
-              </div>
-            </div>
-            <p class="product-description">
-              Add interactive SQL examples to your documentation, tutorials, or blog posts. Lightweight and customizable.
-            </p>
-            <div class="product-actions">
-              <a href="/widget" class="btn secondary" aria-labelledby="product-widget">Learn More</a>
-            </div>
-          </article>
-
-          <article class="product-card secondary scroll-animate">
-            <div class="product-header">
-              <img src="/assets/images/polly-flowscope.svg" alt="" class="product-mascot" aria-hidden="true" loading="lazy" width="48" height="48" />
-              <div class="product-meta">
-                <h3 class="product-name" id="product-flowscope">FlowScope</h3>
-                <p class="product-tagline">SQL lineage visualization</p>
-              </div>
-            </div>
-            <p class="product-description">
-              Visualize SQL data lineage and understand column-level dependencies at a glance. Trace data from source to output in seconds.
-            </p>
-            <div class="product-actions">
-              <a href="/flowscope" class="btn secondary" aria-labelledby="product-flowscope">Learn More</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="principles" class="features">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-badge">Principles</div>
-          <h2>Built Different</h2>
-          <p class="section-subtitle">Every PondPilot tool shares the same core principles</p>
-        </div>
-        <div class="feature-grid principles-grid">
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon privacy">
-              <i class="fas fa-shield-halved"></i>
-            </div>
-            <h3>100% Client-Side</h3>
-            <p>
-              All processing happens in your browser. Your data never touches our servers.
-            </p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon duckdb">
-              <i class="fas fa-bolt"></i>
-            </div>
-            <h3>DuckDB Powered</h3>
-            <p>
-              Built on DuckDB - a blazing-fast analytical SQL engine that runs in your browser.
-            </p>
-          </div>
-          <div class="feature-card scroll-animate">
-            <div class="feature-icon pwa">
-              <i class="fab fa-github"></i>
-            </div>
-            <h3>Open Source</h3>
-            <p>
-              All PondPilot tools are open source. Inspect the code, contribute, or fork it.
-            </p>
+      <article class="product-card secondary scroll-animate">
+        <div class="product-header">
+          <img src="/assets/images/polly-flowscope.svg" alt="" class="product-mascot" aria-hidden="true" loading="lazy" width="48" height="48" />
+          <div class="product-meta">
+            <h3 class="product-name" id="product-flowscope">FlowScope</h3>
+            <p class="product-tagline">SQL lineage visualization</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Ready to explore your data?</h2>
-          <p>
-            Get your data
-            <img
-              src="/assets/images/polly.svg"
-              alt=""
-              class="inline-duck"
-              style="width: 28px; height: 28px; vertical-align: middle"
-              aria-hidden="true"
-              width="28"
-              height="28"
-            />
-            in a row with the fastest, most private way to analyze your datasets
-          </p>
-          <a href="https://app.pondpilot.io" class="btn primary"
-            >Launch PondPilot</a
-          >
+        <p class="product-description">
+          Visualize SQL data lineage and understand column-level dependencies at a glance. Trace data from source to output in seconds.
+        </p>
+        <div class="product-actions">
+          <a href="/flowscope" class="btn secondary" aria-labelledby="product-flowscope">Learn More</a>
         </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="principles" class="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Principles</div>
+      <h2>Built Different</h2>
+      <p class="section-subtitle">Every PondPilot tool shares the same core principles</p>
+    </div>
+    <div class="feature-grid principles-grid">
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon privacy">
+          <i class="fas fa-shield-halved"></i>
+        </div>
+        <h3>100% Client-Side</h3>
+        <p>
+          All processing happens in your browser. Your data never touches our servers.
+        </p>
       </div>
-    </section>
-    </main>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon duckdb">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3>DuckDB Powered</h3>
+        <p>
+          Built on DuckDB - a blazing-fast analytical SQL engine that runs in your browser.
+        </p>
+      </div>
+      <div class="feature-card scroll-animate">
+        <div class="feature-icon pwa">
+          <i class="fab fa-github"></i>
+        </div>
+        <h3>Open Source</h3>
+        <p>
+          All PondPilot tools are open source. Inspect the code, contribute, or fork it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    {% include footer.html %}
-
-    <script src="/assets/js/site.js" defer></script>
-
-    <!-- Cloudflare Web Analytics -->
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "6dc7e9d760c8409290a9502dce84c0c8"}'
-    ></script>
-    <!-- End Cloudflare Web Analytics -->
-  </body>
-</html>
+<section class="cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to explore your data?</h2>
+      <p>
+        Get your data
+        <img
+          src="/assets/images/polly.svg"
+          alt=""
+          class="inline-duck"
+          style="width: 28px; height: 28px; vertical-align: middle"
+          aria-hidden="true"
+          width="28"
+          height="28"
+        />
+        in a row with the fastest, most private way to analyze your datasets
+      </p>
+      <a href="https://app.pondpilot.io" class="btn primary"
+        >Launch PondPilot</a
+      >
+    </div>
+  </div>
+</section>
