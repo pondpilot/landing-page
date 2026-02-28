@@ -11,6 +11,11 @@
         <link rel="preload" href="/assets/css/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="/assets/css/blog.css" /></noscript>
         {% endif %}
+        <style>
+        /* Override Font Awesome font-display to prevent FOIT */
+        @font-face { font-family: 'Font Awesome 6 Free'; font-display: swap; }
+        @font-face { font-family: 'Font Awesome 6 Brands'; font-display: swap; }
+        </style>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /></noscript>
         <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
