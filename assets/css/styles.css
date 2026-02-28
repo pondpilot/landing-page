@@ -1910,7 +1910,7 @@ footer {
 }
 
 .footer-tagline {
-    color: var(--slate-400);
+    color: var(--slate-300);
     font-size: 0.9rem;
     line-height: 1.6;
 }
@@ -1955,8 +1955,20 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     font-size: 0.9rem;
-    color: var(--gray-light);
+    color: var(--slate-300);
     gap: var(--space-5);
+}
+
+.footer-bottom a {
+    color: var(--slate-200);
+    text-decoration: underline;
+    text-decoration-color: var(--slate-500);
+    text-underline-offset: 2px;
+}
+
+.footer-bottom a:hover {
+    color: white;
+    text-decoration-color: white;
 }
 
 .built-by a {
