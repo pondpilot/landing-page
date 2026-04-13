@@ -7,7 +7,7 @@
         {% include critical-css.html %}
         <link rel="preload" href="/assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="/assets/css/styles.css" /></noscript>
-        {% if page.layout == 'post' or page.url contains '/blog/' %}
+        {% if page.layout == 'post' or page.layout == 'page' or page.url contains '/blog/' %}
         <link rel="preload" href="/assets/css/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="/assets/css/blog.css" /></noscript>
         {% endif %}
@@ -25,7 +25,7 @@
         {% seo %}
         {% if page.widget_page %}{% include widget-head.html %}{% endif %}
     </head>
-    <body class="{% if page.layout == 'post' or page.url contains '/blog/' %}blog-page{% endif %}">
+    <body class="{% if page.layout == 'post' or page.layout == 'page' or page.url contains '/blog/' %}blog-page{% endif %}">
         {% include header.html %}
 
         <main id="main-content">
