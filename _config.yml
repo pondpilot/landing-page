@@ -25,5 +25,7 @@ exclude:
   - docker-compose.yml
   - justfile
   - README.md
+  - SEO-AUDIT.md
+  - USE_CASES.md
   - .gitignore
   - .jekyll-cache
