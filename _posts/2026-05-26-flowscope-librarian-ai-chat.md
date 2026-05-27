@@ -15,7 +15,7 @@ Librarian is a chat panel you can open next to your lineage graph and ask questi
 
 ### What an Answer Looks Like
 
-Every on-topic answer has three labelled sections:
+Every on-topic answer has three labeled sections:
 
 * **Summary** — a one- or two-sentence concrete answer with the actual table and column names
 * **Data Lineage** — what the SQL analysis says
@@ -44,7 +44,7 @@ How it works:
 * On first upload, the embedding model (~118 MB) is downloaded once and browser-cached
 * Uploaded PDFs are extracted with pdfjs-dist and split into 500-character chunks
 * Each chunk is embedded into a vector by the model running in a Web Worker, and stored in memory for the current project
-* When you ask a question, the question is embedded the same way and matched against the stored chunks and the closest matches go into the prompt
+* When you ask a question, it's embedded the same way and matched against the stored chunks; the closest matches go into the prompt
 * 100+ languages supported — works on German, Russian, and other non-English docs
 
 ## Local-First Architecture: Your Data Stays in the Browser
