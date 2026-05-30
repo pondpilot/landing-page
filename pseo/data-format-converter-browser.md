@@ -22,7 +22,7 @@ Looking for a specific conversion? Jump directly:
 
 - **Statistical formats:** [SAS to CSV](/formats/sas-to-csv-converter/) · [SAS to Parquet](/formats/sas-to-parquet-converter/) · [Stata to CSV](/formats/stata-to-csv-converter/) · [SPSS to CSV](/formats/spss-to-csv-converter/)
 - **Common formats:** [Excel to Parquet](/formats/excel-to-parquet-converter/) · [JSON to CSV](/formats/json-to-csv-converter/)
-- **Format viewers:** [SAS File Viewer](/formats/sas-file-viewer-free/) · [Parquet Viewer](/tools/duckdb-parquet-viewer/)
+- **Format viewers:** [SAS File Viewer](/formats/sas-file-viewer-free/) · [Parquet Viewer](/duckdb/parquet-viewer/)
 
 ## SQL-Powered Transformation
 

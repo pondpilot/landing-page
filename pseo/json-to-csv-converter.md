@@ -56,6 +56,6 @@ Open [app.pondpilot.io](https://app.pondpilot.io) and convert your JSON file.
 
 ## Related
 
-- [DuckDB JSON Query](/tools/duckdb-json-query/)
+- [DuckDB JSON Query](/duckdb/json-query/)
 - [Data Format Converter](/formats/data-format-converter-browser/)
 - [Excel to Parquet Converter](/formats/excel-to-parquet-converter/)

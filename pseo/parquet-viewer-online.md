@@ -58,6 +58,6 @@ Visit [app.pondpilot.io](https://app.pondpilot.io) and open a Parquet file.
 
 ## Related
 
-- [DuckDB Parquet Viewer](/tools/duckdb-parquet-viewer/)
+- [DuckDB Parquet Viewer](/duckdb/parquet-viewer/)
 - [Excel to Parquet Converter](/formats/excel-to-parquet-converter/)
 - [Data Format Converter](/formats/data-format-converter-browser/)
