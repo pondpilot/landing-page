@@ -60,4 +60,4 @@ Visit [app.pondpilot.io](https://app.pondpilot.io) and convert your Excel file t
 
 - [Data Format Converter](/formats/data-format-converter-browser/)
 - [SAS to Parquet Converter](/formats/sas-to-parquet-converter/)
-- [DuckDB Parquet Viewer](/tools/duckdb-parquet-viewer/)
+- [DuckDB Parquet Viewer](/duckdb/parquet-viewer/)

@@ -59,4 +59,4 @@ Open [app.pondpilot.io](https://app.pondpilot.io) and explore your Iceberg data.
 
 - [Iceberg Browser Client](/use-cases/iceberg-browser-client/)
 - [Browse Iceberg Tables Online](/use-cases/browse-iceberg-tables-online/)
-- [DuckDB Online Playground](/tools/duckdb-online-playground/)
+- [DuckDB Online Playground](/duckdb/online-playground/)

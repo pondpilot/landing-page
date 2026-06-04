@@ -54,4 +54,4 @@ Open [app.pondpilot.io](https://app.pondpilot.io) and connect to your Iceberg RE
 
 - [Iceberg Browser Client](/use-cases/iceberg-browser-client/)
 - [Browse Iceberg Tables Online](/use-cases/browse-iceberg-tables-online/)
-- [DuckDB WASM SQL Editor](/tools/duckdb-wasm-sql-editor/)
+- [DuckDB WASM SQL Editor](/duckdb/wasm-sql-editor/)
