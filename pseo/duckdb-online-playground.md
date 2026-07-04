@@ -50,6 +50,24 @@ DuckDB WASM is not a watered-down version. It's the same analytical engine, comp
 
 PondPilot is free, open source, and requires no signup. There are no query limits, no session timeouts, and no premium tier. Use it as much as you want.
 
+## When the DuckDB CLI is the better choice
+
+For scripting, scheduled jobs, or files too large to sit comfortably in a browser tab, the native DuckDB CLI or Python client is the right tool — it's built for automation and has no browser memory ceiling. PondPilot is for the interactive case: open a tab, point it at a file, and explore, with nothing to install. Plenty of people use both — the CLI in their pipelines, PondPilot when they just want to look at something.
+
+## FAQ
+
+**Do I need to install anything?**
+No. PondPilot runs DuckDB-WASM in your browser — open app.pondpilot.io and you're in a DuckDB SQL editor in seconds, with no install and no signup.
+
+**Is it the real DuckDB?**
+Yes. DuckDB-WASM is the same analytical engine compiled to WebAssembly. Aggregations over millions of rows run in seconds, and Parquet queries use predicate pushdown.
+
+**Can I load my own data?**
+Yes — open your own CSV, Parquet, JSON, or DuckDB files and query them directly, instead of being limited to toy datasets.
+
+**Does my data leave my machine?**
+No. Everything runs locally in your browser tab; there's no server to send data to.
+
 ## Start Playing
 
 [Open PondPilot](https://app.pondpilot.io) and start exploring DuckDB SQL.
