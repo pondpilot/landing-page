@@ -79,3 +79,44 @@ No. Everything runs locally in your browser tab; there's no server to send data 
 - [DuckDB Browser Tool](/duckdb/browser-tool/)
 - [SQL Playground No Signup](/use-cases/sql-playground-no-signup/)
 - [DuckDB WASM SQL Editor](/duckdb/wasm-sql-editor/)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to install anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. PondPilot runs DuckDB-WASM in your browser — open app.pondpilot.io and you're in a DuckDB SQL editor in seconds, with no install and no signup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it the real DuckDB?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. DuckDB-WASM is the same analytical engine compiled to WebAssembly. Aggregations over millions of rows run in seconds, and Parquet queries use predicate pushdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I load my own data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — open your own CSV, Parquet, JSON, or DuckDB files and query them directly, instead of being limited to toy datasets."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my data leave my machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Everything runs locally in your browser tab; there's no server to send data to."
+      }
+    }
+  ]
+}
+</script>

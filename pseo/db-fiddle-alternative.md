@@ -74,3 +74,44 @@ Yes — PondPilot is free and open source, with no rate limits and no signup.
 - [SQL Playground No Signup](/use-cases/sql-playground-no-signup/)
 - [Datasette Alternative](/alternatives/datasette-alternative/)
 - [DuckDB Online Playground](/duckdb/online-playground/)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is PondPilot a drop-in replacement for DB Fiddle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not quite — they solve different problems. DB Fiddle reproduces SQL on MySQL, PostgreSQL, or SQLite and gives you a shareable public link. PondPilot runs DuckDB in your browser against your own files, with nothing sent to a server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I query my own files?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Drop a CSV, Parquet, JSON, or DuckDB file and query it right away — no CREATE TABLE or INSERT. DB Fiddle has no file support; you define the schema and insert rows by hand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my data get uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. PondPilot runs DuckDB compiled to WebAssembly in your browser, so queries run locally and your data never leaves the tab. DB Fiddle runs your queries on a shared server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — PondPilot is free and open source, with no rate limits and no signup."
+      }
+    }
+  ]
+}
+</script>
