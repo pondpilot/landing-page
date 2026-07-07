@@ -23,6 +23,7 @@
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
         <link rel="icon" href="{{ page.favicon | default: '/assets/images/polly.svg' }}" type="image/svg+xml" />
         {% seo %}
+        {% include structured-data.html %}
         {% if page.widget_page %}{% include widget-head.html %}{% endif %}
     </head>
     <body class="{% if page.layout == 'post' or page.layout == 'page' or page.url contains '/blog/' %}blog-page{% endif %}">

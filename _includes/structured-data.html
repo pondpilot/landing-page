@@ -1,0 +1,105 @@
+{% comment %}
+  Site-wide structured data.
+  - Organization (PondPilot) with sameAs to its own profiles + Dark Lake, LLC as parentOrganization.
+  - Per-product SoftwareApplication emitted when a page sets `product:` in front matter (app / flowscope / widget).
+  This is in addition to the WebSite/WebPage JSON-LD that jekyll-seo-tag already emits.
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://pondpilot.io/#organization",
+  "name": "PondPilot",
+  "url": "https://pondpilot.io",
+  "logo": "https://pondpilot.io/assets/images/polly.svg",
+  "description": "A family of 100% client-side, DuckDB-powered, open-source data tools. Query, embed, and trace your data in the browser — nothing gets uploaded.",
+  "sameAs": [
+    "https://github.com/pondpilot",
+    "https://www.linkedin.com/company/pondpilot",
+    "https://www.wikidata.org/wiki/Q139949172"
+  ],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Dark Lake, LLC",
+    "url": "https://darklakeside.com",
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q139948845",
+      "https://www.crunchbase.com/organization/dark-lake"
+    ]
+  }
+}
+</script>
+{% if page.product == "app" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PondPilot",
+  "url": "https://app.pondpilot.io",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web",
+  "description": "A 100% client-side SQL data exploration tool powered by DuckDB-WASM. Query CSV, Parquet, JSON, XLSX, DuckDB, Stata, SAS and SPSS files directly in your browser — read-only, with nothing uploaded.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isAccessibleForFree": true,
+  "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+  "featureList": [
+    "In-browser DuckDB-WASM SQL editor",
+    "Reads CSV, Parquet, JSON, XLSX, DuckDB, Stata, SAS and SPSS files",
+    "Read-only — your data never leaves the browser",
+    "AI SQL assistant (natural language to SQL)",
+    "Charts and data comparison",
+    "Installable PWA with offline support"
+  ],
+  "sameAs": ["https://github.com/pondpilot/pondpilot"],
+  "publisher": { "@id": "https://pondpilot.io/#organization" }
+}
+</script>
+{% elsif page.product == "flowscope" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "FlowScope",
+  "url": "https://flowscope.pondpilot.io",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web",
+  "description": "A privacy-first SQL lineage engine that runs entirely in the browser. Analyzes SQL to draw column-level lineage across tables, CTEs and columns — nothing is sent to a server.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isAccessibleForFree": true,
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "featureList": [
+    "Column-level SQL lineage",
+    "Multi-dialect: PostgreSQL, Snowflake, BigQuery, DuckDB and dbt",
+    "Runs in the browser (Rust compiled to WebAssembly)",
+    "72 lint rules with auto-fix",
+    "CLI for lineage checks in CI",
+    "Librarian AI chat over your lineage"
+  ],
+  "sameAs": ["https://github.com/pondpilot/flowscope"],
+  "publisher": { "@id": "https://pondpilot.io/#organization" }
+}
+</script>
+{% elsif page.product == "widget" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PondPilot Widget",
+  "url": "https://widget.pondpilot.io",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web",
+  "description": "An embeddable, interactive SQL widget powered by DuckDB-WASM. Turns static SQL code blocks in docs, tutorials and blog posts into runnable, editable snippets — about 22KB, with zero backend.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isAccessibleForFree": true,
+  "license": "https://opensource.org/license/mit",
+  "featureList": [
+    "Embeddable interactive SQL that runs in the reader's browser",
+    "Powered by DuckDB compiled to WebAssembly",
+    "About 22KB, with zero backend to host",
+    "Themeable to match your site"
+  ],
+  "sameAs": ["https://github.com/pondpilot/pondpilot-widget"],
+  "publisher": { "@id": "https://pondpilot.io/#organization" }
+}
+</script>
+{% endif %}
