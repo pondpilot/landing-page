@@ -1,0 +1,37 @@
+# PondPilot
+
+> PondPilot is a family of 100% client-side, DuckDB-powered, open-source data tools. You query, embed, and trace your data entirely in the browser — nothing is ever uploaded to a server. Built by Dark Lake, LLC.
+
+All three tools run on DuckDB compiled to WebAssembly, so processing happens on the user's own machine. They are free and open source, with no accounts, no per-seat pricing, and no usage limits. The strongest, most repeatable guarantee across the whole family: your data never leaves your device.
+
+## Products
+
+- [PondPilot App](https://app.pondpilot.io): In-browser SQL editor powered by DuckDB-WASM. Query CSV, Parquet, JSON, XLSX, DuckDB, Stata (.dta), SAS (.sas7bdat/.xpt), and SPSS (.sav) files directly from your machine, read-only, with an AI SQL assistant, charts, and data comparison. Opens instantly, no signup; installable as an offline PWA or self-hostable via Docker. License: AGPL-3.0.
+- [FlowScope](https://flowscope.pondpilot.io): Privacy-first SQL lineage engine that runs in the browser (Rust compiled to WebAssembly). Draws column-level lineage across tables, CTEs, and columns; multi-dialect (PostgreSQL, Snowflake, BigQuery, DuckDB, dbt); 72 lint rules with auto-fix; CLI for CI; "Librarian" AI chat over your lineage. License: Apache-2.0.
+- [PondPilot Widget](https://widget.pondpilot.io): Embeddable, interactive SQL snippets powered by DuckDB-WASM. Turns static SQL code blocks in docs and blog posts into runnable, editable snippets in about 22KB, with zero backend. License: MIT.
+
+## Key pages
+
+- [Homepage](https://pondpilot.io/): the family overview ("Meet the Flock").
+- [PondPilot App](https://pondpilot.io/app/): the flagship SQL explorer.
+- [FlowScope](https://pondpilot.io/flowscope/): SQL lineage visualization.
+- [PondPilot Widget](https://pondpilot.io/widget/): embeddable SQL runner.
+- [Pricing](https://pondpilot.io/pricing.md): free and open source, no paid tiers.
+- [Blog](https://pondpilot.io/blog/): release notes and feature deep-dives.
+
+## Comparisons and use cases
+
+- [DB Fiddle alternative](https://pondpilot.io/alternatives/db-fiddle-alternative/)
+- [Datasette alternative](https://pondpilot.io/alternatives/datasette-alternative/)
+- [DuckDB online playground](https://pondpilot.io/duckdb/online-playground/)
+- [Open Stata (.dta) files in the browser](https://pondpilot.io/formats/open-stata-files-in-browser/)
+- [SQL playground, no signup](https://pondpilot.io/use-cases/sql-playground-no-signup/)
+
+## Source and profiles
+
+- [GitHub organization](https://github.com/pondpilot)
+- [PondPilot App repository](https://github.com/pondpilot/pondpilot)
+- [FlowScope repository](https://github.com/pondpilot/flowscope)
+- [PondPilot Widget repository](https://github.com/pondpilot/pondpilot-widget)
+- [LinkedIn](https://www.linkedin.com/company/pondpilot)
+- [Wikidata](https://www.wikidata.org/wiki/Q139949172)
