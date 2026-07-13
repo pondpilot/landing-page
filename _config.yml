@@ -1,6 +1,6 @@
 # GitHub Pages Jekyll configuration
-name: PondPilot Blog
-description: News and updates from the PondPilot team
+name: PondPilot
+description: PondPilot is a family of 100% client-side, DuckDB-powered, open-source data tools. Query, embed, and trace your data in the browser — nothing gets uploaded.
 url: "https://pondpilot.io"
 baseurl: ""
 
