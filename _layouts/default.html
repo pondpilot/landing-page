@@ -22,6 +22,9 @@
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
         <link rel="icon" href="{{ page.favicon | default: '/assets/images/polly.svg' }}" type="image/svg+xml" />
+        {% if page.md_twin_url %}
+        <link rel="alternate" type="text/markdown" href="{{ page.md_twin_url | absolute_url }}" />
+        {% endif %}
         {% seo %}
         {% include structured-data.html %}
         {% if page.widget_page %}{% include widget-head.html %}{% endif %}

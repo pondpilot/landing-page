@@ -1,4 +1,9 @@
-# Pricing — PondPilot
+---
+layout: page
+title: "Pricing — PondPilot"
+description: "PondPilot is free and open source: no paid tiers, no per-seat pricing, no accounts, and no usage limits."
+permalink: /pricing/
+---
 
 PondPilot is **free and open source**. There are no paid tiers, no per-seat pricing, no accounts, and no usage limits. Nothing is gated behind "contact sales." You can use the hosted apps, install them, or self-host — all at no cost.
 
