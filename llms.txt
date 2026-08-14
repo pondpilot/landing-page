@@ -28,9 +28,9 @@ All three tools run on DuckDB compiled to WebAssembly, so processing happens on 
 {% for post in site.posts -%}
 - [{{ post.title }}]({{ post.url | absolute_url }}) ({{ post.date | date: "%Y-%m-%d" }}){% if post.description %}: {{ post.description }}{% endif %}
 {% endfor %}
-{% assign pseo = site.pages | where_exp: "p", "p.path contains 'pseo/'" %}{% assign prefixes = "alternatives,audience,duckdb,formats,privacy,tools,use-cases" | split: "," %}{% assign labels = "Alternatives,Audience,DuckDB,Formats,Privacy,Tools,Use cases" | split: "," %}{% for prefix in prefixes %}## {{ labels[forloop.index0] }}
+{% for section in site.data.agent_sections %}## {{ section.label }}
 
-{% capture needle %}/{{ prefix }}/{% endcapture %}{% assign section = pseo | where_exp: "p", "p.url contains needle" | sort: "title" %}{% for p in section -%}
+{% for p in section.pages -%}
 - [{{ p.title }}]({{ p.url | absolute_url }}){% if p.description %}: {{ p.description }}{% endif %}
 {% endfor %}
 {% endfor %}## Machine-readable resources
@@ -42,7 +42,7 @@ Other files on this site written for machines rather than people:
 - [/mcp](https://pondpilot.io/mcp): index of everything machine-readable on this site, plus a note on PondPilot and MCP. A static markdown page, not an MCP protocol endpoint.
 - [/sitemap.xml](https://pondpilot.io/sitemap.xml): every indexable page on the site.
 - [/robots.txt](https://pondpilot.io/robots.txt): crawl policy. Major AI crawlers are explicitly allowed.
-- Raw markdown for any content page: append `.md` to its URL — for example https://pondpilot.io/alternatives/db-fiddle-alternative.md.
+- Raw markdown twins: every blog post and every page listed in the sections above, plus the pricing page, also exists as raw markdown — append `.md` to the page URL, for example https://pondpilot.io/alternatives/db-fiddle-alternative.md.
 
 ## Links
 

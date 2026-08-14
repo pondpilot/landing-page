@@ -5,12 +5,21 @@
 # page, the long-form /llms-full.txt bundle, and the /mcp agent index. Runs as a
 # generator (before rendering), so page bodies are still unconverted markdown.
 module PondPilot
-  SITE_URL = "https://pondpilot.io"
   SEPARATOR = "-" * 40
   # Source paths, other than posts and pSEO pages, that get a markdown twin.
   EXTRA_TWIN_PAGES = ["pricing/index.md"].freeze
-  # Permalink prefixes of the pSEO pages, in the order llms-full.txt lists them.
-  PSEO_PREFIXES = %w(alternatives audience duckdb formats privacy tools use-cases).freeze
+  # The pSEO sections, in display order: permalink prefix => heading. This is
+  # the single source for the llms.txt index (via site.data.agent_sections),
+  # llms-full.txt and the twins, so the files cannot disagree with each other.
+  SECTIONS = [
+    ["alternatives", "Alternatives"],
+    ["audience", "Audience"],
+    ["duckdb", "DuckDB"],
+    ["formats", "Formats"],
+    ["privacy", "Privacy"],
+    ["tools", "Tools"],
+    ["use-cases", "Use cases"],
+  ].freeze
 
   # A generated page whose body must reach _site byte for byte: no Liquid, no
   # kramdown. The source name keeps a .txt extension (nothing converts .txt)
@@ -31,8 +40,16 @@ module PondPilot
     safe true
 
     def generate(site)
+      @site_url = site.config["url"]
       posts = site.posts.docs.reverse # newest first
       pseo = pseo_pages(site)
+      site.data["agent_sections"] = SECTIONS.map do |prefix, label|
+        docs = pseo.select { |p| p.url.start_with?("/#{prefix}/") }
+        {
+          "label" => label,
+          "pages" => docs.map { |p| { "title" => p.data["title"], "url" => p.url, "description" => p.data["description"] } },
+        }
+      end
       extra = site.pages.select { |p| EXTRA_TWIN_PAGES.include?(p.relative_path) }
 
       (posts + pseo + extra).each do |doc|
@@ -47,10 +64,20 @@ module PondPilot
 
     private
 
-    # Grouped by permalink prefix, alphabetically within each group.
+    # SECTIONS order, title-sorted within each section — the same order the
+    # llms.txt index renders. A page whose prefix is missing from SECTIONS
+    # still gets a twin and an llms-full.txt entry, but drops out of the
+    # llms.txt index, so warn loudly instead of hiding it.
     def pseo_pages(site)
       pages = site.pages.select { |p| p.relative_path.start_with?("pseo/") }
-      pages.sort_by { |p| [PSEO_PREFIXES.index(p.url.split("/")[1]) || PSEO_PREFIXES.size, p.url] }
+      ordered = SECTIONS.flat_map do |prefix, _label|
+        pages.select { |p| p.url.start_with?("/#{prefix}/") }.sort_by { |p| p.data["title"].to_s }
+      end
+      rest = pages - ordered
+      unless rest.empty?
+        Jekyll.logger.warn "agent_readability:", "no SECTIONS entry covers: #{rest.map(&:url).join(", ")} — add the prefix so they appear in llms.txt"
+      end
+      ordered + rest.sort_by(&:url)
     end
 
     def twin_url(doc)
@@ -62,7 +89,7 @@ module PondPilot
     end
 
     def meta_lines(doc)
-      lines = ["- Canonical: #{SITE_URL}#{doc.url}"]
+      lines = ["- Canonical: #{@site_url}#{doc.url}"]
       return lines unless doc.is_a?(Jekyll::Document)
 
       lines << "- Published: #{doc.date.strftime("%Y-%m-%d")}"
@@ -84,11 +111,11 @@ module PondPilot
     # llms-full.txt inlines the bodies, so site-relative links have to become
     # absolute to stay usable once the text is read outside the site.
     def absolutize(body)
-      body.gsub("](/", "](#{SITE_URL}/").gsub('src="/', %(src="#{SITE_URL}/))
+      body.gsub("](/", "](#{@site_url}/").gsub('src="/', %(src="#{@site_url}/))
     end
 
     def llms_full_entry(doc)
-      lines = ["# #{doc.data["title"]}", "Canonical: #{SITE_URL}#{doc.url}"]
+      lines = ["# #{doc.data["title"]}", "Canonical: #{@site_url}#{doc.url}"]
       lines << "Published: #{doc.date.strftime("%Y-%m-%d")}" if doc.is_a?(Jekyll::Document)
       "#{SEPARATOR}\n\n#{lines.join("\n")}\n\n#{absolutize(body_of(doc))}\n"
     end
@@ -97,9 +124,9 @@ module PondPilot
       header = [
         "# #{site.config["name"]}",
         site.config["description"],
-        "Short-form index of this site: #{SITE_URL}/llms.txt",
+        "Short-form index of this site: #{@site_url}/llms.txt",
         "This file carries the full text of every blog post and every comparison, " \
-        "format, audience, privacy, tooling, and use-case page on #{SITE_URL}, " \
+        "format, audience, privacy, tooling, and use-case page on #{@site_url}, " \
         "in one document. Entries are separated by a line of dashes.",
       ].join("\n\n")
 
@@ -115,16 +142,16 @@ module PondPilot
 
         PondPilot is a family of 100% client-side, DuckDB-powered, open-source data tools. You query, embed, and trace your data entirely in the browser — nothing is ever uploaded to a server. Built by Dark Lake, LLC.
 
-        This page is a plain-text index of everything on #{SITE_URL} that is written for machines: where the structured product facts live, how to fetch any page as raw markdown, and what PondPilot is.
+        This page is a plain-text index of everything on #{@site_url} that is written for machines: where the structured product facts live, how to fetch any page as raw markdown, and what PondPilot is.
 
         ## Machine-readable resources
 
-        - #{SITE_URL}/llms.txt — short-form product context: the three products, key pages, and a linked index of every blog post and comparison, format, audience, privacy, tooling, and use-case page.
-        - #{SITE_URL}/llms-full.txt — long-form companion to llms.txt, carrying the full text of every one of those pages so answers can be grounded in primary source material.
-        - #{SITE_URL}/pricing.md — pricing in structured markdown: per-product price, license, and how to run each tool.
-        - #{SITE_URL}/sitemap.xml — every indexable page on the site.
-        - #{SITE_URL}/robots.txt — crawl policy. Major AI crawlers are explicitly allowed.
-        - Raw markdown for any content page: append `.md` to its URL. #{SITE_URL}/alternatives/db-fiddle-alternative/ becomes #{SITE_URL}/alternatives/db-fiddle-alternative.md — same content, no page chrome, with the canonical URL (and, for blog posts, the publication date and author) in a short metadata block at the top.
+        - #{@site_url}/llms.txt — short-form product context: the three products, key pages, and a linked index of every blog post and comparison, format, audience, privacy, tooling, and use-case page.
+        - #{@site_url}/llms-full.txt — long-form companion to llms.txt, carrying the full text of every one of those pages so answers can be grounded in primary source material.
+        - #{@site_url}/pricing.md — pricing in structured markdown: per-product price, license, and how to run each tool.
+        - #{@site_url}/sitemap.xml — every indexable page on the site.
+        - #{@site_url}/robots.txt — crawl policy. Major AI crawlers are explicitly allowed.
+        - Raw markdown twins: every blog post, every page under /alternatives/, /audience/, /duckdb/, /formats/, /privacy/, /tools/ and /use-cases/, and the pricing page also exist as raw markdown — append `.md` to the page URL. #{@site_url}/alternatives/db-fiddle-alternative/ becomes #{@site_url}/alternatives/db-fiddle-alternative.md — same content, no page chrome, with the canonical URL (and, for blog posts, the publication date and author) in a short metadata block at the top.
 
         ## About this URL
 
@@ -143,9 +170,9 @@ module PondPilot
 
         ## Links
 
-        - Website: #{SITE_URL}
-        - Pricing: #{SITE_URL}/pricing/
-        - Blog: #{SITE_URL}/blog/
+        - Website: #{@site_url}
+        - Pricing: #{@site_url}/pricing/
+        - Blog: #{@site_url}/blog/
         - PondPilot App: https://app.pondpilot.io
         - FlowScope: https://flowscope.pondpilot.io
         - PondPilot Widget: https://widget.pondpilot.io

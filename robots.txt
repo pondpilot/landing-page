@@ -4,8 +4,8 @@ User-agent: *
 Allow: /
 
 # AI crawlers and assistants are explicitly welcome. Machine-readable copies of
-# the site live at /llms.txt, /llms-full.txt and /mcp, and any content page can
-# be fetched as raw markdown by appending .md to its URL.
+# the site live at /llms.txt, /llms-full.txt and /mcp, and blog posts and topic
+# pages can be fetched as raw markdown by appending .md to their URL.
 User-agent: GPTBot
 User-agent: ChatGPT-User
 User-agent: ClaudeBot
