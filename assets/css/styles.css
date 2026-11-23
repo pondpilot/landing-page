@@ -1979,6 +1979,220 @@ footer {
     color: white;
 }
 
+/* Footer legal row: Privacy link + "Cookie settings" (reopens the consent bar) */
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--space-2) var(--space-5);
+}
+
+.cookie-settings {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: var(--slate-200);
+    text-decoration: underline;
+    text-decoration-color: var(--slate-500);
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+
+.cookie-settings[hidden] {
+    display: none;
+}
+
+.cookie-settings:hover {
+    color: white;
+    text-decoration-color: white;
+}
+
+.cookie-settings:focus-visible,
+.footer-bottom a:focus-visible {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
+/* Cookie consent bar (_includes/consent-banner.html). Light, flat, on the
+   site grid. Accept and Decline share one treatment so neither is the
+   default. The row wraps on its own (no viewport breakpoint): the text
+   keeps at least ~36ch; when the row is narrower than that plus the
+   buttons, the buttons drop below the text and split its full width. */
+.cookie-consent {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90; /* under the mobile nav (98-99) and the header (100) */
+    background-color: var(--white);
+    border-top: 1px solid var(--slate-200);
+    transform: translateY(0);
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cookie-consent--hidden {
+    transform: translateY(100%);
+    visibility: hidden;
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 300ms;
+}
+
+.cookie-consent-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-3) var(--space-5); /* the .container gutter */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3) var(--space-6);
+}
+
+.cookie-consent-text {
+    flex: 999 1 36ch; /* takes nearly all spare room while on one row */
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--slate-700);
+    text-wrap: pretty;
+}
+
+.cookie-consent-link {
+    color: var(--primary-dark);
+    text-decoration: underline;
+    text-decoration-color: rgba(37, 99, 235, 0.35);
+    text-underline-offset: 2px;
+    white-space: nowrap;
+    border-radius: 2px; /* rounds the focus ring */
+}
+
+.cookie-consent-link:hover {
+    text-decoration-color: currentColor;
+}
+
+.cookie-consent-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    flex: 1 1 auto; /* alone on its row, it grows to the full width */
+}
+
+.cookie-consent-btn {
+    min-width: 7rem;
+    min-height: 44px;
+    padding: 0 var(--space-5);
+    border: 0;
+    border-radius: var(--radius-full);
+    background-color: #EFF4FF;
+    color: var(--primary-dark);
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.cookie-consent-btn:hover {
+    background-color: #DBE6FE;
+}
+
+.cookie-consent-btn:focus-visible,
+.cookie-consent-link:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* While the bar is up, the page ends with room for it (--cc-h is the bar's
+   height, set by the banner script), so the footer stays reachable. */
+html.cc-open body {
+    padding-bottom: var(--cc-h, 0px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cookie-consent,
+    .cookie-consent--hidden {
+        transition: none;
+    }
+}
+
+/* Privacy policy cookie table (privacy-policy.md). A plain table while it has
+   room; once its own box is narrower than ~36rem (a phone, at any viewport)
+   each cookie stacks into label/value rows, so no column is cut off by the
+   article's overflow. Labels come from each cell's data-label. */
+.cookie-table-wrap {
+    container-type: inline-size;
+    margin: 25px 0;
+}
+
+.cookie-table-wrap .cookie-table {
+    margin: 0;
+}
+
+.cookie-table code {
+    white-space: nowrap;
+}
+
+@container (max-width: 36rem) {
+    .cookie-table-wrap .cookie-table,
+    .cookie-table tbody,
+    .cookie-table tr {
+        display: block;
+    }
+
+    .cookie-table-wrap .cookie-table {
+        border: 0;
+        border-radius: 0;
+        overflow: visible;
+    }
+
+    .cookie-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    .cookie-table-wrap .cookie-table tr,
+    .cookie-table-wrap .cookie-table tr:nth-child(even) {
+        padding: var(--space-4);
+        border-radius: var(--radius-lg);
+        background-color: #F5F8FF;
+    }
+
+    .cookie-table tr + tr {
+        margin-top: var(--space-3);
+    }
+
+    .cookie-table-wrap .cookie-table td {
+        display: grid;
+        grid-template-columns: 5rem 1fr;
+        gap: var(--space-3);
+        padding: var(--space-1) 0;
+        border: 0;
+    }
+
+    .cookie-table td::before {
+        content: attr(data-label);
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.8;
+        color: var(--slate-500);
+    }
+
+    .cookie-table-wrap .cookie-table td:first-child {
+        display: block;
+        padding: 0 0 var(--space-2);
+    }
+
+    .cookie-table td:first-child::before {
+        content: none;
+    }
+}
+
 /* Animations */
 @keyframes float {
     0%, 100% {

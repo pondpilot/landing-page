@@ -4,6 +4,11 @@ description: PondPilot is a family of 100% client-side, DuckDB-powered, open-sou
 url: "https://pondpilot.io"
 baseurl: ""
 
+# Google Tag Manager container ID (GTM-XXXXXXX). The GTM tag, Consent Mode
+# defaults, cookie banner and click events render only when this is set AND the
+# build runs with JEKYLL_ENV=production (GitHub Pages does). Empty = no tag.
+gtm_id: "GTM-53K78LBT"
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
@@ -27,5 +32,6 @@ exclude:
   - README.md
   - SEO-AUDIT.md
   - USE_CASES.md
+  - scripts
   - .gitignore
   - .jekyll-cache
