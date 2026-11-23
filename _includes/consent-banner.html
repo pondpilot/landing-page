@@ -16,7 +16,7 @@ Cookie consent bar. Ported from the sister sites' CookieConsent component
 
 The banner copy lives in the four assigns below. Change the words here only.
 {%- endcomment -%}
-{%- assign cc_text = "We use cookies to understand how visitors use this site. The PondPilot app itself collects nothing." -%}
+{%- assign cc_text = "We measure visits with Google Analytics, which sets cookies only if you accept and runs cookieless if you decline." -%}
 {%- assign cc_link = "Privacy policy" -%}
 {%- assign cc_accept = "Accept" -%}
 {%- assign cc_decline = "Decline" -%}
@@ -24,7 +24,7 @@ The banner copy lives in the four assigns below. Change the words here only.
     <div class="cookie-consent-inner">
         <p class="cookie-consent-text">
             {{ cc_text }}
-            <a href="/privacy-policy/" class="cookie-consent-link">{{ cc_link }}</a>
+            <a href="/privacy-policy/#cookies" class="cookie-consent-link">{{ cc_link }}</a>
         </p>
         <div class="cookie-consent-actions">
             <button id="cookie-decline" type="button" class="cookie-consent-btn">{{ cc_decline }}</button>
