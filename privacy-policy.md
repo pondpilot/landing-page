@@ -28,7 +28,7 @@ The app contacts other servers only for features you start yourself. Querying 
 **Google Analytics 4.** We load Google Analytics through Google Tag Manager with Google Consent Mode v2. What it does depends on your choice in the cookie banner.
 
 - Before you choose, and if you decline, Google Analytics sets no analytics cookies and stores no identifiers on your device. Google still receives cookieless signals about your visit.
-- After you click "Accept", Google Analytics sets the cookies listed below. We use them to measure visits, pages viewed, and clicks on links to the app, GitHub, npm and FlowScope.
+- After you click "Accept", Google Analytics sets the cookies listed below. We use them to measure visits, pages viewed, and clicks on links to the app, the widget, GitHub, npm and FlowScope.
 
 We never enable advertising storage or ad personalization, and Google signals are off. Google Analytics retains data for 14 months. We also export that data to BigQuery on Google Cloud for Dark Lake's internal reporting.
 
@@ -47,7 +47,7 @@ We never enable advertising storage or ad personalization, and Google signals 
 <td role="cell" data-label="Lifetime">Up to&nbsp;2&nbsp;years</td>
 </tr>
 <tr role="row">
-<td role="cell" data-label="Name"><code>_ga_&lt;container-id&gt;</code></td>
+<td role="cell" data-label="Name"><code>_ga_00W4N6QTDN</code></td>
 <td role="cell" data-label="Set by">Google&nbsp;Analytics, after&nbsp;“Accept”</td>
 <td role="cell" data-label="Purpose">Keeps the state of&nbsp;your&nbsp;session</td>
 <td role="cell" data-label="Lifetime">Up to&nbsp;2&nbsp;years</td>

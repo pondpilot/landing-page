@@ -7,7 +7,7 @@ baseurl: ""
 # Google Tag Manager container ID (GTM-XXXXXXX). The GTM tag, Consent Mode
 # defaults, cookie banner and click events render only when this is set AND the
 # build runs with JEKYLL_ENV=production (GitHub Pages does). Empty = no tag.
-gtm_id: ""
+gtm_id: "GTM-53K78LBT"
 
 # Build settings
 markdown: kramdown
