@@ -99,6 +99,7 @@ minify:
     @npx csso _site/assets/css/blog.css --output _site/assets/css/blog.css
     @echo "Minifying JS..."
     @npx terser _site/assets/js/site.js --compress --mangle --output _site/assets/js/site.js
+    @npx terser _site/assets/js/analytics.js --compress --mangle --output _site/assets/js/analytics.js
     @echo "Minification complete."
 
 # Build the site with Jekyll (via Docker)
