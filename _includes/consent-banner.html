@@ -11,12 +11,16 @@ Cookie consent bar. Ported from the sister sites' CookieConsent component
   bar at any time. It stays hidden until this script runs.
 - While the bar is up, the page gets the bar's height as bottom padding, so
   the bar never covers the footer links.
+- Included right after <body> (fixed to the bottom by CSS), so keyboard and
+  screen-reader users reach it first instead of after the whole page.
 - Rendered only when GTM is on (see default.html); styles in styles.css
   under "Cookie consent".
 
 The banner copy lives in the four assigns below. Change the words here only.
+Each &nbsp; keeps a short word on the same line as the next one, so no line
+ends on "with" or "if" and "Google Analytics" never splits.
 {%- endcomment -%}
-{%- assign cc_text = "We measure visits with Google Analytics, which sets cookies only if you accept and runs cookieless if you decline." -%}
+{%- assign cc_text = "We measure visits with&nbsp;Google&nbsp;Analytics, which sets cookies only if&nbsp;you accept and&nbsp;runs cookieless if&nbsp;you decline." -%}
 {%- assign cc_link = "Privacy policy" -%}
 {%- assign cc_accept = "Accept" -%}
 {%- assign cc_decline = "Decline" -%}
@@ -141,8 +145,16 @@ The banner copy lives in the four assigns below. Change the words here only.
 
     // The footer's "Cookie settings" button: unhide it now that it works, and
     // reopen the bar with the keyboard on the first choice.
-    var openers = document.querySelectorAll('[data-cookie-settings]');
-    for (var j = 0; j < openers.length; j++) openers[j].removeAttribute('hidden');
+    // The bar comes before the footer in the page, so wait for the footer.
+    function unhideOpeners() {
+        var openers = document.querySelectorAll('[data-cookie-settings]');
+        for (var j = 0; j < openers.length; j++) openers[j].removeAttribute('hidden');
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', unhideOpeners);
+    } else {
+        unhideOpeners();
+    }
     document.addEventListener('click', function (e) {
         var opener = e.target && e.target.closest ? e.target.closest('[data-cookie-settings]') : null;
         if (!opener) return;
