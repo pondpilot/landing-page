@@ -3,6 +3,7 @@ layout: page
 title: "GDPR Compliant Data Tool — No Data Processing Agreements Needed"
 description: "Analyze data without GDPR concerns. PondPilot processes everything client-side — no data leaves your browser, no DPA required."
 permalink: /privacy/gdpr-compliant-data-tool/
+last_modified_at: 2026-11-23
 ---
 
 
@@ -29,9 +30,9 @@ Run the query, find what you need, close the tab. No trace on any server.
 
 Don't take our word for the privacy claims. PondPilot is [open source](https://github.com/pondpilot). Your security team can audit the code, verify there's no telemetry, and confirm the architecture matches the claims.
 
-## No Cookies, No Tracking
+## What We Do Measure
 
-PondPilot uses Cloudflare Web Analytics for basic page view counts on the landing page. The app itself collects nothing. No cookies, no session tracking, no usage analytics.
+The app has no account and no analytics SDK in its code, and your files and query results stay in your browser. We do count page views on this site and on the hosted app with Cloudflare Web Analytics, which sets no cookies. This site also loads Google Analytics, which sets cookies only after you accept them in the cookie banner. The [privacy policy](/privacy-policy/) lists the cookies and what each tool receives.
 
 ## For Teams in Regulated Industries
 
