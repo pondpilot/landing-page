@@ -1979,6 +1979,143 @@ footer {
     color: white;
 }
 
+/* Footer legal row: Privacy link + "Cookie settings" (reopens the consent bar) */
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--space-2) var(--space-5);
+}
+
+.cookie-settings {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: var(--slate-200);
+    text-decoration: underline;
+    text-decoration-color: var(--slate-500);
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+
+.cookie-settings[hidden] {
+    display: none;
+}
+
+.cookie-settings:hover {
+    color: white;
+    text-decoration-color: white;
+}
+
+.cookie-settings:focus-visible,
+.footer-bottom a:focus-visible {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
+/* Cookie consent bar (_includes/consent-banner.html). Light, flat, on the
+   site grid. Accept and Decline share one treatment so neither is the
+   default. The row wraps on its own (no viewport breakpoint): the text
+   keeps at least ~32ch, otherwise the buttons drop below it, right-aligned. */
+.cookie-consent {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90; /* under the mobile nav (98-99) and the header (100) */
+    background-color: var(--white);
+    border-top: 1px solid var(--slate-200);
+    transform: translateY(0);
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cookie-consent--hidden {
+    transform: translateY(100%);
+    visibility: hidden;
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 300ms;
+}
+
+.cookie-consent-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-3) var(--space-5); /* the .container gutter */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3) var(--space-6);
+}
+
+.cookie-consent-text {
+    flex: 1 1 32ch;
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--slate-700);
+    text-wrap: pretty;
+}
+
+.cookie-consent-link {
+    color: var(--primary-dark);
+    text-decoration: underline;
+    text-decoration-color: rgba(37, 99, 235, 0.35);
+    text-underline-offset: 2px;
+    white-space: nowrap;
+}
+
+.cookie-consent-link:hover {
+    text-decoration-color: currentColor;
+}
+
+.cookie-consent-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+.cookie-consent-btn {
+    min-width: 7rem;
+    min-height: 40px;
+    padding: 0 var(--space-5);
+    border: 0;
+    border-radius: var(--radius-full);
+    background-color: #EFF4FF;
+    color: var(--primary-dark);
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.cookie-consent-btn:hover {
+    background-color: #DBE6FE;
+}
+
+.cookie-consent-btn:focus-visible,
+.cookie-consent-link:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* While the bar is up, the page ends with room for it (--cc-h is the bar's
+   height, set by the banner script), so the footer stays reachable. */
+html.cc-open body {
+    padding-bottom: var(--cc-h, 0px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cookie-consent,
+    .cookie-consent--hidden {
+        transition: none;
+    }
+}
+
 /* Animations */
 @keyframes float {
     0%, 100% {

@@ -18,6 +18,7 @@ All three tools run on DuckDB compiled to WebAssembly, so processing happens on 
 - [PondPilot Widget](https://pondpilot.io/widget/): embeddable SQL runner.
 - [Pricing](https://pondpilot.io/pricing.md): free and open source, no paid tiers.
 - [Blog](https://pondpilot.io/blog/): release notes and feature deep-dives.
+- [Privacy Policy](https://pondpilot.io/privacy-policy/): how this site uses cookies and analytics.
 
 ## Comparisons and use cases
 

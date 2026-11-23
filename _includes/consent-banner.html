@@ -1,0 +1,155 @@
+{%- comment -%}
+Cookie consent bar. Ported from the sister sites' CookieConsent component
+(SecondStack, Antares) so behaviour stays the same across the portfolio:
+- Consent Mode v2 defaults to "denied" in _layouts/default.html, before GTM
+  loads. Accept flips only analytics_storage to "granted"; the ad_* signals
+  stay denied, since this site runs no ads.
+- The choice lives in localStorage (pp_cookie_consent), so a returning visitor
+  is not asked again, and a stored choice is re-applied on every page.
+- Decline also deletes the GA cookies an earlier Accept left behind.
+- The footer's "Cookie settings" button ([data-cookie-settings]) reopens the
+  bar at any time. It stays hidden until this script runs.
+- While the bar is up, the page gets the bar's height as bottom padding, so
+  the bar never covers the footer links.
+- Rendered only when GTM is on (see default.html); styles in styles.css
+  under "Cookie consent".
+
+The banner copy lives in the four assigns below. Change the words here only.
+{%- endcomment -%}
+{%- assign cc_text = "We use cookies to understand how visitors use this site. The PondPilot app itself collects nothing." -%}
+{%- assign cc_link = "Privacy policy" -%}
+{%- assign cc_accept = "Accept" -%}
+{%- assign cc_decline = "Decline" -%}
+<div id="cookie-consent" class="cookie-consent cookie-consent--hidden" role="region" aria-label="Cookie consent" hidden inert>
+    <div class="cookie-consent-inner">
+        <p class="cookie-consent-text">
+            {{ cc_text }}
+            <a href="/privacy-policy/" class="cookie-consent-link">{{ cc_link }}</a>
+        </p>
+        <div class="cookie-consent-actions">
+            <button id="cookie-decline" type="button" class="cookie-consent-btn">{{ cc_decline }}</button>
+            <button id="cookie-accept" type="button" class="cookie-consent-btn">{{ cc_accept }}</button>
+        </div>
+    </div>
+</div>
+<script>
+(function () {
+    'use strict';
+
+    var CONSENT_KEY = 'pp_cookie_consent';
+    var SHOW_DELAY_MS = 1300;
+    var banner = document.getElementById('cookie-consent');
+    var acceptBtn = document.getElementById('cookie-accept');
+    var declineBtn = document.getElementById('cookie-decline');
+    var root = document.documentElement;
+    var returnTo = null;
+
+    if (!banner) return;
+
+    function updateConsent(granted) {
+        if (typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', {
+                analytics_storage: granted ? 'granted' : 'denied'
+            });
+        }
+    }
+
+    // Consent Mode stops new analytics cookies once storage is denied, but the
+    // ones an earlier Accept set (_ga, _ga_<id>) stay until deleted. GA sets
+    // them on the widest domain it may, so try the host and every parent.
+    function clearAnalyticsCookies() {
+        var names = document.cookie.split(';').map(function (c) {
+            return c.split('=')[0].trim();
+        }).filter(function (n) {
+            return /^(_ga(_.+)?|_gid|_gat(_.+)?)$/.test(n);
+        });
+        var parts = location.hostname.split('.');
+        var domains = [''];
+        for (var i = 0; i < parts.length - 1; i++) {
+            domains.push('; domain=.' + parts.slice(i).join('.'));
+        }
+        names.forEach(function (n) {
+            domains.forEach(function (d) {
+                document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
+            });
+        });
+    }
+
+    function fitPage() {
+        root.style.setProperty('--cc-h', banner.offsetHeight + 'px');
+    }
+    if ('ResizeObserver' in window) new ResizeObserver(fitPage).observe(banner);
+
+    function show() {
+        banner.removeAttribute('hidden');
+        banner.removeAttribute('inert');
+        // Let the hidden state paint once, so the bar slides in.
+        void banner.offsetHeight;
+        banner.classList.remove('cookie-consent--hidden');
+        fitPage();
+        root.classList.add('cc-open');
+    }
+
+    function hide() {
+        banner.classList.add('cookie-consent--hidden');
+        banner.setAttribute('inert', '');
+        root.classList.remove('cc-open');
+    }
+
+    // styles.css loads asynchronously. Wait until it styles the bar, so the
+    // bar never shows as bare text at the end of the page.
+    function showWhenStyled(tries) {
+        if (getComputedStyle(banner).position === 'fixed' || tries <= 0) {
+            show();
+        } else {
+            setTimeout(function () { showWhenStyled(tries - 1); }, 300);
+        }
+    }
+
+    function setConsent(value) {
+        try {
+            localStorage.setItem(CONSENT_KEY, value);
+        } catch (e) {
+            // Storage blocked (private mode, strict settings): the choice still
+            // applies to this page view, it just will not be remembered.
+        }
+        updateConsent(value === 'accepted');
+        if (value === 'declined') clearAnalyticsCookies();
+        hide();
+        // Opened from the footer: the keyboard goes back where it came from.
+        if (returnTo) {
+            returnTo.focus({ preventScroll: true });
+            returnTo = null;
+        }
+    }
+
+    var stored = null;
+    try {
+        stored = localStorage.getItem(CONSENT_KEY);
+    } catch (e) {
+        stored = null;
+    }
+
+    if (stored === 'accepted' || stored === 'declined') {
+        updateConsent(stored === 'accepted');
+    } else {
+        setTimeout(function () { showWhenStyled(10); }, SHOW_DELAY_MS);
+    }
+
+    if (acceptBtn) acceptBtn.addEventListener('click', function () { setConsent('accepted'); });
+    if (declineBtn) declineBtn.addEventListener('click', function () { setConsent('declined'); });
+
+    // The footer's "Cookie settings" button: unhide it now that it works, and
+    // reopen the bar with the keyboard on the first choice.
+    var openers = document.querySelectorAll('[data-cookie-settings]');
+    for (var j = 0; j < openers.length; j++) openers[j].removeAttribute('hidden');
+    document.addEventListener('click', function (e) {
+        var opener = e.target && e.target.closest ? e.target.closest('[data-cookie-settings]') : null;
+        if (!opener) return;
+        e.preventDefault();
+        returnTo = opener;
+        show();
+        if (declineBtn) declineBtn.focus({ preventScroll: true });
+    });
+})();
+</script>
