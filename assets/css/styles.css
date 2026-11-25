@@ -209,9 +209,13 @@ header .container {
     height: 32px;
 }
 
-.logo h1 {
+/* Logo wordmark: a span, not an h1, so each page keeps a single h1 */
+.logo-text {
+    font-family: var(--font-display);
     font-size: 1.5rem;
     font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
     margin: 0;
 }
 
