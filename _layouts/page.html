@@ -1,15 +1,29 @@
 ---
 layout: default
 ---
+{%- comment -%}
+h1: an optional front-matter key for pages whose on-page heading differs from
+their <title>; without it the heading is the title.
+A page listed in _data/format_cta.yml gets the "Open in PondPilot" button
+(_includes/format-cta.html) right after its first paragraph, the intro.
+{%- endcomment -%}
+{%- assign format_cta = site.data.format_cta[page.url] %}
 
 <div class="blog-post-container">
     <div class="container-narrow">
         <div class="blog-post-header">
-            <h1>{{ page.title }}</h1>
+            <h1>{{ page.h1 | default: page.title }}</h1>
         </div>
-        
+
         <article class="blog-post-content">
+            {%- if format_cta %}
+            {%- assign intro = content | split: '</p>' | first %}
+            {{ intro }}</p>
+            {% include format-cta.html cta=format_cta %}
+            {{ content | remove_first: intro | remove_first: '</p>' }}
+            {%- else %}
             {{ content }}
+            {%- endif %}
         </article>
 
         <div class="blog-nav">

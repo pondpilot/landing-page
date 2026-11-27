@@ -1,0 +1,48 @@
+# "Open in PondPilot" button on the /formats/ pages, keyed by page URL.
+# _layouts/page.html renders _includes/format-cta.html under a page's intro
+# paragraph when the page's URL is listed here.
+#   ext: the file extension the button names ("Open your .dta file in PondPilot").
+#   generic: true instead of ext for pages that cover many file types
+#            ("Open your file in PondPilot").
+# Deliberately not listed: sqlite-viewer-online, arrow-feather-viewer and
+# orc-viewer-online. The App's supported file list has no .sqlite, .arrow,
+# .feather or .orc, so a button there would send readers to a tool that
+# rejects their file.
+/formats/stata-to-csv-converter/:
+  ext: .dta
+/formats/open-stata-files-in-browser/:
+  ext: .dta
+/formats/open-spss-files-in-browser/:
+  ext: .sav
+/formats/spss-to-csv-converter/:
+  ext: .sav
+/formats/sas-file-viewer-free/:
+  ext: .sas7bdat
+/formats/open-sas-files-in-browser/:
+  ext: .sas7bdat
+/formats/sas-to-csv-converter/:
+  ext: .sas7bdat
+/formats/sas-to-parquet-converter/:
+  ext: .sas7bdat
+/formats/excel-to-csv-converter/:
+  ext: .xlsx
+/formats/excel-to-parquet-converter/:
+  ext: .xlsx
+/formats/csv-to-parquet-converter/:
+  ext: .csv
+/formats/csv-to-json-converter/:
+  ext: .csv
+/formats/json-to-csv-converter/:
+  ext: .json
+/formats/json-to-parquet-converter/:
+  ext: .json
+/formats/parquet-viewer-online/:
+  ext: .parquet
+/formats/parquet-to-json-converter/:
+  ext: .parquet
+/formats/data-format-converter-browser/:
+  generic: true
+/formats/convert-data-formats-browser/:
+  generic: true
+/formats/statistical-data-format-converter/:
+  generic: true
