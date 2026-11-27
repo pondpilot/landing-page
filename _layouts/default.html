@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{% if page.title %}{{ page.title | escape }}{% unless page.title contains "PondPilot" %} - PondPilot{% endunless %}{% else %}PondPilot{% endif %}</title>
+        {% comment %}pSEO pages (pseo/*.md) carry long, keyword-led titles: no " - PondPilot" suffix there, so og:title and <title> match.{% endcomment %}{% assign title_src_dir = page.path | slice: 0, 5 %}<title>{% if page.title %}{{ page.title | escape }}{% unless page.title contains "PondPilot" or title_src_dir == "pseo/" %} - PondPilot{% endunless %}{% else %}PondPilot{% endif %}</title>
         {% include critical-css.html %}
         <link rel="preload" href="/assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="/assets/css/styles.css" /></noscript>
@@ -45,7 +45,7 @@
         })(window,document,'script','dataLayer',{{ site.gtm_id | jsonify }});</script>
         <!-- End Google Tag Manager -->
         {%- endif %}
-        {% seo title=false %}
+        {% comment %}jekyll-seo-tag HTML-escapes the title into its JSON-LD (a title with "&" became "&amp;" in the headline); JSON needs the raw character.{% endcomment %}{% capture seo_tags %}{% seo title=false %}{% endcapture %}{% assign seo_parts = seo_tags | split: '<script type="application/ld+json">' %}{% if seo_parts.size == 2 %}{{ seo_parts[0] }}<script type="application/ld+json">{{ seo_parts[1] | replace: "&amp;", "&" }}{% else %}{{ seo_tags }}{% endif %}
         {% include structured-data.html %}
         {% if page.widget_page %}{% include widget-head.html %}{% endif %}
     </head>

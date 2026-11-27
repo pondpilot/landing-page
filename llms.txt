@@ -18,14 +18,18 @@ All three tools run on DuckDB compiled to WebAssembly, so processing happens on 
 - [PondPilot Widget](https://pondpilot.io/widget/): embeddable SQL runner.
 - [Pricing](https://pondpilot.io/pricing.md): free and open source, no paid tiers.
 - [Blog](https://pondpilot.io/blog/): release notes and feature deep-dives.
+- [Documentation](https://docs.pondpilot.io/): product docs and getting-started guides for the PondPilot App, FlowScope, the Widget, and the CORS proxy.
 - [Privacy Policy](https://pondpilot.io/privacy-policy/): how this site uses cookies and analytics.
 
 ## Comparisons and use cases
 
+- [Convert Stata (.dta) to CSV](https://pondpilot.io/formats/stata-to-csv-converter/)
+- [Open SPSS (.sav) files in the browser](https://pondpilot.io/formats/open-spss-files-in-browser/)
+- [Free SAS (.sas7bdat) file viewer](https://pondpilot.io/formats/sas-file-viewer-free/)
+- [DuckDB in the browser](https://pondpilot.io/duckdb/browser-tool/)
+- [DuckDB online playground](https://pondpilot.io/duckdb/online-playground/)
 - [DB Fiddle alternative](https://pondpilot.io/alternatives/db-fiddle-alternative/)
 - [Datasette alternative](https://pondpilot.io/alternatives/datasette-alternative/)
-- [DuckDB online playground](https://pondpilot.io/duckdb/online-playground/)
-- [Open Stata (.dta) files in the browser](https://pondpilot.io/formats/open-stata-files-in-browser/)
 - [SQL playground, no signup](https://pondpilot.io/use-cases/sql-playground-no-signup/)
 
 ## Source and profiles
