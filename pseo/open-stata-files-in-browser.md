@@ -33,7 +33,7 @@ Window functions, subqueries, CTEs — all available. It's often faster than Sta
 
 ## Convert to Other Formats
 
-Need to get that `.dta` into CSV for Excel? Or Parquet for your data pipeline? PondPilot lets you export to CSV, Parquet, JSON, or Excel with a couple of clicks. No scripting required.
+Need to get that `.dta` into CSV for Excel? Or Parquet for your data pipeline? PondPilot lets you export to CSV, Excel (.xlsx) or Parquet with a couple of clicks. No scripting required.
 
 ## Privacy by Design
 

@@ -13,7 +13,7 @@ IBM SPSS is expensive and you probably don't need a full license just to convert
 1. Open [app.pondpilot.io](https://app.pondpilot.io)
 2. Drop in your `.sav` file
 3. Preview variables and data
-4. Export to CSV (or Parquet, JSON, Excel)
+4. Export to CSV, or to Excel (.xlsx) or Parquet
 
 Under the hood, PondPilot uses [duckdb-read-stat](https://github.com/pondpilot/duckdb-read-stat) to parse SPSS files via WebAssembly. Variable labels and value labels are preserved during import.
 

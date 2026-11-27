@@ -6,7 +6,7 @@ permalink: /use-cases/open-source-sql-editor/
 ---
 
 
-PondPilot is fully open source under a permissive license. Every line of code is on [GitHub](https://github.com/pondpilot). No proprietary backend, no hidden telemetry, no "open core" bait-and-switch.
+PondPilot is fully open source under the AGPL-3.0 license. Every line of code is on [GitHub](https://github.com/pondpilot). No proprietary backend, no hidden telemetry, no "open core" bait-and-switch.
 
 ## Why Open Source Matters for a Data Tool
 

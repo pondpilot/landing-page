@@ -12,7 +12,7 @@ PondPilot is the Swiss Army knife of data format conversion. Open a file in any 
 
 **Open:** CSV, Parquet, JSON, Excel, DuckDB, SAS (.sas7bdat), Stata (.dta), SPSS (.sav)
 
-**Export to:** CSV, Parquet, JSON, Excel
+**Export to:** CSV, Excel (.xlsx), Parquet
 
 That's dozens of conversion paths in a single tool. Instead of googling "SAS to CSV converter" or "Excel to Parquet online" and finding a different sketchy website each time — use one tool that handles everything.
 

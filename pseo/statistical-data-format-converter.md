@@ -12,9 +12,9 @@ SAS, Stata, and SPSS have been the backbone of academic and government research 
 
 | Format | Extension | Read | Write To |
 |--------|-----------|------|----------|
-| SAS | .sas7bdat | ✅ | CSV, Parquet, JSON, Excel |
-| Stata | .dta | ✅ | CSV, Parquet, JSON, Excel |
-| SPSS | .sav | ✅ | CSV, Parquet, JSON, Excel |
+| SAS | .sas7bdat | ✅ | CSV, Excel (.xlsx), Parquet |
+| Stata | .dta | ✅ | CSV, Excel (.xlsx), Parquet |
+| SPSS | .sav | ✅ | CSV, Excel (.xlsx), Parquet |
 
 All three formats are parsed by [duckdb-read-stat](https://github.com/pondpilot/duckdb-read-stat), an open-source DuckDB extension maintained by the PondPilot team. It runs in WebAssembly — no server-side processing.
 
