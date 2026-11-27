@@ -21,7 +21,7 @@
 {%- endfor -%}
 {%- for g in hub_ctx.groups %}
 {%- if g.heading %}
-<h2>{{ g.heading }}</h2>
+<h2 class="hub-group">{{ g.heading }}</h2>
 {%- endif %}
 <ul class="hub-list">
     {%- for e in g.pages -%}

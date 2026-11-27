@@ -1884,6 +1884,11 @@ nav a:focus-visible::after {
     color: var(--gray);
 }
 
+/* Keeps a hyphenated word (air-gapped, DuckDB-WASM) on one line; used in _data/hubs.yml copy */
+.nowrap {
+    white-space: nowrap;
+}
+
 /* Guide links on product pages (/app/, /flowscope/): _includes/guide-links.html.
    Plain rows of links in an auto-filling grid; the column count follows the 900px measure. */
 .guides {

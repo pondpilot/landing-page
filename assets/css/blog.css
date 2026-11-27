@@ -487,6 +487,7 @@ header nav a.active::after {
 }
 
 .breadcrumbs a {
+    padding-block: 2px;
     color: var(--slate-600);
     text-decoration: underline;
     text-decoration-color: var(--slate-300);
@@ -512,6 +513,11 @@ header nav a.active::after {
 /* Category hub pages: a scannable list of guides, one line of description each */
 .blog-post-header h1 {
     text-wrap: balance;
+}
+
+/* With no meta line under it, the H1 sits centred in its card */
+.blog-post-header > h1:last-child {
+    margin-bottom: 0;
 }
 
 .blog-post-content .hub-intro {
@@ -557,4 +563,13 @@ header nav a.active::after {
 
 .blog-post-content h2 {
     text-wrap: balance;
+}
+
+/* On phones the H1 drops to 1.8rem (see the 768px block above); hub group headings step
+   down with it so they stay below the page title */
+@media (max-width: 768px) {
+    .blog-post-content h2.hub-group {
+        font-size: 1.4rem;
+        margin-top: 36px;
+    }
 }

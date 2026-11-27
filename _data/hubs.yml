@@ -4,7 +4,8 @@
 # A pSEO page appears in its hub by URL prefix; a page listed below gets the label, line and
 # group set here, and a new page with no entry is added to the end of the hub's last group
 # with its own title and description. "\_" is a no-break space: it keeps short words with
-# the next word so no line ends on "a", "to", "and" and the like.
+# the next word so no line ends on "a", "to", "and" and the like; a nowrap span keeps a
+# hyphenated word (air-gapped, DuckDB-WASM) on one line.
 
 # Pages left out of every hub and link block. Delete a line to list the page again.
 exclude:
@@ -96,8 +97,8 @@ hubs:
             label: "DuckDB browser tool"
             text: "Run DuckDB in\_your\_browser against your\_own local files."
           - url: /duckdb/wasm-sql-editor/
-            label: "DuckDB\u2011WASM SQL editor"
-            text: "A\_SQL editor on\_top of\_DuckDB\u2011WASM, with\_autocomplete and\_several files open at\_once."
+            label: "<span class=\"nowrap\">DuckDB-WASM</span> SQL editor"
+            text: "A\_SQL editor on\_top of\_<span class=\"nowrap\">DuckDB-WASM</span>, with\_autocomplete and\_several files open at\_once."
           - url: /duckdb/csv-query/
             label: "Query CSV with\_DuckDB"
             text: "Query CSV files with\_DuckDB SQL; DuckDB detects the\_delimiter, the\_header and\_the\_types."
@@ -135,8 +136,8 @@ hubs:
             label: "SQL playground, no signup"
             text: "A\_SQL playground that asks for\_no email and\_no account."
           - url: /use-cases/open-source-sql-editor/
-            label: "Open-source SQL editor"
-            text: "A\_SQL editor whose code you can read, self-host or\_contribute to."
+            label: "<span class=\"nowrap\">Open-source</span> SQL editor"
+            text: "A\_SQL editor whose code you can read, <span class=\"nowrap\">self-host</span> or\_contribute to."
       - heading: "Do a\_job"
         pages:
           - url: /use-cases/compare-datasets-in-browser/
@@ -156,7 +157,7 @@ hubs:
             text: "Analyze your\_own bank and\_card exports without\_handing them to\_a\_service."
           - url: /use-cases/survey-data-analysis/
             label: "Survey data analysis"
-            text: "Get response counts and\_cross-tabs from\_CSV or\_SPSS survey exports."
+            text: "Get response counts and\_<span class=\"nowrap\">cross-tabs</span> from\_CSV or\_SPSS survey exports."
           - url: /use-cases/healthcare-data-analysis-private/
             label: "Private healthcare data analysis"
             text: "Query clinical and\_claims files, including SAS and\_SPSS files, on\_your\_own workstation."
@@ -199,7 +200,7 @@ hubs:
             text: "Explore data in\_the\_browser without\_running a\_Python server."
           - url: /alternatives/dbt-lineage-alternative/
             label: "dbt lineage alternative"
-            text: "FlowScope draws column-level lineage from\_raw SQL, without\_a\_dbt project."
+            text: "FlowScope draws <span class=\"nowrap\">column-level</span> lineage from\_raw SQL, without\_a\_dbt project."
           - url: /alternatives/excel-alternative-for-data-analysis/
             label: "Excel alternative for\_data analysis"
             text: "Use SQL on\_CSV files when a\_dataset outgrows a\_spreadsheet."
@@ -223,10 +224,10 @@ hubs:
             text: "SQL on\_local files in\_the\_browser, free and\_without\_a\_cloud workspace."
           - url: /alternatives/observable-alternative/
             label: "Observable alternative"
-            text: "A\_SQL-first option for\_people who prefer SQL to\_JavaScript notebooks."
+            text: "A\_<span class=\"nowrap\">SQL-first</span> option for\_people who prefer SQL to\_JavaScript notebooks."
           - url: /alternatives/redash-alternative/
             label: "Redash alternative"
-            text: "Ad-hoc SQL on\_a\_file, with\_nothing to\_host."
+            text: "<span class=\"nowrap\">Ad-hoc</span> SQL on\_a\_file, with\_nothing to\_host."
           - url: /alternatives/superset-alternative/
             label: "Apache\_Superset alternative"
             text: "Query files with\_SQL without\_standing up a\_BI platform."
@@ -237,7 +238,7 @@ hubs:
       - heading: null
         pages:
           - url: /tools/column-level-lineage-tool/
-            label: "Column-level lineage tool"
+            label: "<span class=\"nowrap\">Column-level</span> lineage tool"
             text: "Trace which source columns feed each output column, with\_FlowScope."
           - url: /tools/sql-lineage-visualization/
             label: "SQL lineage visualization"
@@ -259,19 +260,19 @@ hubs:
         pages:
           - url: /audience/sql-tool-for-data-analysts/
             label: "Data analysts"
-            text: "Ad-hoc SQL on\_CSV and\_Parquet exports when the\_warehouse is slow or\_locked."
+            text: "<span class=\"nowrap\">Ad-hoc</span> SQL on\_CSV and\_Parquet exports when the\_warehouse is slow or\_locked."
           - url: /audience/data-tool-for-data-engineers/
             label: "Data engineers"
             text: "Check Parquet and\_Iceberg outputs without\_starting a\_cluster."
           - url: /audience/data-analysis-for-researchers/
             label: "Researchers"
-            text: "Analyze survey, SPSS and\_SAS data that a\_data-use agreement keeps off the\_cloud."
+            text: "Analyze survey, SPSS and\_SAS data that a\_<span class=\"nowrap\">data-use</span> agreement keeps off the\_cloud."
           - url: /audience/data-tools-for-journalists/
             label: "Journalists"
             text: "Work through sensitive datasets without\_uploading them to\_a\_cloud service."
           - url: /audience/data-tool-for-accountants/
             label: "Accountants"
-            text: "Reconcile journal-entry and\_ledger exports while client data stays on\_your\_machine."
+            text: "Reconcile <span class=\"nowrap\">journal-entry</span> and\_ledger exports while client data stays on\_your\_machine."
           - url: /audience/data-tool-for-compliance-analysts/
             label: "Compliance analysts"
             text: "Run SQL on\_access logs and\_transaction exports without\_uploading them to\_a\_SaaS tool."
@@ -303,20 +304,20 @@ hubs:
             label: "Private data exploration"
             text: "Explore medical, financial or\_HR data with\_SQL while it stays on\_your\_device."
           - url: /privacy/no-cloud-sql-editor/
-            label: "No-cloud SQL editor"
+            label: "<span class=\"nowrap\">No-cloud</span> SQL editor"
             text: "A\_SQL editor whose queries run in\_your\_browser and\_not on\_a\_cloud server."
           - url: /privacy/offline-data-analysis-tool/
             label: "Offline data analysis tool"
             text: "Install PondPilot as\_a\_PWA and\_run SQL with\_no internet connection."
           - url: /privacy/air-gapped-data-analysis/
-            label: "Air-gapped data analysis"
+            label: "<span class=\"nowrap\">Air-gapped</span> data analysis"
             text: "Run SQL on\_a\_machine with\_no network access, using the\_installed PWA."
           - url: /privacy/gdpr-compliant-data-tool/
-            label: "GDPR and\_client-side processing"
-            text: "Why processing in\_the\_browser keeps personal data off third-party servers."
+            label: "GDPR and\_<span class=\"nowrap\">client-side</span> processing"
+            text: "Why processing in\_the\_browser keeps personal data off <span class=\"nowrap\">third-party</span> servers."
           - url: /privacy/hipaa-compliant-data-tool/
-            label: "HIPAA-friendly data tool"
-            text: "How a\_tool that never receives your\_files fits into\_a\_HIPAA-compliant workflow."
+            label: "<span class=\"nowrap\">HIPAA-friendly</span> data tool"
+            text: "How a\_tool that never receives your\_files fits into\_a\_<span class=\"nowrap\">HIPAA-compliant</span> workflow."
 
 # Guide blocks on product pages (_includes/guide-links.html).
 product_blocks:
@@ -339,6 +340,6 @@ product_blocks:
   flowscope:
     - heading: "SQL lineage guides"
       links:
-        - { url: /tools/column-level-lineage-tool/, label: "Column-level lineage tool" }
+        - { url: /tools/column-level-lineage-tool/, label: "<span class=\"nowrap\">Column-level</span> lineage tool" }
         - { url: /tools/sql-lineage-visualization/, label: "SQL lineage visualization" }
         - { url: /alternatives/dbt-lineage-alternative/, label: "dbt lineage alternative: lineage from\_raw SQL" }
