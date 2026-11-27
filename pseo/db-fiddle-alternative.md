@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "DB Fiddle Alternative — SQL Playground Without Server"
+title: "DB Fiddle Alternative: SQL on Your Own Files"
+h1: "DB Fiddle Alternative — SQL Playground Without Server"
 description: "A DB Fiddle alternative that runs entirely in your browser. No shared server, no query limits. Query your own files with DuckDB SQL."
 permalink: /alternatives/db-fiddle-alternative/
 ---

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Convert Excel to Parquet Online — Free, In-Browser"
+title: "Excel to Parquet: Convert .xlsx Files Online"
+h1: "Convert Excel to Parquet Online — Free, In-Browser"
 description: "Convert Excel .xlsx files to Parquet directly in the browser. No uploads, no installs. Clean data with SQL before exporting."
 permalink: /formats/excel-to-parquet-converter/
 ---
