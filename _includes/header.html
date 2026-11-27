@@ -15,15 +15,15 @@
                     </button>
                     <span class="mobile-nav-label">Products</span>
                     <div id="products-menu" class="dropdown-menu" role="menu">
-                        <a href="/app" class="dropdown-item" role="menuitem">
+                        <a href="/app/" class="dropdown-item" role="menuitem">
                             <span class="dropdown-title">PondPilot</span>
                             <span class="dropdown-desc">SQL explorer for your data</span>
                         </a>
-                        <a href="/widget" class="dropdown-item" role="menuitem">
+                        <a href="/widget/" class="dropdown-item" role="menuitem">
                             <span class="dropdown-title">Widget</span>
                             <span class="dropdown-desc">Embeddable SQL runner</span>
                         </a>
-                        <a href="/flowscope" class="dropdown-item" role="menuitem">
+                        <a href="/flowscope/" class="dropdown-item" role="menuitem">
                             <span class="dropdown-title">FlowScope</span>
                             <span class="dropdown-desc">SQL lineage visualization</span>
                         </a>
@@ -32,10 +32,10 @@
                 {% if page.url == "/" %}
                 <li><a href="#principles">Principles</a></li>
                 {% else %}
-                <li><a href="/app#features">Features</a></li>
-                <li><a href="/app#demo">Demo</a></li>
+                <li><a href="/app/#features">Features</a></li>
+                <li><a href="/app/#demo">Demo</a></li>
                 {% endif %}
-                <li><a href="/blog" {% if page.url contains '/blog/' %}class="active"{% endif %}>Blog</a></li>
+                <li><a href="/blog/" {% if page.url contains '/blog/' %}class="active"{% endif %}>Blog</a></li>
                 <li class="social-icons">
                     <a href="https://github.com/pondpilot" class="icon-btn github-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </li>
