@@ -1,0 +1,49 @@
+{%- comment -%}
+  The link lists on a category hub page (hub_ctx from hub-context.html).
+  Listed pages come in the order set in _data/hubs.yml; pages under the hub's path that have no
+  entry there (new pages) join the end of the last group with their own title and description.
+  Pages in site.data.hubs.exclude, and entries whose page no longer exists, are skipped.
+{%- endcomment -%}
+{%- assign hub_excl = site.data.hubs.exclude -%}
+{%- assign hub_known = "" -%}
+{%- for g in hub_ctx.groups -%}{%- for e in g.pages -%}{%- assign hub_known = hub_known | append: "|" | append: e.url -%}{%- endfor -%}{%- endfor -%}
+{%- assign hub_known = hub_known | append: "|" -%}
+{%- assign hub_new = "" | split: "" -%}
+{%- assign hub_sorted = site.pages | sort: "title" -%}
+{%- for p in hub_sorted -%}
+  {%- assign p_head = p.url | slice: 0, hub_ctx.path.size -%}
+  {%- assign p_key = "|" | append: p.url | append: "|" -%}
+  {%- if p_head == hub_ctx.path and p.url != hub_ctx.path and p.title -%}
+    {%- unless hub_known contains p_key or hub_excl contains p.url or p.url contains ".md" -%}
+      {%- assign hub_new = hub_new | push: p -%}
+    {%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- for g in hub_ctx.groups %}
+{%- if g.heading %}
+<h2>{{ g.heading }}</h2>
+{%- endif %}
+<ul class="hub-list">
+    {%- for e in g.pages -%}
+    {%- unless hub_excl contains e.url -%}
+    {%- assign e_page = site.pages | where: "url", e.url | first -%}
+    {%- if e_page %}
+    <li>
+        <a href="{{ e.url }}">{{ e.label }}</a>
+        <p>{{ e.text }}</p>
+    </li>
+    {%- endif -%}
+    {%- endunless -%}
+    {%- endfor -%}
+    {%- if forloop.last -%}
+    {%- for p in hub_new %}
+    <li>
+        <a href="{{ p.url }}">{{ p.title }}</a>
+        {%- if p.description %}
+        <p>{{ p.description }}</p>
+        {%- endif %}
+    </li>
+    {%- endfor -%}
+    {%- endif %}
+</ul>
+{%- endfor %}

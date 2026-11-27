@@ -32,6 +32,16 @@ All three tools run on DuckDB compiled to WebAssembly, so processing happens on 
 - [Datasette alternative](https://pondpilot.io/alternatives/datasette-alternative/)
 - [SQL playground, no signup](https://pondpilot.io/use-cases/sql-playground-no-signup/)
 
+## Guides
+
+- [File formats](https://pondpilot.io/formats/): Step-by-step guides for opening and converting Stata, SAS, SPSS, Excel, CSV, JSON and Parquet files in your browser. PondPilot never uploads the file.
+- [DuckDB](https://pondpilot.io/duckdb/): Guides to using DuckDB through PondPilot: try the SQL dialect in the playground, use the SQL editor, and query CSV, JSON and Parquet files with DuckDB SQL.
+- [Use cases](https://pondpilot.io/use-cases/): Practical ways to use PondPilot: query CSV, JSON and Parquet files with SQL, browse Iceberg catalogs, compare datasets, clean data and analyze log exports.
+- [Alternatives](https://pondpilot.io/alternatives/): How PondPilot and FlowScope compare with DB Fiddle, Datasette, Metabase, Superset, Jupyter, Excel and other tools, and which jobs each one suits best.
+- [Tools](https://pondpilot.io/tools/): Tools from the PondPilot family: FlowScope for column-level SQL lineage, PondPilot App for SQL data quality checks, and Widget for runnable SQL in docs.
+- [By role](https://pondpilot.io/audience/): How analysts, data engineers, researchers, journalists, accountants, marketers and students use PondPilot to run SQL on files that stay on their machine.
+- [Private analysis](https://pondpilot.io/privacy/): How PondPilot keeps data analysis on your device: files are read in the browser and never uploaded, and the App also works offline as an installed PWA.
+
 ## Source and profiles
 
 - [GitHub organization](https://github.com/pondpilot)

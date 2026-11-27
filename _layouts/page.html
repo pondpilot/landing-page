@@ -6,23 +6,35 @@ h1: an optional front-matter key for pages whose on-page heading differs from
 their <title>; without it the heading is the title.
 A page listed in _data/format_cta.yml gets the "Open in PondPilot" button
 (_includes/format-cta.html) right after its first paragraph, the intro.
+A category hub (front matter `hub:`) lists its guides from _data/hubs.yml; any other
+page under a hub's path gets a breadcrumb and a link to its hub in its Related list.
 {%- endcomment -%}
 {%- assign format_cta = site.data.format_cta[page.url] %}
+{%- include hub-context.html %}
 
 <div class="blog-post-container">
     <div class="container-narrow">
+        {% include breadcrumbs.html %}
         <div class="blog-post-header">
             <h1>{{ page.h1 | default: page.title }}</h1>
         </div>
 
         <article class="blog-post-content">
+            {%- if page.hub %}
+            {%- if page.intro %}
+            <p class="hub-intro">{{ page.intro }}</p>
+            {%- endif %}
+            {% include hub-list.html %}
+            {%- else %}
             {%- if format_cta %}
             {%- assign intro = content | split: '</p>' | first %}
-            {{ intro }}</p>
+            {%- capture page_body %}{{ intro }}</p>
             {% include format-cta.html cta=format_cta %}
-            {{ content | remove_first: intro | remove_first: '</p>' }}
+            {{ content | remove_first: intro | remove_first: '</p>' }}{% endcapture %}
             {%- else %}
-            {{ content }}
+            {%- assign page_body = content %}
+            {%- endif %}
+            {% include related-hub-link.html html=page_body %}
             {%- endif %}
         </article>
 

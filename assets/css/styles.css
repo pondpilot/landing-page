@@ -1884,6 +1884,83 @@ nav a:focus-visible::after {
     color: var(--gray);
 }
 
+/* Guide links on product pages (/app/, /flowscope/): _includes/guide-links.html.
+   Plain rows of links in an auto-filling grid; the column count follows the 900px measure. */
+.guides {
+    padding: var(--space-20) 0;
+    background-color: white;
+}
+
+.guides h2 {
+    text-align: center;
+    font-size: clamp(1.75rem, 1rem + 3vw, 2.5rem);
+    margin-bottom: var(--space-10);
+    text-wrap: balance;
+}
+
+.guides h3 {
+    max-width: 900px;
+    margin: var(--space-12) auto var(--space-2);
+    font-size: 1.25rem;
+}
+
+.guide-links {
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+    column-gap: var(--space-8);
+}
+
+.guide-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    height: 100%;
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--slate-200);
+    color: var(--slate-800);
+    font-weight: 500;
+    text-wrap: pretty;
+    transition: var(--transition-fast);
+}
+
+.guide-links i {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    color: var(--primary);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.guide-links a:hover {
+    color: var(--primary);
+}
+
+.guide-links a:hover i {
+    transform: translateX(3px);
+}
+
+.guide-links a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Footer link columns on tablets and phones: at the site's existing 768px switch the columns
+   stop sitting beside the brand. They flow into as many 9rem tracks as fit (two at 390px, four
+   at 768px) instead of one long stack. */
+@media (max-width: 768px) {
+    footer .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+        gap: var(--space-8) var(--space-6);
+        width: 100%;
+    }
+}
+
 /* CTA section */
 .cta {
     padding: var(--space-24) 0;

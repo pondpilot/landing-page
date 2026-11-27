@@ -1,0 +1,15 @@
+{%- comment -%} Visible breadcrumb for hub and pSEO pages: Home › Hub › Page. Needs hub-context.html first.
+  A div with role="navigation", not <nav>: the site styles bare nav elements as the main menu. {%- endcomment -%}
+{%- if hub_ctx -%}
+<div class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        {%- if hub_self %}
+        <li aria-current="page">{{ hub_ctx.name }}</li>
+        {%- else %}
+        <li><a href="{{ hub_ctx.path }}">{{ hub_ctx.name }}</a></li>
+        <li aria-current="page">{{ hub_crumb }}</li>
+        {%- endif %}
+    </ol>
+</div>
+{%- endif -%}
