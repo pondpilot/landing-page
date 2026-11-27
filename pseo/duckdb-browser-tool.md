@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "DuckDB Browser Tool — Run DuckDB in Your Browser"
-h1: "Run DuckDB in your browser"
+h1: "Run DuckDB in your browser"
 description: "Run DuckDB in your browser with PondPilot. Query local CSV, Parquet, JSON and Excel files with DuckDB SQL through DuckDB-WASM. There is nothing to install."
 permalink: /duckdb/browser-tool/
 ---

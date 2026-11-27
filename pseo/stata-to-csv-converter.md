@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Convert Stata .dta to CSV Online — Free, No License"
+h1: "Convert Stata .dta to CSV Online — Free, No License"
 description: "Convert Stata .dta files to CSV or Excel (.xlsx) in the browser. No Stata license needed. The file stays on your machine. Free, powered by DuckDB-WASM."
 permalink: /formats/stata-to-csv-converter/
 ---
