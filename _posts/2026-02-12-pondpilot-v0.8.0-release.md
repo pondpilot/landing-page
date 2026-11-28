@@ -3,6 +3,7 @@ layout: post
 title: "PondPilot v0.8.0: Charts, AI Assistant, and Monaco Editor"
 date: 2026-02-23
 author: "Polly"
+description: "PondPilot v0.8.0 adds interactive charts, a built-in AI assistant, the Monaco SQL editor, script version history, and native SAS, SPSS and Stata file support."
 image: "/blog/images/v0.8.0.webp"
 ---
 

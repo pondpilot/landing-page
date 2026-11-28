@@ -1,12 +1,13 @@
 ---
 layout: page
 title: "DuckDB Browser Tool — Run DuckDB in Your Browser"
-description: "Use DuckDB directly in your browser. Query CSV, Parquet, JSON files with SQL. No installation, powered by DuckDB WASM."
+h1: "Run DuckDB in your browser"
+description: "Run DuckDB in your browser with PondPilot. Query local CSV, Parquet, JSON and Excel files with DuckDB SQL through DuckDB-WASM. There is nothing to install."
 permalink: /duckdb/browser-tool/
 ---
 
 
-DuckDB is a fast, embeddable analytical database. PondPilot puts it in your browser — no installation, no terminal, no Python. Just open a tab and start querying.
+DuckDB is a fast analytical database that can run inside a browser tab as WebAssembly. PondPilot gives you DuckDB in your browser with a SQL editor around it, so you can query the CSV, Parquet, JSON and Excel files on your machine without installing anything. If you only want to try the SQL dialect, start with the [DuckDB online playground](/duckdb/online-playground/).
 
 ## DuckDB WASM, Ready to Use
 
@@ -46,6 +47,17 @@ DuckDB natively reads CSV, Parquet, JSON, and its own `.duckdb` format. PondPilo
 
 Use DuckDB CLI or Python for heavy lifting, PondPilot for quick visual exploration and ad-hoc queries. They speak the same SQL dialect, so queries are portable between them.
 
+## FAQ
+
+**Can DuckDB run in a browser?**
+Yes. DuckDB-WASM is DuckDB compiled to WebAssembly, and PondPilot runs it inside a browser tab. Nothing is installed on your machine.
+
+**Which files can I query with DuckDB in the browser?**
+PondPilot opens local CSV, Parquet, JSON, Excel (.xlsx) and DuckDB database files, as well as Stata, SAS and SPSS files. It also queries remote files over HTTP(S) and S3, and Apache Iceberg catalogs.
+
+**Does my data leave my machine?**
+No. DuckDB-WASM reads and processes your files in the browser, on your own device, and the App never uploads them.
+
 ## Try DuckDB in Your Browser
 
 [Open PondPilot](https://app.pondpilot.io) — no signup, free, open source.
@@ -54,6 +66,39 @@ Use DuckDB CLI or Python for heavy lifting, PondPilot for quick visual explorati
 
 ## Related
 
-- [DuckDB Online Playground](/duckdb/online-playground/)
+- [DuckDB online playground](/duckdb/online-playground/)
 - [DuckDB WASM SQL Editor](/duckdb/wasm-sql-editor/)
 - [DuckDB CSV Query](/duckdb/csv-query/)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can DuckDB run in a browser?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. DuckDB-WASM is DuckDB compiled to WebAssembly, and PondPilot runs it inside a browser tab. Nothing is installed on your machine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which files can I query with DuckDB in the browser?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PondPilot opens local CSV, Parquet, JSON, Excel (.xlsx) and DuckDB database files, as well as Stata, SAS and SPSS files. It also queries remote files over HTTP(S) and S3, and Apache Iceberg catalogs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my data leave my machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. DuckDB-WASM reads and processes your files in the browser, on your own device, and the App never uploads them."
+      }
+    }
+  ]
+}
+</script>

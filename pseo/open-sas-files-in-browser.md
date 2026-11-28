@@ -33,7 +33,7 @@ Joins, window functions, CTEs — everything works. It's a proper analytics engi
 
 ## Export to Any Format
 
-Once you've opened your SAS file, you can export it to CSV, Parquet, JSON, or Excel. Need to convert a batch of `.sas7bdat` files to Parquet for a data lake migration? PondPilot handles that without writing a single line of Python.
+Once you've opened your SAS file, you can export it to CSV, Excel (.xlsx) or Parquet. Need to convert a batch of `.sas7bdat` files to Parquet for a data lake migration? PondPilot handles that without writing a single line of Python.
 
 ## Why Not Just Use Python?
 

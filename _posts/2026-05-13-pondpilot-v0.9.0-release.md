@@ -3,6 +3,7 @@ layout: post
 title: "PondPilot v0.9.0: MotherDuck, DuckLake, Quack, and SQL Linting"
 date: 2026-05-13
 author: "Polly"
+description: "PondPilot v0.9.0 connects to MotherDuck, DuckLake catalogs and Quack servers, and adds SQL linting in the editor with Fix and Fix All actions from FlowScope."
 image: "/blog/images/v0.9.0.webp"
 ---
 

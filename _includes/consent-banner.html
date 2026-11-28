@@ -16,18 +16,22 @@ Cookie consent bar. Ported from the sister sites' CookieConsent component
 - Rendered only when GTM is on (see default.html); styles in styles.css
   under "Cookie consent".
 
-The banner copy lives in the four assigns below. Change the words here only.
+The banner copy lives in the five assigns below. Change the words here only.
+cc_text_short replaces cc_text when the bar is 480px wide or narrower (a
+phone), where the long sentence took three lines (styles.css, "Cookie consent").
 Each &nbsp; keeps a short word on the same line as the next one, so no line
 ends on "with" or "if" and "Google Analytics" never splits.
 {%- endcomment -%}
 {%- assign cc_text = "We measure visits with&nbsp;Google&nbsp;Analytics, which sets cookies only if&nbsp;you accept and&nbsp;runs cookieless if&nbsp;you decline." -%}
+{%- assign cc_text_short = "Google&nbsp;Analytics sets cookies only if&nbsp;you&nbsp;accept." -%}
 {%- assign cc_link = "Privacy policy" -%}
 {%- assign cc_accept = "Accept" -%}
 {%- assign cc_decline = "Decline" -%}
 <div id="cookie-consent" class="cookie-consent cookie-consent--hidden" role="region" aria-label="Cookie consent" hidden inert>
     <div class="cookie-consent-inner">
         <p class="cookie-consent-text">
-            {{ cc_text }}
+            <span class="cookie-consent-long">{{ cc_text }}</span>
+            <span class="cookie-consent-short">{{ cc_text_short }}</span>
             <a href="/privacy-policy/#cookies" class="cookie-consent-link">{{ cc_link }}</a>
         </p>
         <div class="cookie-consent-actions">

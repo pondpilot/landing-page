@@ -39,7 +39,7 @@ DuckDB's engine is efficient with memory. It can handle SAS files that would mak
 
 ## Beyond CSV
 
-While you're at it, you can also export to Parquet (better compression, typed columns), JSON, or Excel. SAS to Parquet is particularly useful if you're migrating data into a modern analytics stack.
+While you're at it, you can also export to Excel (.xlsx) or Parquet (better compression, typed columns). SAS to Parquet is particularly useful if you're migrating data into a modern analytics stack.
 
 ## Get Started
 

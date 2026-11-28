@@ -12,9 +12,9 @@ PondPilot is a many-to-many data format converter that runs entirely in your bro
 
 **Import:** CSV, Parquet, JSON, Excel (.xlsx), DuckDB, SAS (.sas7bdat), Stata (.dta), SPSS (.sav)
 
-**Export:** CSV, Parquet, JSON, Excel
+**Export:** CSV, Excel (.xlsx), Parquet
 
-That's a lot of conversion paths. SAS to Parquet? Done. SPSS to CSV? Easy. Excel to JSON? Sure. Every combination works because PondPilot loads any input format into DuckDB's SQL engine and writes any output format from there.
+That's a lot of conversion paths. SAS to Parquet? Done. SPSS to CSV? Easy. Excel to CSV? Sure. Every combination works because PondPilot loads any input format into DuckDB's SQL engine and writes any output format from there.
 
 ## How It Works
 

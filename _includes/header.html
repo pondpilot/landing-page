@@ -31,10 +31,14 @@
                 </li>
                 {% if page.url == "/" %}
                 <li><a href="#principles">Principles</a></li>
+                {% elsif page.url == "/flowscope/" %}
+                {%- comment -%}FlowScope has its own features section and no demo section.{%- endcomment %}
+                <li><a href="#features">Features</a></li>
                 {% else %}
                 <li><a href="/app/#features">Features</a></li>
                 <li><a href="/app/#demo">Demo</a></li>
                 {% endif %}
+                <li><a href="https://docs.pondpilot.io/">Docs</a></li>
                 <li><a href="/blog/" {% if page.url contains '/blog/' %}class="active"{% endif %}>Blog</a></li>
                 <li class="social-icons">
                     <a href="https://github.com/pondpilot" class="icon-btn github-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>

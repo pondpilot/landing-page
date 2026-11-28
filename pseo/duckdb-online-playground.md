@@ -1,12 +1,13 @@
 ---
 layout: page
-title: "DuckDB Online Playground — Try DuckDB Instantly"
-description: "Try DuckDB SQL in your browser without installing anything. Load your own data, write queries, see results. Free and open source."
+title: "DuckDB Online Playground: Run SQL, No Install"
+h1: "DuckDB online playground"
+description: "Try DuckDB online. Write DuckDB SQL and see the results without installing anything, on your own CSV, Parquet or JSON file. Free and open source."
 permalink: /duckdb/online-playground/
 ---
 
 
-Want to try DuckDB without installing it? PondPilot is a polished, browser-based DuckDB playground where you can write SQL against your own data — instantly.
+Want to try DuckDB without installing it? PondPilot is an online DuckDB playground: open it, write DuckDB SQL and see the results straight away. You can practice the SQL dialect on your own CSV, Parquet or JSON file. If you want DuckDB for everyday work on local files, see [DuckDB in the browser](/duckdb/browser-tool/).
 
 ## Faster Than Installing DuckDB
 
@@ -76,7 +77,7 @@ No. Everything runs locally in your browser tab; there's no server to send data 
 
 ## Related
 
-- [DuckDB Browser Tool](/duckdb/browser-tool/)
+- [DuckDB in the browser](/duckdb/browser-tool/)
 - [SQL Playground No Signup](/use-cases/sql-playground-no-signup/)
 - [DuckDB WASM SQL Editor](/duckdb/wasm-sql-editor/)
 
@@ -90,7 +91,7 @@ No. Everything runs locally in your browser tab; there's no server to send data 
       "name": "Do I need to install anything?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. PondPilot runs DuckDB-WASM in your browser — open app.pondpilot.io and you're in a DuckDB SQL editor in seconds, with no install and no signup."
+        "text": "No. PondPilot runs DuckDB-WASM in your browser — open app.pondpilot.io and you’re in a DuckDB SQL editor in seconds, with no install and no signup."
       }
     },
     {
@@ -114,7 +115,7 @@ No. Everything runs locally in your browser tab; there's no server to send data 
       "name": "Does my data leave my machine?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Everything runs locally in your browser tab; there's no server to send data to."
+        "text": "No. Everything runs locally in your browser tab; there’s no server to send data to."
       }
     }
   ]

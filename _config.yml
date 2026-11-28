@@ -9,6 +9,14 @@ baseurl: ""
 # build runs with JEKYLL_ENV=production (GitHub Pages does). Empty = no tag.
 gtm_id: "GTM-53K78LBT"
 
+# pricing.md has no front matter: it is served raw at /pricing.md for AI agents
+# (llms.txt links it) and rendered at /pricing/ by GitHub Pages' default
+# plugins, which take the page title from its "# Pricing" heading. The page
+# layout prints that title as the <h1>, so strip the heading from the rendered
+# body; otherwise /pricing/ shows two <h1>s. The raw .md keeps its heading.
+titles_from_headings:
+  strip_title: true
+
 # Build settings
 markdown: kramdown
 highlighter: rouge

@@ -645,6 +645,60 @@ nav ul li {
     box-shadow: var(--shadow-md);
 }
 
+/* Pill CTA: the buttons that open the App (homepage hero, App card and
+   closing band, the /formats/ pages). Flat, same blue as .primary, same
+   pill radius as the cookie bar buttons. On dark surfaces the card and band
+   rules keep their white fill and only take the pill shape. The label may wrap on a phone;
+   balance keeps its two lines about the same length. */
+.btn-pill {
+    border-radius: var(--radius-full);
+    min-height: 48px;
+    text-wrap: balance;
+}
+
+.btn.primary.btn-pill {
+    background: var(--primary);
+    box-shadow: none;
+}
+
+.btn.primary.btn-pill:hover {
+    background: var(--primary-dark);
+    transform: none;
+    box-shadow: none;
+}
+
+.family-hero .hero-buttons {
+    margin-bottom: var(--space-3);
+}
+
+.hero-content .hero-note {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--slate-600);
+}
+
+/* "Open in PondPilot" block under the intro of a /formats/ page
+   (_includes/format-cta.html). Sits in the article's text column. */
+.format-cta {
+    margin: 0 0 var(--space-6);
+}
+
+.blog-post-content .format-cta .btn-pill {
+    max-width: 100%;
+    padding: 12px 24px; /* 24px sides keep the longest label (.sas7bdat) on one line at 390px */
+    color: var(--white);
+    text-decoration: none;
+    line-height: 1.35;
+}
+
+.blog-post-content .format-cta .format-cta-note {
+    margin: var(--space-3) 0 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--slate-600);
+    text-wrap: pretty;
+}
+
 /* Focus-visible styles for keyboard accessibility */
 .btn:focus-visible,
 .nav-cta:focus-visible,
@@ -1488,6 +1542,29 @@ nav a:focus-visible::after {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
+/* Text link next to a card's button ("See App features and demo") */
+.product-actions {
+    align-items: center;
+}
+
+.product-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+.product-card.featured .product-link {
+    color: var(--white);
+    text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+.product-card.featured .product-link:hover {
+    color: var(--white);
+    text-decoration-color: currentColor;
+}
+
 /* Email signup for FlowScope */
 .notify-form {
     display: flex;
@@ -1558,6 +1635,10 @@ nav a:focus-visible::after {
 
 .start-option li {
     margin-bottom: 10px;
+}
+
+.start-option p + .btn {
+    margin-top: var(--space-4);
 }
 
 .code-block {
@@ -2060,6 +2141,26 @@ footer {
     line-height: 1.5;
     color: var(--slate-700);
     text-wrap: pretty;
+}
+
+/* The bar is its own container: at 480px wide or less (a phone) it shows the
+   short sentence, so the text takes one or two lines instead of three. */
+.cookie-consent {
+    container-type: inline-size;
+}
+
+.cookie-consent-short {
+    display: none;
+}
+
+@container (max-width: 480px) {
+    .cookie-consent-long {
+        display: none;
+    }
+
+    .cookie-consent-short {
+        display: inline;
+    }
 }
 
 .cookie-consent-link {

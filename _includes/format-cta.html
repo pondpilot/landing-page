@@ -1,0 +1,21 @@
+{%- comment -%}
+"Open in PondPilot" button for the /formats/ pages. _layouts/page.html puts it
+under the intro paragraph of every page listed in _data/format_cta.yml.
+Pass cta= that page's entry: { ext: ".dta" } or { generic: true }.
+
+Each &nbsp; keeps a short word on the line of the word after it, so no line
+ends on "your", "the", "in" or "and". A file extension never splits.
+assets/js/analytics.js reports clicks here as cta_app_click with
+location "format_cta" (from the section id).
+{%- endcomment -%}
+{%- if include.cta.ext -%}
+{%- capture cta_label -%}Open your&nbsp;{{ include.cta.ext }} file in&nbsp;PondPilot{%- endcapture -%}
+{%- assign cta_note = "Free, no&nbsp;signup. PondPilot reads the&nbsp;file in&nbsp;your&nbsp;browser and&nbsp;never uploads&nbsp;it." -%}
+{%- else -%}
+{%- assign cta_label = "Open your&nbsp;file in&nbsp;PondPilot" -%}
+{%- assign cta_note = "Free, no&nbsp;signup. PondPilot reads your files in&nbsp;your&nbsp;browser and&nbsp;never uploads&nbsp;them." -%}
+{%- endif -%}
+<section id="format-cta" class="format-cta">
+    <a href="https://app.pondpilot.io" class="btn primary btn-pill">{{ cta_label }}</a>
+    <p class="format-cta-note">{{ cta_note }}</p>
+</section>

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Convert SAS to Parquet Online — Modernize Legacy Data"
+title: "SAS to Parquet: Convert .sas7bdat Files Online"
+h1: "Convert SAS to Parquet Online — Modernize Legacy Data"
 description: "Convert .sas7bdat files to Parquet in the browser. No SAS license, no servers. Migrate legacy SAS data to a modern columnar format."
 permalink: /formats/sas-to-parquet-converter/
 ---
