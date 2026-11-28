@@ -1,0 +1,19 @@
+{%- comment -%}
+  Renders the page body ({{ include.html }}) and adds a link to the page's own category hub as the
+  last item of its "## Related" list. A page without that list gets the link as its own line.
+{%- endcomment -%}
+{%- assign rh_html = include.html -%}
+{%- if hub_ctx and hub_self == false -%}
+  {%- capture rh_item -%}<li class="related-hub"><a href="{{ hub_ctx.path }}">{{ hub_ctx.related_label }}</a></li>{%- endcapture -%}
+  {%- assign rh_parts = rh_html | split: '<h2 id="related">' -%}
+  {%- if rh_parts.size == 2 and rh_parts[1] contains '</ul>' -%}
+    {%- capture rh_close -%}{{ rh_item }}</ul>{%- endcapture -%}
+    {%- assign rh_tail = rh_parts[1] | replace_first: '</ul>', rh_close -%}
+    {{- rh_parts[0] -}}<h2 id="related">{{- rh_tail -}}
+  {%- else -%}
+    {{- rh_html -}}
+<p class="related-hub"><a href="{{ hub_ctx.path }}">{{ hub_ctx.related_label }}</a></p>
+  {%- endif -%}
+{%- else -%}
+  {{- rh_html -}}
+{%- endif -%}

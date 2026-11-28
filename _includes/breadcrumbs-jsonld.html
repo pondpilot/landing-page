@@ -1,0 +1,17 @@
+{%- comment -%} BreadcrumbList JSON-LD for hub and pSEO pages (Home › Hub › Page). {%- endcomment -%}
+{%- include hub-context.html -%}
+{%- if hub_ctx %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": {{ hub_ctx.name | strip_html | replace: " ", " " | jsonify }}, "item": "{{ site.url }}{{ hub_ctx.path }}" }
+    {%- unless hub_self -%},
+    { "@type": "ListItem", "position": 3, "name": {{ hub_crumb | strip_html | replace: " ", " " | replace: "‑", "-" | jsonify }}, "item": "{{ site.url }}{{ page.url }}" }
+    {%- endunless %}
+  ]
+}
+</script>
+{%- endif -%}

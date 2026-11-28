@@ -1,0 +1,19 @@
+{%- comment -%}
+  Finds the category hub that owns the current page (by URL prefix, from _data/hubs.yml).
+  Sets: hub_ctx (the hub, or nil), hub_self (true on the hub page itself) and hub_crumb
+  (the page's name in the breadcrumb: its hub label, else its title).
+{%- endcomment -%}
+{%- assign hub_ctx = nil -%}
+{%- assign hub_self = false -%}
+{%- assign hub_crumb = page.title -%}
+{%- for h in site.data.hubs.hubs -%}
+  {%- assign url_head = page.url | slice: 0, h.path.size -%}
+  {%- if url_head == h.path -%}
+    {%- assign hub_ctx = h -%}
+    {%- if page.url == h.path -%}{%- assign hub_self = true -%}{%- endif -%}
+    {%- for g in h.groups -%}{%- for e in g.pages -%}
+      {%- if e.url == page.url -%}{%- assign hub_crumb = e.label -%}{%- endif -%}
+    {%- endfor -%}{%- endfor -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}

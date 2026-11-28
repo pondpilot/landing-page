@@ -25,6 +25,15 @@
                         <li><a href="/app/#features">Features</a></li>
                         <li><a href="/app/#demo">Demo</a></li>
                         <li><a href="/blog/">Blog</a></li>
+                        <li><a href="https://docs.pondpilot.io/">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>{{ site.data.hubs.footer_heading }}</h3>
+                    <ul>
+                        {%- for h in site.data.hubs.hubs %}
+                        <li><a href="{{ h.path }}">{{ h.name }}</a></li>
+                        {%- endfor %}
                     </ul>
                 </div>
                 <div class="footer-col">

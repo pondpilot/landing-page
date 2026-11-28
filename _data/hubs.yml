@@ -1,0 +1,345 @@
+# Category hubs: /formats/, /duckdb/, /use-cases/, /alternatives/, /tools/, /audience/, /privacy/.
+# The hub pages (hubs/*.md), the footer "Guides" column, the guide blocks on /app/ and
+# /flowscope/, each pSEO page's breadcrumb and its "Related" hub link all read this file.
+# A pSEO page appears in its hub by URL prefix; a page listed below gets the label, line and
+# group set here, and a new page with no entry is added to the end of the hub's last group
+# with its own title and description. "\_" is a no-break space: it keeps short words with
+# the next word so no line ends on "a", "to", "and" and the like; a nowrap span keeps a
+# hyphenated word (air-gapped, DuckDB-WASM) on one line.
+
+# Pages left out of every hub and link block. Delete a line to list the page again.
+exclude:
+  - /formats/sqlite-viewer-online/                     # SQLite files are not in the App's supported list yet
+  - /tools/data-profiling-tool/                        # Sonar, not in production
+  - /tools/column-statistics-tool/                     # Sonar, not in production
+  - /use-cases/exploratory-data-analysis-browser/      # Sonar, not in production
+  - /tools/cli-duckdb-client/                          # Quack CLI
+  - /tools/terminal-sql-client/                        # Quack CLI
+  - /formats/csv-to-json-converter/                    # the App has no JSON export
+  - /formats/parquet-to-json-converter/                # the App has no JSON export
+  - /formats/arrow-feather-viewer/                     # .arrow and .feather are not in the App's supported list
+  - /formats/orc-viewer-online/                        # .orc is not in the App's supported list
+
+footer_heading: "Guides"
+
+hubs:
+  - path: /formats/
+    name: "File formats"          # footer link and breadcrumb
+    related_label: "All file format guides"   # link added to each page's "Related" list
+    groups:
+      - heading: "Stata, SAS and\_SPSS files"
+        pages:
+          - url: /formats/stata-to-csv-converter/
+            label: "Convert Stata .dta to\_CSV"
+            text: "Convert a\_Stata .dta file to\_CSV or\_Excel without\_a\_Stata license."
+          - url: /formats/open-stata-files-in-browser/
+            label: "Open Stata .dta files"
+            text: "View a\_Stata .dta file and\_query it with\_SQL when you don't have Stata."
+          - url: /formats/open-spss-files-in-browser/
+            label: "Open SPSS .sav files"
+            text: "Open a\_.sav file online, browse its\_rows and\_query it with\_SQL."
+          - url: /formats/spss-to-csv-converter/
+            label: "Convert SPSS .sav to\_CSV"
+            text: "Convert an\_SPSS .sav file to\_CSV in\_the\_browser."
+          - url: /formats/sas-file-viewer-free/
+            label: "Free SAS file viewer"
+            text: "View a\_.sas7bdat file in\_a\_browser tab, with\_nothing to\_download."
+          - url: /formats/open-sas-files-in-browser/
+            label: "Open SAS files"
+            text: "Open a\_.sas7bdat file and\_query it with\_SQL, without\_a\_SAS license."
+          - url: /formats/sas-to-csv-converter/
+            label: "Convert SAS to\_CSV"
+            text: "Export a\_.sas7bdat file to\_CSV, and\_filter it with\_SQL first if\_you need only part of\_it."
+          - url: /formats/sas-to-parquet-converter/
+            label: "Convert SAS to\_Parquet"
+            text: "Move legacy .sas7bdat data into\_Parquet for\_a\_current data stack."
+          - url: /formats/statistical-data-format-converter/
+            label: "Statistical format converter"
+            text: "One page for\_all three: read SAS, Stata and\_SPSS files and\_export them to\_CSV, Excel or\_Parquet."
+      - heading: "Excel, CSV, JSON and\_Parquet files"
+        pages:
+          - url: /formats/excel-to-csv-converter/
+            label: "Convert Excel to\_CSV"
+            text: "Each worksheet in\_an\_.xlsx file opens as\_its\_own table, ready to\_export as\_CSV."
+          - url: /formats/excel-to-parquet-converter/
+            label: "Convert Excel to\_Parquet"
+            text: "Convert an\_.xlsx file to\_Parquet and\_fix the\_column types with\_SQL on\_the\_way."
+          - url: /formats/csv-to-parquet-converter/
+            label: "Convert CSV to\_Parquet"
+            text: "Convert a\_CSV file to\_typed, compressed Parquet."
+          - url: /formats/json-to-csv-converter/
+            label: "Convert JSON to\_CSV"
+            text: "Flatten nested JSON with\_SQL and\_export a\_flat CSV file."
+          - url: /formats/json-to-parquet-converter/
+            label: "Convert JSON to\_Parquet"
+            text: "Flatten JSON, set the\_column types and\_export Parquet."
+          - url: /formats/parquet-viewer-online/
+            label: "Parquet viewer online"
+            text: "Browse a\_Parquet file's schema, preview its\_rows and\_run SQL on\_it."
+      - heading: "Any supported format"
+        pages:
+          - url: /formats/data-format-converter-browser/
+            label: "Data format converter"
+            text: "Open a\_CSV, Parquet, JSON, Excel, DuckDB, SAS, Stata or\_SPSS file and\_export it as\_CSV, Excel or\_Parquet."
+          - url: /formats/convert-data-formats-browser/
+            label: "How conversion works"
+            text: "PondPilot loads a\_file into\_DuckDB, you reshape it with\_SQL, and\_you export the\_result."
+  - path: /duckdb/
+    name: "DuckDB"          # footer link and breadcrumb
+    related_label: "DuckDB guides"   # link added to each page's "Related" list
+    groups:
+      - heading: null
+        pages:
+          - url: /duckdb/online-playground/
+            label: "DuckDB online playground"
+            text: "Try DuckDB SQL online without\_installing anything."
+          - url: /duckdb/browser-tool/
+            label: "DuckDB browser tool"
+            text: "Run DuckDB in\_your\_browser against your\_own local files."
+          - url: /duckdb/wasm-sql-editor/
+            label: "<span class=\"nowrap\">DuckDB-WASM</span> SQL editor"
+            text: "A\_SQL editor on\_top of\_<span class=\"nowrap\">DuckDB-WASM</span>, with\_autocomplete and\_several files open at\_once."
+          - url: /duckdb/csv-query/
+            label: "Query CSV with\_DuckDB"
+            text: "Query CSV files with\_DuckDB SQL; DuckDB detects the\_delimiter, the\_header and\_the\_types."
+          - url: /duckdb/json-query/
+            label: "Query JSON with\_DuckDB"
+            text: "Query JSON with\_SQL, flatten nested data and\_join it with\_CSV."
+          - url: /duckdb/parquet-viewer/
+            label: "DuckDB Parquet viewer"
+            text: "Inspect a\_Parquet file's schema and\_query it with\_DuckDB."
+  - path: /use-cases/
+    name: "Use cases"          # footer link and breadcrumb
+    related_label: "Use cases"   # link added to each page's "Related" list
+    groups:
+      - heading: "Query a\_file"
+        pages:
+          - url: /use-cases/analyze-csv-in-browser/
+            label: "Analyze CSV in\_the\_browser"
+            text: "Add a\_CSV file and\_query it with\_SQL straight away."
+          - url: /use-cases/csv-to-sql-online/
+            label: "CSV to\_SQL online"
+            text: "Treat a\_CSV file as\_a\_SQL table, with\_no import step."
+          - url: /use-cases/explore-json-data-locally/
+            label: "Explore JSON data locally"
+            text: "Query JSON files with\_SQL and\_flatten nested structures."
+          - url: /use-cases/query-parquet-files-online/
+            label: "Query Parquet files online"
+            text: "Run SQL on\_Parquet files without\_Python or\_Spark."
+          - url: /use-cases/parquet-to-csv-converter/
+            label: "Parquet to\_CSV converter"
+            text: "Filter a\_Parquet file with\_SQL and\_export the\_result as\_CSV."
+          - url: /use-cases/browser-sql-analytics/
+            label: "Browser SQL analytics"
+            text: "Run analytical SQL on\_CSV, Parquet and\_JSON files with\_nothing installed."
+          - url: /use-cases/sql-playground-no-signup/
+            label: "SQL playground, no signup"
+            text: "A\_SQL playground that asks for\_no email and\_no account."
+          - url: /use-cases/open-source-sql-editor/
+            label: "<span class=\"nowrap\">Open-source</span> SQL editor"
+            text: "A\_SQL editor whose code you can read, <span class=\"nowrap\">self-host</span> or\_contribute to."
+      - heading: "Do a\_job"
+        pages:
+          - url: /use-cases/compare-datasets-in-browser/
+            label: "Compare datasets"
+            text: "Compare two datasets to\_find the\_rows that changed, went missing or\_were added."
+          - url: /use-cases/sql-data-cleaning-tool/
+            label: "SQL data cleaning"
+            text: "Remove duplicates, fix formats and\_filter out junk rows with\_SQL."
+          - url: /use-cases/log-analysis-with-sql/
+            label: "Log analysis with\_SQL"
+            text: "Count, group and\_filter JSON or\_CSV log exports with\_SQL."
+          - url: /use-cases/bank-statement-analysis/
+            label: "Bank statement analysis"
+            text: "Categorize transactions from\_a\_bank CSV export and\_total them by\_month."
+          - url: /use-cases/personal-finance-data-analysis/
+            label: "Personal finance analysis"
+            text: "Analyze your\_own bank and\_card exports without\_handing them to\_a\_service."
+          - url: /use-cases/survey-data-analysis/
+            label: "Survey data analysis"
+            text: "Get response counts and\_<span class=\"nowrap\">cross-tabs</span> from\_CSV or\_SPSS survey exports."
+          - url: /use-cases/healthcare-data-analysis-private/
+            label: "Private healthcare data analysis"
+            text: "Query clinical and\_claims files, including SAS and\_SPSS files, on\_your\_own workstation."
+      - heading: "Apache\_Iceberg"
+        pages:
+          - url: /use-cases/browse-iceberg-tables-online/
+            label: "Browse Iceberg tables online"
+            text: "Explore Apache\_Iceberg tables from\_a\_browser tab."
+          - url: /use-cases/iceberg-browser-client/
+            label: "Iceberg browser client"
+            text: "Connect to\_an\_Iceberg REST catalog and\_run SQL on\_its\_tables."
+          - url: /use-cases/iceberg-rest-catalog-viewer/
+            label: "Iceberg REST catalog viewer"
+            text: "Browse the\_namespaces, tables and\_schemas in\_an\_Iceberg REST catalog."
+          - url: /use-cases/iceberg-data-exploration-tool/
+            label: "Iceberg data exploration"
+            text: "Explore Iceberg data with\_SQL before you build anything on\_it."
+          - url: /use-cases/duckdb-iceberg-wasm/
+            label: "DuckDB, Iceberg and\_WASM"
+            text: "How DuckDB's Iceberg extension runs in\_WebAssembly, and\_how PondPilot uses it."
+      - heading: "Embed SQL with\_Widget"
+        pages:
+          - url: /use-cases/sql-editor-for-documentation/
+            label: "SQL editor for\_documentation"
+            text: "Embed a\_live SQL editor in\_your\_docs with\_PondPilot\_Widget."
+          - url: /use-cases/interactive-sql-tutorial-embed/
+            label: "Interactive SQL tutorial embed"
+            text: "Embed runnable SQL examples that students can edit and\_run."
+  - path: /alternatives/
+    name: "Alternatives"          # footer link and breadcrumb
+    related_label: "PondPilot compared with\_other tools"   # link added to each page's "Related" list
+    groups:
+      - heading: null
+        pages:
+          - url: /alternatives/db-fiddle-alternative/
+            label: "DB\_Fiddle alternative"
+            text: "A\_SQL playground that runs in\_your\_browser and\_queries your\_own files."
+          - url: /alternatives/datasette-alternative/
+            label: "Datasette alternative"
+            text: "Explore data in\_the\_browser without\_running a\_Python server."
+          - url: /alternatives/dbt-lineage-alternative/
+            label: "dbt lineage alternative"
+            text: "FlowScope draws <span class=\"nowrap\">column-level</span> lineage from\_raw SQL, without\_a\_dbt project."
+          - url: /alternatives/excel-alternative-for-data-analysis/
+            label: "Excel alternative for\_data analysis"
+            text: "Use SQL on\_CSV files when a\_dataset outgrows a\_spreadsheet."
+          - url: /alternatives/google-sheets-alternative-private/
+            label: "Private Google\_Sheets alternative"
+            text: "Analyze CSV files on\_your\_machine, without\_a\_Google account."
+          - url: /alternatives/hex-alternative/
+            label: "Hex alternative"
+            text: "SQL on\_local files for\_an\_analyst working alone, with\_no workspace to\_set up."
+          - url: /alternatives/jupyter-notebook-alternative-for-sql/
+            label: "Jupyter alternative for\_SQL"
+            text: "Run SQL on\_data files without\_a\_Python environment or\_kernels."
+          - url: /alternatives/looker-studio-alternative/
+            label: "Looker\_Studio alternative"
+            text: "Query CSV and\_Parquet files on\_your\_machine with\_SQL."
+          - url: /alternatives/metabase-alternative/
+            label: "Metabase alternative"
+            text: "Quick SQL on\_a\_file, without\_deploying a\_BI server."
+          - url: /alternatives/mode-analytics-alternative/
+            label: "Mode\_Analytics alternative"
+            text: "SQL on\_local files in\_the\_browser, free and\_without\_a\_cloud workspace."
+          - url: /alternatives/observable-alternative/
+            label: "Observable alternative"
+            text: "A\_<span class=\"nowrap\">SQL-first</span> option for\_people who prefer SQL to\_JavaScript notebooks."
+          - url: /alternatives/redash-alternative/
+            label: "Redash alternative"
+            text: "<span class=\"nowrap\">Ad-hoc</span> SQL on\_a\_file, with\_nothing to\_host."
+          - url: /alternatives/superset-alternative/
+            label: "Apache\_Superset alternative"
+            text: "Query files with\_SQL without\_standing up a\_BI platform."
+  - path: /tools/
+    name: "Tools"          # footer link and breadcrumb
+    related_label: "Tools for\_SQL lineage, data checks and\_runnable SQL"   # link added to each page's "Related" list
+    groups:
+      - heading: null
+        pages:
+          - url: /tools/column-level-lineage-tool/
+            label: "<span class=\"nowrap\">Column-level</span> lineage tool"
+            text: "Trace which source columns feed each output column, with\_FlowScope."
+          - url: /tools/sql-lineage-visualization/
+            label: "SQL lineage visualization"
+            text: "Paste SQL into\_FlowScope and\_see how tables, CTEs and\_columns flow."
+          - url: /tools/data-quality-check-tool/
+            label: "Data quality check tool"
+            text: "Find nulls, duplicates and\_outliers in\_CSV and\_Parquet files with\_SQL."
+          - url: /tools/embed-sql-in-documentation/
+            label: "Embed SQL in\_documentation"
+            text: "Make the\_SQL in\_your\_docs runnable with\_PondPilot\_Widget."
+          - url: /tools/interactive-sql-blog-widget/
+            label: "Interactive SQL blog widget"
+            text: "Let blog readers edit and\_run your\_queries on\_the\_page."
+  - path: /audience/
+    name: "By\_role"          # footer link and breadcrumb
+    related_label: "PondPilot by\_role"   # link added to each page's "Related" list
+    groups:
+      - heading: null
+        pages:
+          - url: /audience/sql-tool-for-data-analysts/
+            label: "Data analysts"
+            text: "<span class=\"nowrap\">Ad-hoc</span> SQL on\_CSV and\_Parquet exports when the\_warehouse is slow or\_locked."
+          - url: /audience/data-tool-for-data-engineers/
+            label: "Data engineers"
+            text: "Check Parquet and\_Iceberg outputs without\_starting a\_cluster."
+          - url: /audience/data-analysis-for-researchers/
+            label: "Researchers"
+            text: "Analyze survey, SPSS and\_SAS data that a\_<span class=\"nowrap\">data-use</span> agreement keeps off the\_cloud."
+          - url: /audience/data-tools-for-journalists/
+            label: "Journalists"
+            text: "Work through sensitive datasets without\_uploading them to\_a\_cloud service."
+          - url: /audience/data-tool-for-accountants/
+            label: "Accountants"
+            text: "Reconcile <span class=\"nowrap\">journal-entry</span> and\_ledger exports while client data stays on\_your\_machine."
+          - url: /audience/data-tool-for-compliance-analysts/
+            label: "Compliance analysts"
+            text: "Run SQL on\_access logs and\_transaction exports without\_uploading them to\_a\_SaaS tool."
+          - url: /audience/sql-tool-for-marketers/
+            label: "Marketers"
+            text: "Join campaign and\_UTM exports and\_answer your\_own questions."
+          - url: /audience/sql-tool-for-product-managers/
+            label: "Product managers"
+            text: "Slice a\_CSV export in\_ways the\_dashboard doesn't offer."
+          - url: /audience/data-analysis-for-startups/
+            label: "Startups"
+            text: "Query Stripe, CRM and\_product exports for\_free, with\_no infrastructure."
+          - url: /audience/sql-explorer-for-students/
+            label: "Students"
+            text: "Practice SQL on\_your\_own data with\_nothing to\_install."
+  - path: /privacy/
+    name: "Private analysis"          # footer link and breadcrumb
+    related_label: "Private data analysis"   # link added to each page's "Related" list
+    groups:
+      - heading: null
+        pages:
+          - url: /privacy/data-analysis-without-uploading/
+            label: "Data analysis without\_uploading"
+            text: "How PondPilot analyzes a\_file that never leaves your\_browser."
+          - url: /privacy/local-data-analysis-tool/
+            label: "Local data analysis tool"
+            text: "What \"local\" means here: your\_own machine does the\_processing."
+          - url: /privacy/private-data-exploration/
+            label: "Private data exploration"
+            text: "Explore medical, financial or\_HR data with\_SQL while it stays on\_your\_device."
+          - url: /privacy/no-cloud-sql-editor/
+            label: "<span class=\"nowrap\">No-cloud</span> SQL editor"
+            text: "A\_SQL editor whose queries run in\_your\_browser and\_not on\_a\_cloud server."
+          - url: /privacy/offline-data-analysis-tool/
+            label: "Offline data analysis tool"
+            text: "Install PondPilot as\_a\_PWA and\_run SQL with\_no internet connection."
+          - url: /privacy/air-gapped-data-analysis/
+            label: "<span class=\"nowrap\">Air-gapped</span> data analysis"
+            text: "Run SQL on\_a\_machine with\_no network access, using the\_installed PWA."
+          - url: /privacy/gdpr-compliant-data-tool/
+            label: "GDPR and\_<span class=\"nowrap\">client-side</span> processing"
+            text: "Why processing in\_the\_browser keeps personal data off <span class=\"nowrap\">third-party</span> servers."
+          - url: /privacy/hipaa-compliant-data-tool/
+            label: "<span class=\"nowrap\">HIPAA-friendly</span> data tool"
+            text: "How a\_tool that never receives your\_files fits into\_a\_<span class=\"nowrap\">HIPAA-compliant</span> workflow."
+
+# Guide blocks on product pages (_includes/guide-links.html).
+product_blocks:
+  app:
+    - heading: "Guides for\_your\_file type"
+      links:
+        - { url: /formats/stata-to-csv-converter/, label: "Convert Stata .dta to\_CSV or\_Excel" }
+        - { url: /formats/open-spss-files-in-browser/, label: "Open SPSS .sav files" }
+        - { url: /formats/sas-file-viewer-free/, label: "View SAS .sas7bdat files" }
+        - { url: /formats/parquet-viewer-online/, label: "View Parquet files" }
+        - { url: /formats/excel-to-parquet-converter/, label: "Convert Excel to\_Parquet" }
+        - { url: /formats/, label: "All file format guides" }
+    - heading: "More guides"
+      links:
+        - { url: /duckdb/, label: "DuckDB guides" }
+        - { url: /use-cases/, label: "Use cases" }
+        - { url: /audience/, label: "PondPilot by\_role" }
+        - { url: /privacy/, label: "Private data analysis" }
+        - { url: /alternatives/, label: "PondPilot compared with\_other tools" }
+  flowscope:
+    - heading: "SQL lineage guides"
+      links:
+        - { url: /tools/column-level-lineage-tool/, label: "<span class=\"nowrap\">Column-level</span> lineage tool" }
+        - { url: /tools/sql-lineage-visualization/, label: "SQL lineage visualization" }
+        - { url: /alternatives/dbt-lineage-alternative/, label: "dbt lineage alternative: lineage from\_raw SQL" }

@@ -461,3 +461,115 @@ header nav a.active::after {
         gap: 10px;
     }
 }
+
+/* Breadcrumb above the page card on hub and pSEO pages (Home › Hub › Page).
+   Mirrored in _includes/critical-css.html so the card does not move when this file loads. */
+.breadcrumbs {
+    margin: 0 0 var(--space-4);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--slate-600);
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs li + li::before {
+    content: "\203A"; content: "\203A" / "";
+    margin: 0 var(--space-2);
+    color: var(--slate-400);
+}
+
+.breadcrumbs a {
+    padding-block: 2px;
+    color: var(--slate-600);
+    text-decoration: underline;
+    text-decoration-color: var(--slate-300);
+    text-underline-offset: 3px;
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary);
+    text-decoration-color: currentColor;
+}
+
+.breadcrumbs [aria-current="page"] {
+    color: var(--slate-800);
+}
+
+.breadcrumbs a:focus-visible,
+.hub-list a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Category hub pages: a scannable list of guides, one line of description each */
+.blog-post-header h1 {
+    text-wrap: balance;
+}
+
+/* With no meta line under it, the H1 sits centred in its card */
+.blog-post-header > h1:last-child {
+    margin-bottom: 0;
+}
+
+.blog-post-content .hub-intro {
+    max-width: 68ch;
+    color: var(--slate-700);
+    text-wrap: pretty;
+}
+
+.blog-post-content ul.hub-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.blog-post-content ul.hub-list li {
+    margin: 0;
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--slate-200);
+}
+
+.blog-post-content h2 + ul.hub-list li:first-child {
+    border-top: 0;
+    padding-top: var(--space-2);
+}
+
+.blog-post-content .hub-list a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.blog-post-content .hub-list a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+.blog-post-content .hub-list p {
+    margin: var(--space-1) 0 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--slate-600);
+    text-wrap: pretty;
+}
+
+.blog-post-content h2 {
+    text-wrap: balance;
+}
+
+/* On phones the H1 drops to 1.8rem (see the 768px block above); hub group headings step
+   down with it so they stay below the page title */
+@media (max-width: 768px) {
+    .blog-post-content h2.hub-group {
+        font-size: 1.4rem;
+        margin-top: 36px;
+    }
+}

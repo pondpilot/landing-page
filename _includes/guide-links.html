@@ -1,0 +1,24 @@
+{%- comment -%}
+  Guide links on a product page: {% include guide-links.html block="app" %} or block="flowscope".
+  Links and headings live in _data/hubs.yml (product_blocks); excluded pages are skipped.
+{%- endcomment -%}
+{%- assign gl_groups = site.data.hubs.product_blocks[include.block] -%}
+{%- assign gl_excl = site.data.hubs.exclude -%}
+<section class="guides" aria-labelledby="guides-{{ include.block }}">
+    <div class="container">
+        {%- for g in gl_groups %}
+        {%- if forloop.first %}
+        <h2 id="guides-{{ include.block }}">{{ g.heading }}</h2>
+        {%- else %}
+        <h3>{{ g.heading }}</h3>
+        {%- endif %}
+        <ul class="guide-links">
+            {%- for l in g.links -%}
+            {%- unless gl_excl contains l.url %}
+            <li><a href="{{ l.url }}"><span>{{ l.label }}</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+            {%- endunless -%}
+            {%- endfor %}
+        </ul>
+        {%- endfor %}
+    </div>
+</section>
