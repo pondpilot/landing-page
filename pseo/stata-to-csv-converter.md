@@ -7,7 +7,7 @@ permalink: /formats/stata-to-csv-converter/
 ---
 
 
-Someone sent you a `.dta` file and you need it in CSV. You don't have Stata, and you don't want to install Python just for this. PondPilot converts Stata files to CSV in your browser — zero setup, zero cost. If you need a spreadsheet instead, the same export also saves Excel (.xlsx) files.
+Someone sent you a `.dta` file and you need it in CSV. You don't have Stata, and you don't want to install Python just for this. PondPilot converts Stata files to CSV in your browser — zero setup, zero cost. If you need a spreadsheet instead, the same export also saves Excel (.xlsx) files.
 
 ## How to Convert
 
@@ -35,7 +35,7 @@ Export exactly what you need, not the entire dataset.
 
 Online converters that ask you to upload files are a red flag for research data. PondPilot processes everything locally. Your `.dta` file never leaves your machine. There's no server, no account, no tracking.
 
-## Export to Excel or Parquet instead
+## Export to Excel or Parquet instead
 
 The export dialog also saves Excel (.xlsx) files, which is the quickest route when the data is going to someone who works in spreadsheets. If the data is headed for an analytics stack, choose Parquet, because a Parquet file is smaller than a CSV and keeps the column types. The other export formats are TSV, SQL, XML and Markdown.
 
